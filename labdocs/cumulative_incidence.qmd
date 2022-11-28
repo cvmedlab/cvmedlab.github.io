@@ -10,10 +10,9 @@ format:
 page-layout: full
 ---
 
+This is an example of creating cumulative incidence curves for a time-to-event outcome. Here, we're using our Personal Hypertension Care project data from the OneFlorida research consortium.
 
-This is an example of creating cumulative incidence curves for a time-to-event outcome. Here, we're using our Personal Hypertension Care project data from the OneFlorida research consortium. 
-
-We're using three packages:  `tidyverse`, `survival`, and `survminer`. 
+We're using three packages: `tidyverse`, `survival`, and `survminer`.
 
 ## Data Prep
 
@@ -53,11 +52,11 @@ comma <- function(x) format(x, digits = 2, big.mark = ",")
 
 ## Data
 
-We have **`r fu |> subset(source == "FLM", source) |> nrow() |> comma()`** Medicaid patients, and **`r fu |> subset(source == "MED", source) |> nrow() |> comma()`** Medicare patients. We intend to compare cumulative incidence of time-to-first follow-up (first hypertension-related visit) after starting hypertension therapy. Time 0 is date that they started antihypertensive treatment.   
+We have **`r fu |> subset(source == "FLM", source) |> nrow() |> comma()`** Medicaid patients, and **`r fu |> subset(source == "MED", source) |> nrow() |> comma()`** Medicare patients. We intend to compare cumulative incidence of time-to-first follow-up (first hypertension-related visit) after starting hypertension therapy. Time 0 is date that they started antihypertensive treatment.
 
 ## Plotting time-to-first follow-up
 
-First, we create a cumulative incidence curve for time-to-first follow-up. The y-axis represents the cumulative proportion that had a first follow-up visit over time (x-axis). We're going to include Medicaid and Medicare on the same plot, as well as a formal comparison (w/ p-value), but if we don't want to directly compare the two, we could remove the p-value, or even split these up onto 2 figures. We're using the `ggsurvplot()` function from the *survminer* package. 
+First, we create a cumulative incidence curve for time-to-first follow-up. The y-axis represents the cumulative proportion that had a first follow-up visit over time (x-axis). We're going to include Medicaid and Medicare on the same plot, as well as a formal comparison (w/ p-value), but if we don't want to directly compare the two, we could remove the p-value, or even split these up onto 2 figures. We're using the `ggsurvplot()` function from the *survminer* package.
 
 ```{r}
 #| label: T1FU_plot
@@ -83,7 +82,6 @@ ggsurvplot(fut1,
            tables.col = "strata",
            surv.scale = "percent")
 ```
-
 
 ## Time-to-second follow-up
 
