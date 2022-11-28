@@ -4,23 +4,17 @@ format: html
 editor: visual
 ---
 
-## Quarto
+## Lab Papers
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+Lab papers are listed below, sorted (descending) by year. Where available, the PDF link is also listed, as is the github site or website. 
 
-## Running Code
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+```{r pubs, results="asis", echo=FALSE, warning=FALSE, message=FALSE}
+library(bib2df)
+library(stringi)
 
-```{r}
-1 + 1
+pub_list("lab_pubs/lab_pubs.bib",
+         "lab_pubs/lab_pubs.yml",
+         "lab_pubs/files",
+         "https://www.cvmedlab.org/files")
 ```
-
-You can add options to executable code like this
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).

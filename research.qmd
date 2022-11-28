@@ -27,4 +27,4 @@ Current funding for the lab is through the [National Heart, Lung and Blood Insti
 
 #### [Publications]{style="color: #7f7f7f"}
 
-A complete list of my lab's journal publications can be found on [PubMed](https://www.ncbi.nlm.nih.gov/myncbi/steven.smith.4/bibliography/public/) or [Google Scholar](https://scholar.google.com/citations?user=3MKlN-EAAAAJ&hl=en). Newer publications are also available via [ORCID](https://orcid.org/0000-0002-0201-839X). If you do not have access to a particular journal, please [email me](mailto:ssmith@cop.ufl.edu) for an author's print.
+A complete list of my lab's journal publications can be found on our [papers](papers.qmd) page, as well as on [PubMed](https://www.ncbi.nlm.nih.gov/myncbi/steven.smith.4/bibliography/public/) or [Google Scholar](https://scholar.google.com/citations?user=3MKlN-EAAAAJ&hl=en). Newer publications are also available via [ORCID](https://orcid.org/0000-0002-0201-839X). We provide pdfs of most of our pubs, but if for some reason you cannot access the link, or a particular journal, please [email me](mailto:ssmith@cop.ufl.edu) for an author's print.
