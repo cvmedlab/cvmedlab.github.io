@@ -60,7 +60,7 @@
     "href": "research.html",
     "title": "CV med Lab",
     "section": "",
-    "text": "My lab is focused on studying adverse cardiovascular effects of common chronic diseases (hypertension, type 2 diabetes, thromboembolic disorders) and optimizing drug therapy to minimize risks of these diseases.\nA major focus is on adverse effects of chronic uncontrolled blood pressure (hypertension) and ways to optimize antihypertensive drug therapy to mitigate these adverse effects. I have particular expertise in the area of treatment-resistant hypertension.\n\n\n\nMy research spans population and clinical sciences related to cardiovascular disease and its treatment. This includes both observational research, as well as clinical trial work, primarily through my collaboration with colleagues in the Division of Cardiovascular Medicine.\nI am also interested in research on methods for using electronic health record (EHR) data, including how to minimize misclassification when measuring longitudinal drug exposure from EHR prescribing data, and methods for dealing with missingness in EHR data and biases associated with missing data.\n\n\n\nCurrent funding for the lab is through the National Heart, Lung and Blood Institute (NHLBI) via our work on optimizing antihypertensive drug selection (K01 HL138172) and high-throughput screening for antihypertensive prescribing cascades (R21 HL159576).\n\n\n\nA complete list of my lab’s journal publications can be found on our papers page, as well as on PubMed or Google Scholar. Newer publications are also available via ORCID. We provide pdfs of most of our pubs, but if for some reason you cannot access the link, or a particular journal, please email me for an author’s print."
+    "text": "The CVmedLab is focused on studying cardiovascular effects of common chronic diseases (hypertension, type 2 diabetes, thromboembolic disorders) and optimizing drug therapy to minimize risks of these diseases.\nA major focus is on adverse effects of chronic uncontrolled blood pressure (hypertension) and ways to optimize antihypertensive drug therapy to mitigate these adverse effects. We have particular expertise in the area of treatment-resistant hypertension.\n\n\n\nOur research spans population and clinical sciences related to cardiovascular disease and its treatment. This includes both observational research, as well as clinical trial work, primarily through my collaboration with colleagues in the Division of Cardiovascular Medicine.\nWe are also interested in methodologic research for using electronic health record (EHR) data, including how to minimize misclassification when measuring longitudinal drug exposure from EHR prescribing data, and methods for dealing with missingness in EHR data and biases associated with missing data.\n\n\n\nCurrent funding for the lab is through the National Heart, Lung and Blood Institute (NHLBI) via our work on optimizing antihypertensive drug selection (K01 HL138172) and high-throughput screening for antihypertensive prescribing cascades (R21 HL159576).\n\n\n\nA complete list of my lab’s journal publications can be found on our papers page, as well as on PubMed or Google Scholar. Newer publications are also available via ORCID. We provide pdfs of most of our pubs, but if for some reason you cannot access the link, or a particular journal, please email me for an author’s print."
   },
   {
     "objectID": "labdocs/writing.html",
@@ -145,5 +145,68 @@
     "title": "Manuscript Writing",
     "section": "Manuscript Structure",
     "text": "Manuscript Structure\nThe same organization (head & body) used in paragraphs can be applied to entire sections of a manuscript or to the entire manuscript. For example, the introduction of a manuscript functions as a head for the entire article. Thus, the first paragraph should contain a preliminary thesis to inform readers immediately of the article’s focus.\nLikewise, the final paragraph of the introduction should end with the article’s primary focus/significance. Remember stress order: the very last sentence of the last paragraph should contain the article’s thesis sentence since this sentence will be what the reader remembers most. For a review manuscript, this sentence should precisely describe the purpose of the review and the topics that will be covered. The same general principle holds true for the final summary paragraph. Ostensibly, the summary will be the last thing read and will remain in memory the longest. Consequently, this section should clearly repeat (in general terms) the main points of the review that you would like the reader to remember."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CV med Lab",
+    "section": "",
+    "text": "The Cardiovascular Medications Lab (CVmedLab) at the University of Florida investigates real world safety and effectiveness of cardiovascular medications. We ask questions like how are cardiovascular diseases treated in the real world and how do these treatment regimens evolve over time? Are certain medications more effective than others for a particular cardiovascular disease? To what extent are well-known disparities in cardiovascular disease outcomes explained by differences in treatment approaches? These kinds of questions are investigated using observational data (e.g., electronic health records, insurance claims data) and epidemiologic methods , as well as with prospective clinical trials. The CVmedLab uses a variety of computational methods and tools to conduct and communicate research.\nCurrent and previous lab members include graduate students pursuing master’s or doctoral degrees, postdoctoral researcher associates, and Doctor of Pharmacy (Pharm.D.) students. If you are interested in cardiovascular disease treatment and using computational techniques for designing and executing studies, analyzing data, and developing new technologies, then you may be interested in joining the team.\nThe lab is located in the Department of Pharmaceutical Outcomes & Policy in the College of Pharmacy at UF, and affiliated with the Center for Drug Evaluation and Safety and the Center for Integrative Cardiovascular and Metabolic Disease."
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "CV med Lab",
+    "section": "Contact",
+    "text": "Contact\nSteven Smith\n\nAssistant Professor\nDepartment of Pharmaceutical Outcomes & Policy\nUF College of Pharmacy\nPO Box 100496, Gainesville, FL 32610\nOffice: Health Professions, Nursing & Pharmacy (HPNP) Ste 3316\nPhone: 352-273-5134\nemail: ssmith@cop.ufl.edu or steve@cvmedlab.org"
+  },
+  {
+    "objectID": "lab_pubs/initial_antihypertensive_prescribing_onefl.html",
+    "href": "lab_pubs/initial_antihypertensive_prescribing_onefl.html",
+    "title": "Initial Antihypertensive Regimens in Newly Treated Patients: Real World Evidence from the OneFlorida+ Clinical Research Network",
+    "section": "",
+    "text": "Hypertension affects an estimated 120 million individuals in the U.S. and is the leading modifiable risk factor for cardiovascular disease and death.1 Nearly all of these individuals ultimately require antihypertensive therapy to achieve blood pressure (BP) control, and as a consequence, several antihypertensive drugs are among the most commonly used medications worldwide. Consensus U.S. and international guidelines have long recommended certain antihypertensive classes as ‘first-line’ therapies – namely angiotensin-converting enzyme inhibitors (ACEIs), angiotensin receptor blockers (ARBs), thiazide diuretics, calcium channel blockers (CCBs), and, until relatively recently, β-blockers.2,3 However, for most patients with uncomplicated hypertension, guidelines generally do not prioritize any of these classes except in select circumstances, leaving prescribers to choose from some 30 to 40 antihypertensive drugs when initiating antihypertensive therapy.\nReal world antihypertensive utilization patterns have been studied extensively, but in almost all cases, the focus of these studies has been on treatment patterns in prevalent hypertension cohorts.4–14 These studies provide useful insight into overall antihypertensive use in populations. However, they rarely have distinguished between patients who are early in their treatment course from those with long-standing hypertension and who may have extensive treatment histories and multi-drug regimens that have evolved over time. Thus, very little is known about contemporary patterns of early antihypertensive care, including initial antihypertensive regimens, and to what extent these accord with care typically recommended in consensus guidelines. These gaps are noteworthy in light of the fact that only approximately one in five U.S. patients with hypertension have BP controlled to <130/80 mm Hg.1 Thus, delays in achieving BP control are exceedingly common in routine practice and extend high-risk periods, leading to worse outcomes.12,15 A greater understanding of how antihypertensive regimens emerge and evolve early in therapy may aid in identifying quality care gaps that can be intervened on.\nTo address this gap, we used the OneFlorida+ Clinical Research Consortium (hereafter, OneFlorida+) to characterize initial treatment regimens among a diverse cohort of new users of antihypertensive therapy. We were principally interested in the distribution of classes, specific antihypertensive drugs within classes, how these distributions differed in pre-specified demographic and clinical groups, and their trends over time."
+  },
+  {
+    "objectID": "lab_pubs/initial_antihypertensive_prescribing_onefl.html#funding",
+    "href": "lab_pubs/initial_antihypertensive_prescribing_onefl.html#funding",
+    "title": "Initial Antihypertensive Regimens in Newly Treated Patients: Real World Evidence from the OneFlorida+ Clinical Research Network",
+    "section": "Funding",
+    "text": "Funding\n\nThis work was funded by the National Heart, Lung, and Blood Institute, K01 HL138172 (Dr. Smith). Research reported in this publication was also supported in part by the UF Center for Drug Evaluation and Safety; in part by the OneFlorida Clinical Data Network, funded by the Patient-Centered Outcomes Research Institute numbers CDRN-1501-26692 and RI-CRN-2020-005; in part by the OneFlorida Cancer Control Alliance, funded by the Florida Department of Health’s James and Esther King Biomedical Research Program number 4KB16; and in part by the University of Florida Clinical and Translational Science Institute and its Clinical and Translational Science Award (CTSA) hub partner, Florida State University, which are supported in part by three CTSA Program grants awarded on August 15, 2015, and renewed for five years on July 2, 2019, by the National Center for Advancing Translational Sciences of the National Institutes of Health. The UF-FSU CTSA grant numbers are UL1TR001427, KL2TR001429 and TL1TR001428. The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health, Patient-Centered Outcomes Research Institute (PCORI) or its Board of Governors or Methodology, the OneFlorida Clinical Research Consortium, the UF-FSU Clinical and Translational Science Institute, or the Florida Department of Health."
+  },
+  {
+    "objectID": "lab_pubs/initial_antihypertensive_prescribing_onefl.html#disclosures",
+    "href": "lab_pubs/initial_antihypertensive_prescribing_onefl.html#disclosures",
+    "title": "Initial Antihypertensive Regimens in Newly Treated Patients: Real World Evidence from the OneFlorida+ Clinical Research Network",
+    "section": "Disclosures",
+    "text": "Disclosures\n\nThe authors have no conflicts of interest to disclose."
+  },
+  {
+    "objectID": "lab_pubs/initial_antihypertensive_prescribing_onefl.html#figure-1",
+    "href": "lab_pubs/initial_antihypertensive_prescribing_onefl.html#figure-1",
+    "title": "Initial Antihypertensive Regimens in Newly Treated Patients: Real World Evidence from the OneFlorida+ Clinical Research Network",
+    "section": "Figure 1",
+    "text": "Figure 1\n ## Figure 2"
+  },
+  {
+    "objectID": "lab_pubs/initial_antihypertensive_prescribing_onefl.html#figure-3",
+    "href": "lab_pubs/initial_antihypertensive_prescribing_onefl.html#figure-3",
+    "title": "Initial Antihypertensive Regimens in Newly Treated Patients: Real World Evidence from the OneFlorida+ Clinical Research Network",
+    "section": "Figure 3",
+    "text": "Figure 3\n\n\nFigure 2: Figure 3. Proportion of patients prescribed each antihypertensive class, among Medicaid-insured patients with newly-treated hypertension. Numbers to the right of bars represent distinct patients. Patients initiating multiple therapies are included in each category. ACEI, angiotensin-converting enzyme inhibitor; ARB, angiotensin receptor blocker; DHP CCB, dihydropyridine calcium channel blocker; DRI, direct renin inhibitor (aliskiren)."
+  },
+  {
+    "objectID": "lab_pubs/initial_antihypertensive_prescribing_onefl.html#figure-2",
+    "href": "lab_pubs/initial_antihypertensive_prescribing_onefl.html#figure-2",
+    "title": "Initial Antihypertensive Regimens in Newly Treated Patients: Real World Evidence from the OneFlorida+ Clinical Research Network",
+    "section": "Figure 2",
+    "text": "Figure 2\n\n\nFigure 1: Figure 2"
+  },
+  {
+    "objectID": "lab_pubs/initial_antihypertensive_prescribing_onefl.html#supplement",
+    "href": "lab_pubs/initial_antihypertensive_prescribing_onefl.html#supplement",
+    "title": "Initial Antihypertensive Regimens in Newly Treated Patients: Real World Evidence from the OneFlorida+ Clinical Research Network",
+    "section": "Supplement",
+    "text": "Supplement\n\nThe data supplement for this paper can be found here."
   }
 ]
