@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.cvmedlab.org/about.html</loc>
-    <lastmod>2022-11-28T19:23:49.856Z</lastmod>
+    <lastmod>2022-11-29T01:40:58.818Z</lastmod>
   </url>
   <url>
     <loc>https://www.cvmedlab.org/labdocs/cumulative_incidence.html</loc>
@@ -10,18 +10,26 @@
   </url>
   <url>
     <loc>https://www.cvmedlab.org/papers.html</loc>
-    <lastmod>2022-11-28T19:38:47.051Z</lastmod>
+    <lastmod>2022-11-29T02:37:27.294Z</lastmod>
   </url>
   <url>
     <loc>https://www.cvmedlab.org/people.html</loc>
-    <lastmod>2022-11-28T19:38:47.435Z</lastmod>
+    <lastmod>2022-11-29T02:14:33.268Z</lastmod>
   </url>
   <url>
     <loc>https://www.cvmedlab.org/research.html</loc>
-    <lastmod>2022-11-28T19:39:05.704Z</lastmod>
+    <lastmod>2022-11-29T04:27:56.246Z</lastmod>
   </url>
   <url>
     <loc>https://www.cvmedlab.org/labdocs/writing.html</loc>
     <lastmod>2022-11-28T19:39:26.453Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cvmedlab.org/index.html</loc>
+    <lastmod>2022-11-29T01:45:17.301Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cvmedlab.org/lab_pubs/initial_antihypertensive_prescribing_onefl.html</loc>
+    <lastmod>2022-11-29T05:44:49.155Z</lastmod>
   </url>
 </urlset>

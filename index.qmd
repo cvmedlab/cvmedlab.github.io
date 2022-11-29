@@ -4,44 +4,24 @@ format:
     include-in-header: 
       - includes/icons.html
       - includes/analytics.html
-page-layout: full
 ---
 
-::: column-page
-# [Steven M. Smith]{style="color: #1E354B"}
+![](./assets/CVmedLab_Logo-01.svg){fig-align="center"}
 
-::: wrap-columns
-::: columns-50
-::: tight-text
-Assistant Professor  
-[Department of Pharmaceutical Outcomes & Policy](https://pop.pharmacy.ufl.edu/)\
-[Division of Cardiovascular Medicine, Department of Medicine](https://cardiology.medicine.ufl.edu/)
+The Cardiovascular Medications Lab (CVmedLab) at the University of Florida investigates real world safety and effectiveness of cardiovascular medications. We ask questions like how are cardiovascular diseases treated in the real world and how do these treatment regimens evolve over time? Are certain medications more effective than others for a particular cardiovascular disease? To what extent are well-known disparities in cardiovascular disease outcomes explained by differences in treatment approaches? These kinds of questions are investigated using observational data (e.g., electronic health records, insurance claims data) and epidemiologic methods , as well as with prospective clinical trials. The CVmedLab uses a variety of computational methods and tools to conduct and communicate research.
 
-Associate Director  
-[Center for Integrative Cardiovascular and Metabolic Disease](https://cicmd.center.ufl.edu/)
+[Current and previous lab members](people.qmd) include graduate students pursuing master's or doctoral degrees, postdoctoral researcher associates, and Doctor of Pharmacy (Pharm.D.) students. If you are interested in cardiovascular disease treatment and using computational techniques for designing and executing studies, analyzing data, and developing new technologies, then you may be interested in joining the team.
 
-Member  
-[Center for Drug Evaluation and Safety (CoDES)](https://codes.pharmacy.ufl.edu/){.btn-tertiary}
+The lab is located in the [Department of Pharmaceutical Outcomes & Policy](https://pop.pharmacy.ufl.edu) in the [College of Pharmacy](https://pharmacy.ufl.edu/) at [UF](https://www.ufl.edu/), and affiliated with the [Center for Drug Evaluation and Safety](https://codes.pharmacy.ufl.edu/) and the [Center for Integrative Cardiovascular and Metabolic Disease](https://cicmd.center.ufl.edu).
 
-University of Florida  
-:::
-:::
+## Contact
 
-::: columns-50
-![](assets/CICMD.jpg){fig-align="right"}
-:::
-:::
-:::
+**Steven Smith**
 
-::: column-page-inset
-### [Background]{style="color: #1E354B"}
-
-I am a pharmacist and epidemiologist specializing in cardiovascular medicine, especially hypertension. I obtained my PharmD in 2007 and MPH, with an emphasis in biostatistics and epidemiology in 2011, both from the University of Florida. I completed a Pharmacy Practice Residency at the NF/SG Veterans Affairs Hospital (2008) and a postdoctoral fellowship in Family Medicine at the University of Florida (2011). I started my career at the University of Colorado in 2011 and returned to the University of Florida in 2014.
-:::
-
-::: column-page-inset
-### [Contact]{style="color: #1E354B"}
-
-<a href="mailto:ssmith@cop.ufl.edu">[mail]{.material-symbols-rounded}ssmith\@cop.ufl.edu</a>\
-<a href="mailto:steve@stevenmsmith.org">[mail]{.material-symbols-rounded}steve\@stevenmsmith.org</a>
-:::
+-   Assistant Professor
+-   Department of Pharmaceutical Outcomes & Policy
+-   UF College of Pharmacy
+-   PO Box 100496, Gainesville, FL 32610
+-   Office: Health Professions, Nursing & Pharmacy (HPNP) Ste 3316
+-   Phone: 352-273-5134
+-   email: [ssmith\@cop.ufl.edu](mailto:ssmith@cop.ufl.edu) or [steve\@cvmedlab.org](mailto:steve@cvmedlab.org)

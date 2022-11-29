@@ -4,7 +4,6 @@ format:
     include-in-header: 
       - includes/icons.html
       - includes/analytics.html
-page-layout: full
 ---
 
 ::: grid
@@ -15,7 +14,7 @@ page-layout: full
 :::
 
 ::: g-col-2
-![](assets/CICMD.jpg){fig-align="center"}
+![](assets/steve_profile.jpg){fig-align="center"}
 :::
 
 ::: g-col-10
@@ -121,6 +120,6 @@ page-layout: full
 ::: g-col-12
 ## [Join the Group]{style="color: #1E354B"}
 
-See the [about page](about.qmd) for information on joining the group. 
+See the [about page](about.qmd) for information on joining the group.
 :::
 :::
