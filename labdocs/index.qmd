@@ -1,0 +1,11 @@
+---
+title: "Lab Docs"
+
+listing:
+  contents: "*.qmd"
+
+editor: visual
+---
+
+# Lab Docs
+
