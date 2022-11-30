@@ -1,10 +1,9 @@
 ---
-title: "Papers"
+title: "Lab Publications"
+listing: 
+  type: default
+  contents: "lab_pubs/*.qmd"
 format: html
 editor: visual
 ---
 
-## Lab Papers
-
-Lab papers are listed below, sorted (descending) by year. Where available, the PDF link is also listed, as is the github site or website.
-q

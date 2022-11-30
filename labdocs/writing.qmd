@@ -1,6 +1,7 @@
 ---
 title: "Manuscript Writing"
 author: Steven M. Smith
+date: last-modified
 format: html
 ---
 

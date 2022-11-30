@@ -30,13 +30,9 @@ website:
 
     right:
       - icon: github
-        href: https://github.com/ssmithm
+        href: https://github.com/cvmedlab
       - icon: twitter
-        href: https://twitter.com/SteveSmithUF
-      - icon: linkedin
-        href: https://www.linkedin.com/in/steven-smith-09b80659/
-      - icon: researchgate
-        href: https://www.researchgate.net/profile/Steven_Smith16/
+        href: https://twitter.com/CVmedLab
 
   #page-footer: "Copyright 2022, Steven M. Smith" 
   
