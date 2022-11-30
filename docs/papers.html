@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CV med Lab - Papers</title>
+<title>CV med Lab - Lab Publications</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -58,7 +60,37 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -114,22 +146,12 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ssmithm"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/cvmedlab"><i class="bi bi-github" role="img">
 </i> 
  </a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/SteveSmithUF"><i class="bi bi-twitter" role="img">
-</i> 
- </a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/steven-smith-09b80659/"><i class="bi bi-linkedin" role="img">
-</i> 
- </a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://www.researchgate.net/profile/Steven_Smith16/"><i class="bi bi-researchgate" role="img">
+    <a class="nav-link" href="https://twitter.com/CVmedLab"><i class="bi bi-twitter" role="img">
 </i> 
  </a>
   </li>  
@@ -149,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Papers</h1>
+<h1 class="title">Lab Publications</h1>
 </div>
 
 
@@ -163,14 +185,42 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="lab-papers" class="level2">
-<h2 class="anchored" data-anchor-id="lab-papers">Lab Papers</h2>
-<p>Lab papers are listed below, sorted (descending) by year. Where available, the PDF link is also listed, as is the github site or website. q</p>
 
 
-</section>
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1669775961552" data-listing-reading-time-sort="28.23">
+<div class="thumbnail">
+<p><a href="./lab_pubs/initial_antihypertensive_prescribing_onefl.html"> <img src="./lab_pubs/initial_antihypertensive_prescribing_onefl_fig1.svg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./lab_pubs/initial_antihypertensive_prescribing_onefl.html">
+<h3 class="no-anchor listing-title">
+Initial Antihypertensive Regimens in Newly Treated Patients: Real World Evidence from the OneFlorida+ Clinical Research Network
+</h3>
+<div class="listing-subtitle">
+
+</div>
+<div class="listing-description">
+<em>Status: in press at the Journal of the American Heart Association</em>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./lab_pubs/initial_antihypertensive_prescribing_onefl.html">
+<div class="listing-author">
+Steven M. Smith, PharmD, MPH, Almut G. Winterstein, PhD, Matthew J. Gurka, PhD, Marta G. Walsh, MS, Shailina Keshwani, MS, Anne Libby, PhD, William Hogan, MD, MS, Carl J. Pepine, MD, Rhonda M. Cooper-DeHoff, PharmD, MS
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
