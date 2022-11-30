@@ -69,7 +69,7 @@ format:
 editor: visual
 ---
 
-*Status: in press at the Journal of the American Heart Association*
+*Status: in press (Journal of the American Heart Association)*
 
 ### INTRODUCTION
 
