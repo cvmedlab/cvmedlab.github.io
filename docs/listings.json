@@ -4,5 +4,13 @@
     "items": [
       "/lab_pubs/initial_antihypertensive_prescribing_onefl.html"
     ]
+  },
+  {
+    "listing": "/labdocs/index.html",
+    "items": [
+      "/labdocs/table1_gtsummary.html",
+      "/labdocs/cumulative_incidence.html",
+      "/labdocs/writing.html"
+    ]
   }
 ]

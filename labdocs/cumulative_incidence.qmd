@@ -1,5 +1,5 @@
 ---
-title: "Time-to-follow-up Visualizations"
+title: "Cumulative Incidence Curves {R}"
 format:
   html:
     include-in-header: 
