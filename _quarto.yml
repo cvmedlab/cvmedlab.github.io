@@ -1,10 +1,12 @@
 project:
   type: website
   output-dir: docs
+  resources: CNAME
 
 website:
   title: "CV med Lab"
-  site-url: https://www.cvmedlab.org/
+  site-url: https://cvmedlab.github.io
+  repo-url: https://github.com/cvmedlab/cvmedlab.github.io/
   #google-analytics: UA-163403898-2
   navbar:
     title: "{CVmedLab}"

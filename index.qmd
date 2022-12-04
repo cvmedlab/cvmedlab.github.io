@@ -2,9 +2,10 @@
 format: 
   html:
     include-in-header: 
-      - includes/icons.html
-      - includes/analytics.html
+      - include/icons.html
+      - include/analytics.html
 ---
+
 
 ![](./assets/CVmedLab_Logo-01.svg){fig-align="center"}
 
