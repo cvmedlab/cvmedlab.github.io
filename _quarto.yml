@@ -5,9 +5,9 @@ project:
 
 website:
   title: "CV med Lab"
-  site-url: https://cvmedlab.github.io
+  site-url: https://cvmedlab.org/
   repo-url: https://github.com/cvmedlab/cvmedlab.github.io/
-  #google-analytics: UA-163403898-2
+  google-analytics: G-K32ECMZR0R
   navbar:
     title: "{CVmedLab}"
     left:
@@ -29,6 +29,8 @@ website:
             href: labdocs/cumulative_incidence.qmd
           - text: "Scientific Writing" 
             href: labdocs/writing.qmd
+      - text: "lab manual"
+        href: https://labmanual.cvmedlab.org/
 
     right:
       - icon: github

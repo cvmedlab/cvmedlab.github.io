@@ -1,23 +1,17 @@
 ---
-# about:
-#   template: solana
-#   image: assets/steve_profile.jpg
-#   image-shape: rounded
-#   image-width: 20em
 format: 
   html:
     include-in-header: 
       - includes/icons.html
-      - includes/analytics.html
 ---
 
 ::: grid
-::: g-col-4
-![](assets/CVmedLab_Logo-01.svg){fig-align="left"}
-:::
-
 ::: g-col-8
 I lead a lab of thoughtful, smart, [hardworking trainees](people.qmd) interested in studying treatments for cardiovascular disease. The UF CV med Lab is focused on cardiovascular effects of drugs, particularly in real-world populations. This includes conventionally cardiovascular drugs (e.g., antihypertensives), but also drugs not typically associated with cardiovascular effects (antidiabetic drugs, antibiotics, antidepressants, etc...), but which have, or may have, cardiovascular consequences.
+:::
+
+::: g-col-4
+![](assets/CVmedLab_Logo-03.svg){fig-align="left"}
 :::
 :::
 

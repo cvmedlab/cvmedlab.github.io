@@ -3,7 +3,6 @@ format:
   html:
     include-in-header: 
       - includes/icons.html
-      - includes/analytics.html
 ---
 
 ::: grid
