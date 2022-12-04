@@ -1,43 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.cvmedlab.org/about.html</loc>
-    <lastmod>2022-11-29T01:40:58.818Z</lastmod>
+    <loc>https://cvmedlab.github.io/labdocs/table1_table1.html</loc>
+    <lastmod>2022-12-04T03:06:47.508Z</lastmod>
   </url>
   <url>
-    <loc>https://www.cvmedlab.org/labdocs/cumulative_incidence.html</loc>
-    <lastmod>2022-11-28T19:38:48.562Z</lastmod>
+    <loc>https://cvmedlab.github.io/labdocs/table1_gtsummary.html</loc>
+    <lastmod>2022-12-04T03:07:20.084Z</lastmod>
   </url>
   <url>
-    <loc>https://www.cvmedlab.org/papers.html</loc>
-    <lastmod>2022-11-30T02:53:52.084Z</lastmod>
+    <loc>https://cvmedlab.github.io/labdocs/index.html</loc>
+    <lastmod>2022-12-04T03:07:20.555Z</lastmod>
   </url>
   <url>
-    <loc>https://www.cvmedlab.org/people.html</loc>
-    <lastmod>2022-11-29T02:14:33.268Z</lastmod>
+    <loc>https://cvmedlab.github.io/labdocs/cumulative_incidence.html</loc>
+    <lastmod>2022-12-04T03:07:28.884Z</lastmod>
   </url>
   <url>
-    <loc>https://www.cvmedlab.org/research.html</loc>
-    <lastmod>2022-11-29T04:27:56.246Z</lastmod>
+    <loc>https://cvmedlab.github.io/labdocs/writing.html</loc>
+    <lastmod>2022-12-04T03:07:29.758Z</lastmod>
   </url>
   <url>
-    <loc>https://www.cvmedlab.org/labdocs/writing.html</loc>
-    <lastmod>2022-11-29T21:38:33.001Z</lastmod>
+    <loc>https://cvmedlab.github.io/research.html</loc>
+    <lastmod>2022-12-04T03:07:30.102Z</lastmod>
   </url>
   <url>
-    <loc>https://www.cvmedlab.org/index.html</loc>
-    <lastmod>2022-11-30T02:17:22.210Z</lastmod>
+    <loc>https://cvmedlab.github.io/papers.html</loc>
+    <lastmod>2022-12-04T03:07:30.647Z</lastmod>
   </url>
   <url>
-    <loc>https://www.cvmedlab.org/lab_pubs/initial_antihypertensive_prescribing_onefl.html</loc>
-    <lastmod>2022-11-30T02:53:51.451Z</lastmod>
+    <loc>https://cvmedlab.github.io/lab_pubs/initial_antihypertensive_prescribing_onefl.html</loc>
+    <lastmod>2022-12-04T03:07:50.019Z</lastmod>
   </url>
   <url>
-    <loc>https://www.cvmedlab.org/labdocs/index.html</loc>
-    <lastmod>2022-11-30T05:37:50.663Z</lastmod>
+    <loc>https://cvmedlab.github.io/index.html</loc>
+    <lastmod>2022-12-04T03:07:50.394Z</lastmod>
   </url>
   <url>
-    <loc>https://www.cvmedlab.org/labdocs/table1_gtsummary.html</loc>
-    <lastmod>2022-11-30T05:37:49.971Z</lastmod>
+    <loc>https://cvmedlab.github.io/about.html</loc>
+    <lastmod>2022-12-04T03:07:50.755Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cvmedlab.github.io/people.html</loc>
+    <lastmod>2022-12-04T03:07:51.133Z</lastmod>
   </url>
 </urlset>
