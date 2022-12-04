@@ -3,9 +3,7 @@ format:
   html:
     include-in-header: 
       - include/icons.html
-      - include/analytics.html
 ---
-
 
 ![](./assets/CVmedLab_Logo-01.svg){fig-align="center"}
 
