@@ -1,8 +1,10 @@
 ---
-title: "Baseline Characteristics Table"
+title: "Baseline Characteristics Table {R}"
 format: 
   html:
     embed-resources: true  
+author: Steven M. Smith
+date: last-modified
 editor: visual
 ---
 
