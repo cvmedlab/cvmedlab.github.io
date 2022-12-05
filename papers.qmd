@@ -4,6 +4,5 @@ listing:
   type: default
   contents: "lab_pubs/*.qmd"
 format: html
-editor: visual
+page-layout: full
 ---
-
