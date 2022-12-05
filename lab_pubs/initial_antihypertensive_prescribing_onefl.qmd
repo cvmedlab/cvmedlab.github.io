@@ -50,6 +50,19 @@ affiliations:
     city: Gainesville
     state: FL
 
+abstract: |
+  Background: Knowledge of real-world antihypertensive use is limited to prevalent hypertension, limiting our understanding of how treatment evolves and its contribution to persistently poor BP control. We sought to characterize antihypertensive initiation among new users. 
+
+  Methods and Results: Using Medicaid and Medicare data from the OneFlorida+ Clinical Research Consortium, we identified new users of ≥1 first-line antihypertensives (angiotensin converting enzyme inhibitor [ACEI], calcium channel blocker [CCB], angiotensin receptor blocker [ARB], thiazide diuretic, or β-blocker) between 2013 and 2021 among adults with diagnosed hypertension, and no antihypertensive fill during the 12 months prior. We evaluated initial antihypertensive regimens by class and drug overall and across study years, and examined variation in antihypertensive initiation across demographic (sex, race, ethnicity), comorbidity (chronic kidney disease, diabetes, and atherosclerotic cardiovascular disease). We identified 143,054 patients initiating 188,995 antihypertensives (75% monotherapy; 25% combination therapy), with mean age, 59 years and 57% of whom were women. The most commonly initiated antihypertensive class overall was ACEIs (39%) followed by β-blockers (31%), CCBs (24%), thiazides (19%), and ARBs (11%). Excepting β-blockers, a single drug accounted for ≥75% of use of each class. β-blocker use decreased (35% to 26%) and CCB use increased (24% to 28%) over the study period, while initiation of most other classes remained relatively stable. We also observed significant differences in antihypertensive selection across demographic and comorbidity strata. 
+
+  Conclusions: These findings indicate substantial variation exists in initial antihypertensive prescribing and there remain significant gaps between current guideline recommendations and real-world implementation in early hypertension care.
+  
+citation:
+  type: article-journal
+  container-title: "Journal of the American Heart Association"
+  #doi: ""
+  #url: https://example.com/summarizing-output
+  
 bibliography: initial_antihypertensive_prescribing_onefl.bib
 
 citations-hover: true
@@ -65,8 +78,6 @@ format:
     toc: true
     toc-depth: 4
     toc-title: "Sections"
-
-editor: visual
 ---
 
 *Status: in press (Journal of the American Heart Association)*
