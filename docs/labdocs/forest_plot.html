@@ -242,34 +242,36 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
 </header>
 
 <p>We often do stratified analyses, in which we wish to show hazard ratios, or odds ratios, and their confidence intervals graphically, stratified across levels of a variable. For example, we might be interested in whether Drug A is better than Drug B at preventing some outcome, and whether the <em>magnitude of that effect</em> differs across sexes, race groups, or patients who have/do not have some comorbidity.</p>
-<p>This labdoc focuses on creating the figure to display such analyses. We’ll discuss running the analyses that underly such a figure elsewhere (to come).</p>
+<p>This labdoc focuses on creating the figure to display such analyses. We’ll discuss running the analyses that underly such a figure elsewhere (to come). There are several packages that can create forest plots, but this one – <a href="https://cran.r-project.org/web/packages/forestploter/index.html">forestploter</a> – is pretty easy/straightforward and customizable.</p>
 <p>First, let’s load the relevant libraries and create some data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forestploter)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(grid)</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)      <span class="co"># for data wrangling</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forestploter)   <span class="co"># for the forest plot</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)          <span class="co"># for kable() to print a nice table</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(grid)           <span class="co"># grid and gridExtra to glue a couple plots together</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>mace <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>Subgroup, <span class="sc">~</span>est, <span class="sc">~</span>low.ci, <span class="sc">~</span>high.ci, <span class="sc">~</span>p.interaction,</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"History of ESA use"</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">0.745</span>,</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"No"</span>, <span class="fl">1.00</span>, <span class="fl">0.86</span>, <span class="fl">1.16</span>, <span class="cn">NA</span>,</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Yes"</span>, <span class="fl">0.97</span>, <span class="fl">0.92</span>, <span class="fl">1.02</span>, <span class="cn">NA</span>,</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Race"</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">0.203</span>,</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"White"</span>, <span class="fl">1.01</span>, <span class="fl">0.95</span>, <span class="fl">1.07</span>, <span class="cn">NA</span>,</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Black"</span>, <span class="fl">0.89</span>, <span class="fl">0.80</span>, <span class="fl">0.99</span>, <span class="cn">NA</span>,</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Others"</span>, <span class="fl">0.99</span>, <span class="fl">0.79</span>, <span class="fl">1.23</span>, <span class="cn">NA</span>,</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Age group"</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">0.244</span>,</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">"18 to 64 y"</span>, <span class="fl">0.93</span>, <span class="fl">0.85</span>, <span class="fl">1.02</span>, <span class="cn">NA</span>,</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="st">"65 and above"</span>, <span class="fl">0.99</span>, <span class="fl">0.91</span>, <span class="fl">1.05</span>, <span class="cn">NA</span>,</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Sex"</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">0.664</span>,</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Female"</span>, <span class="fl">0.96</span>, <span class="fl">0.89</span>, <span class="fl">1.04</span>, <span class="cn">NA</span>,</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Male"</span>, <span class="fl">0.98</span>, <span class="fl">0.92</span>, <span class="fl">1.06</span>, <span class="cn">NA</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># print the table</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(mace)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># some summary data calculated elsewhere</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>mace <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>Subgroup, <span class="sc">~</span>est, <span class="sc">~</span>low.ci, <span class="sc">~</span>high.ci, <span class="sc">~</span>p.interaction,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#  Subgroup, point estimate, low end of 95% CI, high end of 95% CI, p-value for interaction</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"History of ESA use"</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">0.745</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"No"</span>, <span class="fl">1.00</span>, <span class="fl">0.86</span>, <span class="fl">1.16</span>, <span class="cn">NA</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Yes"</span>, <span class="fl">0.97</span>, <span class="fl">0.92</span>, <span class="fl">1.02</span>, <span class="cn">NA</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Race"</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">0.203</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">"White"</span>, <span class="fl">1.01</span>, <span class="fl">0.95</span>, <span class="fl">1.07</span>, <span class="cn">NA</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Black"</span>, <span class="fl">0.89</span>, <span class="fl">0.80</span>, <span class="fl">0.99</span>, <span class="cn">NA</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Others"</span>, <span class="fl">0.99</span>, <span class="fl">0.79</span>, <span class="fl">1.23</span>, <span class="cn">NA</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Age group"</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">0.244</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="st">"18 to 64 y"</span>, <span class="fl">0.93</span>, <span class="fl">0.85</span>, <span class="fl">1.02</span>, <span class="cn">NA</span>,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="st">"65 and above"</span>, <span class="fl">0.99</span>, <span class="fl">0.91</span>, <span class="fl">1.05</span>, <span class="cn">NA</span>,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Sex"</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">0.664</span>,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Female"</span>, <span class="fl">0.96</span>, <span class="fl">0.89</span>, <span class="fl">1.04</span>, <span class="cn">NA</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Male"</span>, <span class="fl">0.98</span>, <span class="fl">0.92</span>, <span class="fl">1.06</span>, <span class="cn">NA</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># print the table</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(mace)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
 <thead>
@@ -383,25 +385,195 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mace <span class="ot">&lt;-</span> mace <span class="sc">|&gt;</span> </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="co"># indent levels of the strata (subgroup), but not the name of the strata</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">Subgroup =</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(est), Subgroup, <span class="fu">paste0</span>(<span class="st">"    "</span>, Subgroup)),</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>         <span class="co"># create a standard error value to size the box of the forest plot</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">se =</span> (<span class="fu">log</span>(high.ci) <span class="sc">-</span> <span class="fu">log</span>(est))<span class="sc">/</span><span class="fl">1.96</span>,</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>         <span class="co"># create a space for the actual plot - you may need to adjust the # (30) here </span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at"> </span><span class="st">`</span> <span class="ot">=</span> <span class="fu">paste</span>(<span class="fu">rep</span>(<span class="st">" "</span>, <span class="dv">30</span>), <span class="at">collapse =</span> <span class="st">" "</span>),</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>         <span class="co"># glue together a HR (95% CI) for display</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">HR (95% CI)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(se), <span class="st">""</span>, <span class="fu">sprintf</span>(<span class="st">"%.2f (%.2f - %.2f)"</span>, est, low.ci, high.ci)),</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>         <span class="co"># rename p-interaction, and convert to string (may also want to use sprintf() function if needed)</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">p-interaction</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(p.interaction), <span class="st">""</span>, <span class="fu">paste</span>(p.interaction)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>         </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>         <span class="co"># create a standard error value to size the box of the forest plot</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">se =</span> (<span class="fu">log</span>(high.ci) <span class="sc">-</span> <span class="fu">log</span>(est))<span class="sc">/</span><span class="fl">1.96</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>         </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>         <span class="co"># create a space for the actual plot - you may need to adjust the # (30) here </span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at"> </span><span class="st">`</span> <span class="ot">=</span> <span class="fu">paste</span>(<span class="fu">rep</span>(<span class="st">" "</span>, <span class="dv">30</span>), <span class="at">collapse =</span> <span class="st">" "</span>),</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>         </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>         <span class="co"># glue together a HR (95% CI) for display</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">HR (95% CI)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(se), <span class="st">""</span>, <span class="fu">sprintf</span>(<span class="st">"%.2f (%.2f - %.2f)"</span>, est, low.ci, high.ci)),</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>         </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>         <span class="co"># rename p-interaction, and convert to string (may also want to use sprintf() function if needed)</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">p-interaction</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(p.interaction), <span class="st">""</span>, <span class="fu">paste</span>(p.interaction))) <span class="sc">|&gt;</span> </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># get rid of the old p.interaction variable, as we no longer need it. </span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>p.interaction)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(mace)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 9%">
+<col style="width: 11%">
+<col style="width: 3%">
+<col style="width: 22%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Subgroup</th>
+<th style="text-align: right;">est</th>
+<th style="text-align: right;">low.ci</th>
+<th style="text-align: right;">high.ci</th>
+<th style="text-align: right;">se</th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">HR (95% CI)</th>
+<th style="text-align: left;">p-interaction</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">History of ESA use</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0.745</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.86</td>
+<td style="text-align: right;">1.16</td>
+<td style="text-align: right;">0.0757245</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">1.00 (0.86 - 1.16)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">0.97</td>
+<td style="text-align: right;">0.92</td>
+<td style="text-align: right;">1.02</td>
+<td style="text-align: right;">0.0256438</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0.97 (0.92 - 1.02)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Race</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0.203</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">White</td>
+<td style="text-align: right;">1.01</td>
+<td style="text-align: right;">0.95</td>
+<td style="text-align: right;">1.07</td>
+<td style="text-align: right;">0.0294430</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">1.01 (0.95 - 1.07)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Black</td>
+<td style="text-align: right;">0.89</td>
+<td style="text-align: right;">0.80</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">0.0543283</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0.89 (0.80 - 0.99)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Others</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">0.79</td>
+<td style="text-align: right;">1.23</td>
+<td style="text-align: right;">0.1107472</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0.99 (0.79 - 1.23)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Age group</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0.244</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">18 to 64 y</td>
+<td style="text-align: right;">0.93</td>
+<td style="text-align: right;">0.85</td>
+<td style="text-align: right;">1.02</td>
+<td style="text-align: right;">0.0471292</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0.93 (0.85 - 1.02)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">65 and above</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">0.91</td>
+<td style="text-align: right;">1.05</td>
+<td style="text-align: right;">0.0300207</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0.99 (0.91 - 1.05)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sex</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0.664</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Female</td>
+<td style="text-align: right;">0.96</td>
+<td style="text-align: right;">0.89</td>
+<td style="text-align: right;">1.04</td>
+<td style="text-align: right;">0.0408381</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0.96 (0.89 - 1.04)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Male</td>
+<td style="text-align: right;">0.98</td>
+<td style="text-align: right;">0.92</td>
+<td style="text-align: right;">1.06</td>
+<td style="text-align: right;">0.0400365</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0.98 (0.92 - 1.06)</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
 </div>
-<p>The above just cleans up the data a bit for display. You may need to adjust the above code to get your forest plot just right. One thing to note: the variable names will be the headers in the figure. So if you want something, for example, that includes spaces, you need to name the variable with `’s around it (see, for example, the HR (95% CI) variable I created above).</p>
+</div>
+<p>As you can see by comparing this table to the first one above, the code above just cleans up the data a bit and gets it ready for display. One thing that’s not obvious from the output table is that the levels within each strata (for example, Male and Female) are indented. If you opened the table with <code>View(mace)</code> you would see this:</p>
+<p><img src="../assets/screengrabs/labdocs_forestplot1.png" class="img-fluid"></p>
+<p>This indentation is necessary if you want the eventual forest plot to have the same indentation for each level of a strata. If you don’t care (or don’t even want strata headers), you could omit the step that creates this indentation.</p>
+<p>You may need to adjust the above code to get your forest plot just right. One thing to note: the variable names will be the headers in the figure. So if you want something, for example, that includes spaces, you need to name the variable with `’s around it (see, for example, the HR (95% CI) variable I created above).</p>
 <p>Next, we create the theme. There’s lots of options here. Run <code>??forestploter::forest_theme</code> in your Console to see the options.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tm <span class="ot">&lt;-</span> <span class="fu">forest_theme</span>(<span class="at">base_size =</span> <span class="dv">10</span>,</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">refline_col =</span> <span class="st">"black"</span>,</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">arrow_type =</span> <span class="st">"closed"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>And, finally, we create the plot and plot it. Note that the first line, <code>forest(mace[,c(1, 7:9)])</code> selects the specific columns we’re going to include. <code>ci_column</code> specifies where to put the actual forest plot, numbered as columns from the first (left-most).</p>
+<p>And, finally, we create the plot and plot it. Note that the first line, <code>forest(mace[,c(1, 6:8)])</code> selects the specific columns (1, 6, 7, and 8) we’re going to include. <code>ci_column</code> specifies where to put the actual forest plot, numbered as columns from the first (left-most).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">forest</span>(mace[,<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">7</span><span class="sc">:</span><span class="dv">9</span>)],</span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">forest</span>(mace[,<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">6</span><span class="sc">:</span><span class="dv">8</span>)],</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">est =</span> mace<span class="sc">$</span>est,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">lower =</span> mace<span class="sc">$</span>low.ci, </span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">upper =</span> mace<span class="sc">$</span>high.ci,</span>
@@ -438,33 +610,28 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Female"</span>, <span class="fl">0.96</span>, <span class="fl">0.89</span>, <span class="fl">1.04</span>, <span class="cn">NA</span>,</span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Male"</span>, <span class="fl">0.98</span>, <span class="fl">0.92</span>, <span class="fl">1.06</span>, <span class="cn">NA</span></span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="co"># indent levels of the strata (subgroup), but not the name of the strata</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>         <span class="at">Subgroup =</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(est), Subgroup, <span class="fu">paste0</span>(<span class="st">"    "</span>, Subgroup)),</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>         <span class="co"># create a standard error value to size the box of the forest plot</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>         <span class="at">se =</span> (<span class="fu">log</span>(high.ci) <span class="sc">-</span> <span class="fu">log</span>(est))<span class="sc">/</span><span class="fl">1.96</span>,</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>         <span class="co"># create a space for the actual plot - you may need to adjust the # (30) here </span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at"> </span><span class="st">`</span> <span class="ot">=</span> <span class="fu">paste</span>(<span class="fu">rep</span>(<span class="st">" "</span>, <span class="dv">30</span>), <span class="at">collapse =</span> <span class="st">" "</span>),</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>         <span class="co"># glue together a HR (95% CI) for display</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">HR (95% CI)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(se), <span class="st">""</span>, <span class="fu">sprintf</span>(<span class="st">"%.2f (%.2f - %.2f)"</span>, est, low.ci, high.ci)),</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>         <span class="co"># rename p-interaction, and convert to string (may also want to use sprintf() function if needed)</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">p-interaction</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(p.interaction), <span class="st">""</span>, <span class="fu">paste</span>(p.interaction)))</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>pd <span class="ot">&lt;-</span> <span class="fu">forest</span>(death[,<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">7</span><span class="sc">:</span><span class="dv">9</span>)],</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>            <span class="at">est =</span> death<span class="sc">$</span>est,</span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>            <span class="at">lower =</span> death<span class="sc">$</span>low.ci, </span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>            <span class="at">upper =</span> death<span class="sc">$</span>high.ci,</span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>            <span class="at">sizes =</span> death<span class="sc">$</span>se,</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>            <span class="at">ci_column =</span> <span class="dv">2</span>,</span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>            <span class="at">ref_line =</span> <span class="dv">1</span>,</span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>            <span class="at">arrow_lab =</span> <span class="fu">c</span>(<span class="st">"Short-acting Better"</span>, <span class="st">"Long-acting Better"</span>),</span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>            <span class="at">xlim =</span> <span class="fu">c</span>(<span class="fl">0.75</span>, <span class="fl">1.3</span>),</span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>            <span class="at">ticks_at =</span> <span class="fu">c</span>(<span class="fl">0.75</span>, <span class="dv">1</span>, <span class="fl">1.25</span>),</span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>            <span class="at">theme =</span> tm,</span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>            <span class="at">title =</span> <span class="st">"B. All-cause Death"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Subgroup =</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(est), Subgroup, <span class="fu">paste0</span>(<span class="st">"    "</span>, Subgroup)),</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>         <span class="at">se =</span> (<span class="fu">log</span>(high.ci) <span class="sc">-</span> <span class="fu">log</span>(est))<span class="sc">/</span><span class="fl">1.96</span>,</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at"> </span><span class="st">`</span> <span class="ot">=</span> <span class="fu">paste</span>(<span class="fu">rep</span>(<span class="st">" "</span>, <span class="dv">30</span>), <span class="at">collapse =</span> <span class="st">" "</span>),</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">HR (95% CI)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(se), <span class="st">""</span>, <span class="fu">sprintf</span>(<span class="st">"%.2f (%.2f - %.2f)"</span>, est, low.ci, high.ci)),</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">p-interaction</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(p.interaction), <span class="st">""</span>, <span class="fu">paste</span>(p.interaction)))</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">forest</span>(death[,<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">7</span><span class="sc">:</span><span class="dv">9</span>)],</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>            <span class="at">est =</span> death<span class="sc">$</span>est,</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>            <span class="at">lower =</span> death<span class="sc">$</span>low.ci, </span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>            <span class="at">upper =</span> death<span class="sc">$</span>high.ci,</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>            <span class="at">sizes =</span> death<span class="sc">$</span>se,</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>            <span class="at">ci_column =</span> <span class="dv">2</span>,</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>            <span class="at">ref_line =</span> <span class="dv">1</span>,</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>            <span class="at">arrow_lab =</span> <span class="fu">c</span>(<span class="st">"Short-acting Better"</span>, <span class="st">"Long-acting Better"</span>),</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>            <span class="at">xlim =</span> <span class="fu">c</span>(<span class="fl">0.75</span>, <span class="fl">1.3</span>),</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>            <span class="at">ticks_at =</span> <span class="fu">c</span>(<span class="fl">0.75</span>, <span class="dv">1</span>, <span class="fl">1.25</span>),</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>            <span class="at">theme =</span> tm,</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>            <span class="at">title =</span> <span class="st">"B. All-cause Death"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, patch them together.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(p, pd, <span class="at">ncol=</span><span class="dv">1</span>, <span class="at">nrow=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(p, p2, <span class="at">ncol=</span><span class="dv">1</span>, <span class="at">nrow=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="forest_plot_files/figure-html/combined-1.png" class="img-fluid" width="672"></p>
 </div>
