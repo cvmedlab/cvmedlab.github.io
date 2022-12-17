@@ -1,0 +1,221 @@
+---
+title: "Interactive Forest Plot"
+---
+
+Ok, this may be a complete bust, but I'm going to try to create an interactive Forest Plot with Observable JS in Quarto. Here goes. 
+
+## Data
+
+```{r}
+#| message: false
+#| warning: false
+
+statins <- readr::read_csv("/Users/stevensmith/Dropbox (UFL)/R Projects/cvmedlab.github.io/labdocs/data/C10AA_PSSA_2022_7_18_ADJ_TIME_WND.csv") |> 
+  janitor::clean_names()
+
+atc4_unique <- statins |> 
+  dplyr::select(atc4_name_of_marker_drug) |> 
+  dplyr::distinct() |> 
+  dplyr::arrange() |> 
+  dplyr::add_row(atc4_name_of_marker_drug = "(All)", .before = 1) |> 
+  as.vector() |> 
+  unlist()
+
+# define the ojs data
+ojs_define(atc4s = atc4_unique)
+ojs_define(data = statins)
+```
+
+## Rendering the input fields
+
+First, we need to write the code to create the inputs. Then, we create the plot
+
+```{ojs}
+
+/* inputs */
+viewof inputs = Inputs.form({
+  atc4: Inputs.select(atc4s, { value: "(All)", label: "ATC4 Marker Drug" }),
+  rankby: Inputs.radio(["Adjusted Sequence Ratio (Descending)", "ATC4 of marker drug (Alphabetically)", "ATC4 code of marker drug (Alphabetically)"], { value: "Adjusted Sequence Ratio (Descending)", label: "Rank by:" }),
+  twindow: Inputs.radio([90, 180, 360], { value: 90, label: "PSSA Time Window" }),
+  /*sigsig: Inputs.radio()*/
+  title: Inputs.text({ label: "Title", value: "Title of this plot" }),
+  /*xlabel: Inputs.text({ label: "X-label", value: "Units" }),*/
+  plotWidth: Inputs.range([50, 500], {
+    value: 250,
+    step: 10,
+    label: "Plot Width"
+  }),
+  rowHeight: Inputs.range([10, 45], {
+    value: 18,
+    step: 1,
+    label: "Row height"
+  }),
+  xdomain: Inputs.text({ label: "X domain", value: "-200, 150" })
+/*  numTicks: Inputs.range([3, 20], { value: 5, step: 1, label: "X Ticks" })*/
+})
+
+/* the plot */
+chart = {
+  const svg = d3
+      .create("svg")
+      .attr("viewBox", [0, 0, width, data.length * inputs.rowHeight])
+      .style("font", "13px sans-serif"),
+    height = data.length * inputs.rowHeight,
+    margin = { top: 35, bottom: 35, left: 400 },
+    domainRegex = /(?:-?\d+),\s?(?:-?\d+)/,
+    xDomain = domainRegex.test(inputs.xdomain)
+      ? inputs.xdomain.split(",").map((d) => parseInt(d))
+      : [d3.min(data, (d) => d.adjusted_sequence_ratio_lower_limit_of_95_percent_ci), d3.max(data, (d) => d.adjusted_sequence_ratio_upper_limit_of_95_percent_ci)],
+    x = d3
+      .scaleLinear()
+      .domain(xDomain)
+      .range([margin.left, margin.left + inputs.plotWidth])
+      .clamp(true),
+    y = d3
+      .scaleLinear()
+      .domain([-1, data.length])
+      .range([margin.top, height - margin.bottom]),
+    yAxis = (g) =>
+      g.attr("transform", `translate(${margin.left},0)`).call(d3.axisLeft(y)),
+    xAxis = (g) =>
+      g
+        .attr("transform", `translate(0,${height - margin.bottom})`)
+        .call(d3.axisBottom(x).ticks(inputs.numTicks))
+        .style("font", "13px sans-serif"),
+    radiusScale = d3
+      .scaleSqrt()
+      .domain([1, d3.max(data, (d) => d.N)])
+      .range([3, 8]);
+
+  svg.append("g").call(xAxis);
+
+  const labels_g = svg
+    .append("g")
+    .attr("text-anchor", "middle")
+    .attr("class", "labels");
+
+  labels_g
+    .append("text")
+    .attr("font-weight", "bold")
+    .attr("x", d3.mean(x.range()))
+    .attr("y", y(-1) - 5)
+    .text(inputs.title);
+
+  labels_g
+    .append("text")
+    .attr("x", d3.mean(x.range()))
+    .attr("y", y(data.length) + 33)
+    .text(inputs.xlabel);
+
+  svg
+    .append("g")
+    .append("line")
+    .attr("stroke", "#A1A1A1")
+    .attr("stroke-width", 2)
+    .attr("stroke-dasharray", "4 4")
+    .attr("x1", (d) => x(0))
+    .attr("x2", (d) => x(0))
+    .attr("y1", y.range()[0])
+    .attr("y2", y.range()[1]);
+
+  var lines = svg.append("g");
+  lines
+    .selectAll("line.a")
+    .data(data)
+    .join("line")
+    .attr("stroke", "black")
+    .attr("stroke-width", 2)
+    .attr("x1", (d) => x(d.Lower))
+    .attr("x2", (d) => x(d.Upper))
+    .attr("y1", (d, i) => y(i))
+    .attr("y2", (d, i) => y(i));
+  lines
+    .selectAll("path.lower")
+    .data(data)
+    .join("path")
+    .attr("stroke", "black")
+    .attr("stroke-width", 2)
+    .attr("d", (d, i) => {
+      const dx = d.Lower < xDomain[0] ? inputs.rowHeight * 0.3 : 0;
+      return d3.line()([
+        [x(d.Lower) + dx, y(i) - inputs.rowHeight * 0.2],
+        [x(d.Lower), y(i)],
+        [x(d.Lower) + dx, y(i) + inputs.rowHeight * 0.2]
+      ]);
+    });
+
+  lines
+    .selectAll("path.upper")
+    .data(data)
+    .join("path")
+    .attr("stroke", "black")
+    .attr("stroke-width", 2)
+    .attr("d", (d, i) => {
+      const dx = d.Upper > xDomain[1] ? inputs.rowHeight * 0.3 : 0;
+      return d3.line()([
+        [x(d.Upper) - dx, y(i) - inputs.rowHeight * 0.2],
+        [x(d.Upper), y(i)],
+        [x(d.Upper) - dx, y(i) + inputs.rowHeight * 0.2]
+      ]);
+    });
+
+  const addText = (colName, xPosition, headerName, textAnchor) => {
+    let g = svg.append("g");
+
+    g.selectAll("text")
+      .data(data)
+      .join("text")
+      .attr("x", xPosition)
+      .attr("y", (d, i) => y(i))
+      .attr("text-anchor", textAnchor)
+      .attr("alignment-baseline", "central")
+      .text((d) => d[colName]);
+
+    g.append("text")
+      .attr("x", xPosition)
+      .attr("y", y(-1) - 5)
+      .attr("text-anchor", textAnchor)
+      .attr("font-weight", "bold")
+      .text((d) => headerName);
+  };
+  addText("Author(s) and Year", 20, "Author(s) and Year", "start");
+  addText("Confidence", 190, "Confidence", "middle");
+  addText("Timing", 265, "Timing", "middle");
+  addText("N", 330, "N", "end");
+  addText("Result", margin.left + inputs.plotWidth + 150, "Result", "end");
+
+  lines
+    .selectAll("line.upper")
+    .data(data)
+    .join("line")
+    .attr("stroke", "black")
+    .attr("stroke-width", 2)
+    .attr("x1", 0)
+    .attr("x2", width)
+    .attr("y1", y(data.length))
+    .attr("y2", y(data.length));
+
+  lines
+    .selectAll("line.lower")
+    .data(data)
+    .join("line")
+    .attr("stroke", "black")
+    .attr("stroke-width", 2)
+    .attr("x1", 0)
+    .attr("x2", width)
+    .attr("y1", y(-1))
+    .attr("y2", y(-1));
+
+  svg
+    .append("g")
+    .selectAll("circle")
+    .data(data)
+    .join("circle")
+    .attr("cx", (d) => x(d.Estimate))
+    .attr("cy", (d, i) => y(i))
+    .attr("r", (d) => radiusScale(d.N));
+
+  return svg.node();
+}
+```
+
