@@ -4,20 +4,22 @@ title: "Forest Plot"
 
 We often do stratified analyses, in which we wish to show hazard ratios, or odds ratios, and their confidence intervals graphically, stratified across levels of a variable. For example, we might be interested in whether Drug A is better than Drug B at preventing some outcome, and whether the *magnitude of that effect* differs across sexes, race groups, or patients who have/do not have some comorbidity.
 
-This labdoc focuses on creating the figure to display such analyses. We'll discuss running the analyses that underly such a figure elsewhere (to come).
+This labdoc focuses on creating the figure to display such analyses. We'll discuss running the analyses that underly such a figure elsewhere (to come). There are several packages that can create forest plots, but this one -- [forestploter](https://cran.r-project.org/web/packages/forestploter/index.html) -- is pretty easy/straightforward and customizable. 
 
 First, let's load the relevant libraries and create some data.
 
 ```{r packages}
 #| message: FALSE
-library(tidyverse)
-library(forestploter)
-library(knitr)
-library(grid)
+library(tidyverse)      # for data wrangling
+library(forestploter)   # for the forest plot
+library(knitr)          # for kable() to print a nice table
+library(grid)           # grid and gridExtra to glue a couple plots together
 library(gridExtra)
 
+# some summary data calculated elsewhere
 mace <- tribble(
   ~Subgroup, ~est, ~low.ci, ~high.ci, ~p.interaction,
+#  Subgroup, point estimate, low end of 95% CI, high end of 95% CI, p-value for interaction
   "History of ESA use", NA, NA, NA, 0.745,
   "No", 1.00, 0.86, 1.16, NA,
   "Yes", 0.97, 0.92, 1.02, NA,
@@ -45,17 +47,32 @@ Next, we will do a few data edits to prepare for the forest plot.
 mace <- mace |> 
   mutate(# indent levels of the strata (subgroup), but not the name of the strata
          Subgroup = if_else(is.na(est), Subgroup, paste0("    ", Subgroup)),
+         
          # create a standard error value to size the box of the forest plot
          se = (log(high.ci) - log(est))/1.96,
+         
          # create a space for the actual plot - you may need to adjust the # (30) here 
          ` ` = paste(rep(" ", 30), collapse = " "),
+         
          # glue together a HR (95% CI) for display
          `HR (95% CI)` = if_else(is.na(se), "", sprintf("%.2f (%.2f - %.2f)", est, low.ci, high.ci)),
+         
          # rename p-interaction, and convert to string (may also want to use sprintf() function if needed)
-         `p-interaction` = if_else(is.na(p.interaction), "", paste(p.interaction)))
+         `p-interaction` = if_else(is.na(p.interaction), "", paste(p.interaction))) |> 
+  
+  # get rid of the old p.interaction variable, as we no longer need it. 
+  select(-p.interaction)
+
+kable(mace)
 ```
 
-The above just cleans up the data a bit for display. You may need to adjust the above code to get your forest plot just right. One thing to note: the variable names will be the headers in the figure. So if you want something, for example, that includes spaces, you need to name the variable with \`'s around it (see, for example, the HR (95% CI) variable I created above).
+As you can see by comparing this table to the first one above, the code above just cleans up the data a bit and gets it ready for display. One thing that's not obvious from the output table is that the levels within each strata (for example, Male and Female) are indented. If you opened the table with `View(mace)` you would see this: 
+
+![](/assets/screengrabs/labdocs_forestplot1.png)
+
+This indentation is necessary if you want the eventual forest plot to have the same indentation for each level of a strata. If you don't care (or don't even want strata headers), you could omit the step that creates this indentation.
+
+You may need to adjust the above code to get your forest plot just right. One thing to note: the variable names will be the headers in the figure. So if you want something, for example, that includes spaces, you need to name the variable with \`'s around it (see, for example, the HR (95% CI) variable I created above).
 
 Next, we create the theme. There's lots of options here. Run `??forestploter::forest_theme` in your Console to see the options.
 
@@ -65,10 +82,10 @@ tm <- forest_theme(base_size = 10,
                    arrow_type = "closed")
 ```
 
-And, finally, we create the plot and plot it. Note that the first line, `forest(mace[,c(1, 7:9)])` selects the specific columns we're going to include. `ci_column` specifies where to put the actual forest plot, numbered as columns from the first (left-most).
+And, finally, we create the plot and plot it. Note that the first line, `forest(mace[,c(1, 6:8)])` selects the specific columns (1, 6, 7, and 8) we're going to include. `ci_column` specifies where to put the actual forest plot, numbered as columns from the first (left-most).
 
 ```{r forestplot}
-p <- forest(mace[,c(1, 7:9)],
+p <- forest(mace[,c(1, 6:8)],
             est = mace$est,
             lower = mace$low.ci, 
             upper = mace$high.ci,
@@ -104,18 +121,13 @@ death <- tribble(
   "Female", 0.96, 0.89, 1.04, NA,
   "Male", 0.98, 0.92, 1.06, NA
   ) |> 
-  mutate(# indent levels of the strata (subgroup), but not the name of the strata
-         Subgroup = if_else(is.na(est), Subgroup, paste0("    ", Subgroup)),
-         # create a standard error value to size the box of the forest plot
+  mutate(Subgroup = if_else(is.na(est), Subgroup, paste0("    ", Subgroup)),
          se = (log(high.ci) - log(est))/1.96,
-         # create a space for the actual plot - you may need to adjust the # (30) here 
          ` ` = paste(rep(" ", 30), collapse = " "),
-         # glue together a HR (95% CI) for display
          `HR (95% CI)` = if_else(is.na(se), "", sprintf("%.2f (%.2f - %.2f)", est, low.ci, high.ci)),
-         # rename p-interaction, and convert to string (may also want to use sprintf() function if needed)
          `p-interaction` = if_else(is.na(p.interaction), "", paste(p.interaction)))
 
-pd <- forest(death[,c(1, 7:9)],
+p2 <- forest(death[,c(1, 7:9)],
             est = death$est,
             lower = death$low.ci, 
             upper = death$high.ci,
@@ -133,5 +145,5 @@ Now, patch them together.
 
 ```{r combined}
 #| fig.height=9
-gridExtra::grid.arrange(p, pd, ncol=1, nrow=2)
+gridExtra::grid.arrange(p, p2, ncol=1, nrow=2)
 ```
