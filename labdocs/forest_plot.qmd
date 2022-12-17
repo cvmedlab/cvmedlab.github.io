@@ -1,0 +1,137 @@
+---
+title: "Forest Plot"
+---
+
+We often do stratified analyses, in which we wish to show hazard ratios, or odds ratios, and their confidence intervals graphically, stratified across levels of a variable. For example, we might be interested in whether Drug A is better than Drug B at preventing some outcome, and whether the *magnitude of that effect* differs across sexes, race groups, or patients who have/do not have some comorbidity.
+
+This labdoc focuses on creating the figure to display such analyses. We'll discuss running the analyses that underly such a figure elsewhere (to come).
+
+First, let's load the relevant libraries and create some data.
+
+```{r packages}
+#| message: FALSE
+library(tidyverse)
+library(forestploter)
+library(knitr)
+library(grid)
+library(gridExtra)
+
+mace <- tribble(
+  ~Subgroup, ~est, ~low.ci, ~high.ci, ~p.interaction,
+  "History of ESA use", NA, NA, NA, 0.745,
+  "No", 1.00, 0.86, 1.16, NA,
+  "Yes", 0.97, 0.92, 1.02, NA,
+  "Race", NA, NA, NA, 0.203,
+  "White", 1.01, 0.95, 1.07, NA,
+  "Black", 0.89, 0.80, 0.99, NA,
+  "Others", 0.99, 0.79, 1.23, NA,
+  "Age group", NA, NA, NA, 0.244,
+  "18 to 64 y", 0.93, 0.85, 1.02, NA,
+  "65 and above", 0.99, 0.91, 1.05, NA,
+  "Sex", NA, NA, NA, 0.664,
+  "Female", 0.96, 0.89, 1.04, NA,
+  "Male", 0.98, 0.92, 1.06, NA
+  )
+
+# print the table
+kable(mace)
+```
+
+The above table is the summary data from the stratified analyses. Stratification variables are supplied as their own line, with several `NA` values and, finally, the p-value for the interaction test. The levels of the stratification variable have more information, including the value of the level, the point estimate, and the lower and upper confidence intervals.
+
+Next, we will do a few data edits to prepare for the forest plot.
+
+```{r mutations}
+mace <- mace |> 
+  mutate(# indent levels of the strata (subgroup), but not the name of the strata
+         Subgroup = if_else(is.na(est), Subgroup, paste0("    ", Subgroup)),
+         # create a standard error value to size the box of the forest plot
+         se = (log(high.ci) - log(est))/1.96,
+         # create a space for the actual plot - you may need to adjust the # (30) here 
+         ` ` = paste(rep(" ", 30), collapse = " "),
+         # glue together a HR (95% CI) for display
+         `HR (95% CI)` = if_else(is.na(se), "", sprintf("%.2f (%.2f - %.2f)", est, low.ci, high.ci)),
+         # rename p-interaction, and convert to string (may also want to use sprintf() function if needed)
+         `p-interaction` = if_else(is.na(p.interaction), "", paste(p.interaction)))
+```
+
+The above just cleans up the data a bit for display. You may need to adjust the above code to get your forest plot just right. One thing to note: the variable names will be the headers in the figure. So if you want something, for example, that includes spaces, you need to name the variable with \`'s around it (see, for example, the HR (95% CI) variable I created above).
+
+Next, we create the theme. There's lots of options here. Run `??forestploter::forest_theme` in your Console to see the options.
+
+```{r theme}
+tm <- forest_theme(base_size = 10,
+                   refline_col = "black",
+                   arrow_type = "closed")
+```
+
+And, finally, we create the plot and plot it. Note that the first line, `forest(mace[,c(1, 7:9)])` selects the specific columns we're going to include. `ci_column` specifies where to put the actual forest plot, numbered as columns from the first (left-most).
+
+```{r forestplot}
+p <- forest(mace[,c(1, 7:9)],
+            est = mace$est,
+            lower = mace$low.ci, 
+            upper = mace$high.ci,
+            sizes = mace$se,
+            ci_column = 2,
+            ref_line = 1,
+            arrow_lab = c("Short-acting Better", "Long-acting Better"),
+            xlim = c(0.75, 1.3),
+            ticks_at = c(0.75, 1, 1.25),
+            theme = tm,
+            title = "A. Major Adverse Cardiovascular Events") 
+
+# Print plot
+plot(p)
+```
+
+We could easily add a second plot and glue them together with `gridExtra::grid.arrange()`.
+
+```{r deathdata}
+death <- tribble(
+  ~Subgroup, ~est, ~low.ci, ~high.ci, ~p.interaction,
+  "History of ESA use", NA, NA, NA, 0.745,
+  "No", 1.00, 0.86, 1.16, NA,
+  "Yes", 0.97, 0.92, 1.02, NA,
+  "Race", NA, NA, NA, 0.203,
+  "White", 1.01, 0.95, 1.07, NA,
+  "Black", 0.89, 0.80, 0.99, NA,
+  "Others", 0.99, 0.79, 1.23, NA,
+  "Age group", NA, NA, NA, 0.244,
+  "18 to 64 y", 0.93, 0.85, 1.02, NA,
+  "65 and above", 0.99, 0.91, 1.05, NA,
+  "Sex", NA, NA, NA, 0.664,
+  "Female", 0.96, 0.89, 1.04, NA,
+  "Male", 0.98, 0.92, 1.06, NA
+  ) |> 
+  mutate(# indent levels of the strata (subgroup), but not the name of the strata
+         Subgroup = if_else(is.na(est), Subgroup, paste0("    ", Subgroup)),
+         # create a standard error value to size the box of the forest plot
+         se = (log(high.ci) - log(est))/1.96,
+         # create a space for the actual plot - you may need to adjust the # (30) here 
+         ` ` = paste(rep(" ", 30), collapse = " "),
+         # glue together a HR (95% CI) for display
+         `HR (95% CI)` = if_else(is.na(se), "", sprintf("%.2f (%.2f - %.2f)", est, low.ci, high.ci)),
+         # rename p-interaction, and convert to string (may also want to use sprintf() function if needed)
+         `p-interaction` = if_else(is.na(p.interaction), "", paste(p.interaction)))
+
+pd <- forest(death[,c(1, 7:9)],
+            est = death$est,
+            lower = death$low.ci, 
+            upper = death$high.ci,
+            sizes = death$se,
+            ci_column = 2,
+            ref_line = 1,
+            arrow_lab = c("Short-acting Better", "Long-acting Better"),
+            xlim = c(0.75, 1.3),
+            ticks_at = c(0.75, 1, 1.25),
+            theme = tm,
+            title = "B. All-cause Death") 
+```
+
+Now, patch them together.
+
+```{r combined}
+#| fig.height=9
+gridExtra::grid.arrange(p, pd, ncol=1, nrow=2)
+```
