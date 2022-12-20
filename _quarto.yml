@@ -31,6 +31,8 @@ website:
             href: labdocs/forest_plot.qmd
           - text: "Scientific Writing" 
             href: labdocs/writing.qmd
+          - text: "Antihypertensive Pharmacology"
+            href: labdocs/antihypertensive_pharmacology.qmd
       - text: "lab manual"
         href: https://labmanual.cvmedlab.org/
 

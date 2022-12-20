@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 707.8169 503.0903">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 17px;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        font-family: Arial-BoldMT, Arial;
+        font-weight: 700;
+      }
+
+      .cls-4 {
+        fill: #e6f6ff;
+      }
+
+      .cls-5 {
+        fill: #c7b299;
+      }
+
+      .cls-6 {
+        fill: gray;
+      }
+
+      .cls-7 {
+        letter-spacing: -.0742em;
+      }
+
+      .cls-8 {
+        font-family: ArialMT, Arial;
+        font-size: 16px;
+      }
+
+      .cls-9 {
+        stroke-width: 2px;
+      }
+
+      .cls-9, .cls-10, .cls-11, .cls-12, .cls-13 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-9, .cls-11 {
+        stroke: #000;
+      }
+
+      .cls-9, .cls-12, .cls-13 {
+        fill: none;
+        stroke-linecap: round;
+      }
+
+      .cls-10 {
+        stroke: gray;
+      }
+
+      .cls-10, .cls-11 {
+        fill: #fff;
+        stroke-width: 3px;
+      }
+
+      .cls-12 {
+        stroke: #534741;
+      }
+
+      .cls-12, .cls-13 {
+        stroke-width: 5px;
+      }
+
+      .cls-13 {
+        stroke: #2e3192;
+      }
+
+      .cls-2 {
+        letter-spacing: -.0371em;
+      }
+
+      .cls-2, .cls-3 {
+        font-size: 18px;
+      }
+    </style>
+  </defs>
+  <path id="Efficacy_Main_Line" data-name="Efficacy Main Line" class="cls-4" d="M155.434,432.2931c7.7565-.0135,38.0176-1.6991,45.2574-3.6938,17.1172-4.7162,34.8663-10.3493,50.2883-19.2732,14.4081-8.3372,27.3471-19.2269,37.941-32.0725,4.1492-5.0329,7.5764-10.2748,10.7437-15.9582,25.0787-45.0015,27.5326-97.2532,36.4256-146.8828,12.0254-67.1108,34.502-156.2762,104.6069-184.3912C505.0903,4.1968,602.649,7.6979,670.8348,7.6979V434.8386"/>
+  <path class="cls-5" d="M670.8348,434.8386V7.6979l-10.0001,.0317c-62.5013,0-97.6189-.3955-141.2298,39.806-43.2567,39.8751-62.7091,110.2137-72.754,166.9088-8.7931,49.6295-11.2194,101.8811-36.0164,146.8827-17.6633,32.0553-47.3089,53.4795-82.2422,62.5569-47.4622,12.3331-174.3807,8.3554-222.8523,8.4408"/>
+  <path id="Efficacy_Main_Line-2" data-name="Efficacy Main Line" class="cls-13" d="M155.434,432.2931c7.7565-.0135,38.0176-1.6991,45.2574-3.6938,17.1172-4.7162,34.8663-10.3493,50.2883-19.2732,14.4081-8.3372,27.3471-19.2269,37.941-32.0725,4.1492-5.0329,7.5764-10.2748,10.7437-15.9582,25.0787-45.0015,27.5326-97.2532,36.4256-146.8828,12.0254-67.1108,34.502-156.2762,104.6069-184.3912C505.0903,4.1968,602.649,7.6979,670.8348,7.6979"/>
+  <path id="Toxicity_Mainline" data-name="Toxicity Mainline" class="cls-12" d="M108.8105,432.293c48.297-.0855,171.6874,3.8924,218.9787-8.4408,34.8074-9.0775,64.3463-30.5016,81.946-62.5569,24.7077-45.0015,27.1253-97.2532,35.8866-146.8827,10.0087-56.6951,29.391-127.0337,72.4919-166.9088C561.5676,7.3024,596.5586,7.6979,658.8348,7.6979"/>
+  <polyline class="cls-9" points="670.8348 434.8386 105.7399 434.8386 105.7399 9.3024"/>
+  <line class="cls-9" x1="90.8113" y1="9.3024" x2="105.7399" y2="9.3024"/>
+  <line class="cls-9" x1="90.8113" y1="434.8386" x2="105.7399" y2="434.8386"/>
+  <line class="cls-9" x1="105.7399" y1="449.7673" x2="105.7399" y2="434.8386"/>
+  <line class="cls-9" x1="186.4678" y1="449.7673" x2="186.4678" y2="434.8386"/>
+  <line class="cls-9" x1="267.1956" y1="449.7673" x2="267.1956" y2="434.8386"/>
+  <line class="cls-9" x1="347.9234" y1="449.7673" x2="347.9234" y2="434.8386"/>
+  <line class="cls-9" x1="428.6513" y1="449.7673" x2="428.6513" y2="434.8386"/>
+  <line class="cls-9" x1="509.3791" y1="449.7673" x2="509.3791" y2="434.8386"/>
+  <line class="cls-9" x1="590.107" y1="449.7673" x2="590.107" y2="434.8386"/>
+  <line class="cls-9" x1="670.8348" y1="449.7673" x2="670.8348" y2="434.8386"/>
+  <text class="cls-1" transform="translate(-.3611 222.0705)"><tspan x="0" y="0">% Maximal</tspan><tspan x="2.8389" y="20.3999">Response</tspan></text>
+  <text class="cls-1" transform="translate(386.4051 110.4553)"><tspan x="0" y="0">Efficacy</tspan></text>
+  <text class="cls-2" transform="translate(284.3918 342.1067)"><tspan x="0" y="0">A</tspan></text>
+  <text class="cls-3" transform="translate(277.5684 416.8389)"><tspan x="0" y="0">A</tspan></text>
+  <text class="cls-3" transform="translate(290.5674 422.833) scale(.583)"><tspan x="0" y="0">T</tspan></text>
+  <text class="cls-3" transform="translate(363.6447 71.0316)"><tspan x="0" y="0">B</tspan></text>
+  <text class="cls-3" transform="translate(405.5499 397.2739)"><tspan x="0" y="0">B</tspan></text>
+  <text class="cls-3" transform="translate(418.549 403.2681) scale(.583)"><tspan x="0" y="0">T</tspan></text>
+  <text class="cls-3" transform="translate(443.7828 322.7756)"><tspan x="0" y="0">B</tspan></text>
+  <text class="cls-3" transform="translate(456.7818 328.7698) scale(.583)"><tspan x="0" y="0">T</tspan></text>
+  <text class="cls-3" transform="translate(463.192 322.7756)"><tspan x="0" y="0">′</tspan></text>
+  <text class="cls-3" transform="translate(318.2601 405.824)"><tspan x="0" y="0">A</tspan></text>
+  <text class="cls-3" transform="translate(331.2591 411.8181) scale(.583)"><tspan x="0" y="0">T</tspan></text>
+  <text class="cls-3" transform="translate(337.6693 405.824)"><tspan x="0" y="0">′</tspan></text>
+  <text class="cls-3" transform="translate(317.0339 164.3138)"><tspan x="0" y="0">A′</tspan></text>
+  <text class="cls-3" transform="translate(399.071 37.8853)"><tspan x="0" y="0">B′</tspan></text>
+  <text class="cls-1" transform="translate(558.6177 110.4556)"><tspan class="cls-7" x="0" y="0">T</tspan><tspan x="9.1226" y="0">oxicity</tspan></text>
+  <text class="cls-1" transform="translate(367.5023 496.6906)"><tspan x="0" y="0">Dose</tspan></text>
+  <text class="cls-8" transform="translate(45.7059 13.7305)"><tspan x="0" y="0">100%</tspan></text>
+  <text class="cls-8" transform="translate(63.5027 439.11)"><tspan x="0" y="0">0%</tspan></text>
+  <text class="cls-8" transform="translate(90.1694 468.0707)"><tspan x="0" y="0">0.01</tspan></text>
+  <text class="cls-8" transform="translate(175.3464 468.0707)"><tspan x="0" y="0">0.1</tspan></text>
+  <text class="cls-8" transform="translate(262.7464 468.0707)"><tspan x="0" y="0">1</tspan></text>
+  <text class="cls-8" transform="translate(339.0251 468.0707)"><tspan x="0" y="0">10</tspan></text>
+  <text class="cls-8" transform="translate(415.3036 468.0707)"><tspan x="0" y="0">100</tspan></text>
+  <text class="cls-8" transform="translate(491.5825 468.0707)"><tspan x="0" y="0">1000</tspan></text>
+  <text class="cls-8" transform="translate(578.6146 468.0707)"><tspan x="0" y="0">10</tspan></text>
+  <text class="cls-8" transform="translate(596.4114 462.7426) scale(.583)"><tspan x="0" y="0">4</tspan></text>
+  <text class="cls-8" transform="translate(659.3423 468.0707)"><tspan x="0" y="0">10</tspan></text>
+  <text class="cls-8" transform="translate(677.1392 462.7426) scale(.583)"><tspan x="0" y="0">5</tspan></text>
+  <g>
+    <line class="cls-9" x1="345.8784" y1="261.2682" x2="422.8379" y2="261.2682"/>
+    <path d="M333.8081,261.2682c5.6796,2.1074,12.7266,5.7031,17.0947,9.5117l-3.4404-9.5117,3.4404-9.5098c-4.3682,3.8086-11.4151,7.4043-17.0947,9.5098Z"/>
+    <path d="M434.9082,261.2682c-5.6796,2.1074-12.7266,5.7031-17.0947,9.5117l3.4404-9.5117-3.4404-9.5098c4.3682,3.8086,11.4151,7.4043,17.0947,9.5098Z"/>
+  </g>
+  <text class="cls-8" transform="translate(342.8704 232.5653)"><tspan x="0" y="0">Therapeutic</tspan><tspan x="13.793" y="19.2002">Window</tspan></text>
+  <circle cx="308.8561" cy="342.1069" r="7.7205"/>
+  <circle class="cls-11" cx="308.8561" cy="426.8386" r="7.7205"/>
+  <circle class="cls-11" cx="347.9234" cy="416.8386" r="7.7205"/>
+  <circle class="cls-6" cx="389.7285" cy="69.1648" r="7.7205"/>
+  <circle class="cls-6" cx="428.2875" cy="35.8853" r="7.7205"/>
+  <circle class="cls-10" cx="389.7285" cy="389.5536" r="7.7205"/>
+  <circle cx="347.9236" cy="160.5012" r="7.7205"/>
+  <circle class="cls-10" cx="428.2875" cy="313.9024" r="7.7205"/>
+</svg>

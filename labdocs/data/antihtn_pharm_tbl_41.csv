@@ -1,0 +1,26 @@
+RAS Inhibitor,Bioavailability,Protein Binding,Elimination Route,Elimination t1/2
+ACE inhibitors,,,,
+Benazepril ,³37%,97%,Hepatic (to benazeprilat),10-11 hrs (benazeprilat)
+Captopril,75%,25%-30%,50% Hepatic,2 hrs
+Enalapril,60%,<50%,60% hydrolysis (to enalaprilat),11-14 hrs (enalaprilat)
+Fosinopril,36%,99% (fosinoprilat),50% renal,12-14 hrs
+Lisinopril,25%,0%,100% renal,12Ð13 hrs
+Moexipril,13%*,50%,7% renal,1 hr (moexipril);
+,,,,2Ð9 hrs (moexiprilat)
+Perindopril,65%Ð75%,60% (perindopril); 10%Ð20% (perindoprilat),5%Ð10% renal,1 hr (perindopril); 
+,,,,30-120 hrs (perindoprilat)
+Ramipril,30%Ð60%,73%,60% renal,>50 hrs
+Quinapril,60%,97%,96% renal,2Ð3 hrs
+Trandolapril,70%,80%,33% renal,6Ð10 hrs
+ARBs,,,,
+Azilsartan,60%,>99%,55% renal,11 hrs
+Candesartan,15%,>99%,60% renal,9 hrs
+Eprosartan,15%,98%,30% renal,5-9 hrs
+Irbesartan,70%,90%Ð95%,20% renal,11-15 hrs
+Losartan,35%,99%,10% renal,1-2 hrs (losartan); 
+,,,,6-9 hrs (E-3174)
+Olmesartan,29%,>99%,40% renal,14-16 hrs
+Telmisartan,40%Ð60%,>99%,1% renal,24 hrs
+Valsartan,25%,95%,30% renal,6 hrs
+DRIs,,,,
+Aliskiren,2.50%,50%,25% renal,20-45 hrs
