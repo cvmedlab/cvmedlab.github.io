@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 707.8169 503.0903">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.0181em;
+      }
+
+      .cls-2 {
+        font-family: Arial-BoldMT, Arial;
+        font-size: 17px;
+        font-weight: 700;
+      }
+
+      .cls-3 {
+        font-family: ArialMT, Arial;
+        font-size: 16px;
+      }
+
+      .cls-4 {
+        stroke: #000;
+        stroke-width: 2px;
+      }
+
+      .cls-4, .cls-5, .cls-6, .cls-7 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-5 {
+        stroke: #29abe2;
+      }
+
+      .cls-5, .cls-6, .cls-7 {
+        stroke-width: 5px;
+      }
+
+      .cls-6 {
+        stroke: #ed1e79;
+      }
+
+      .cls-7 {
+        stroke: blue;
+      }
+    </style>
+  </defs>
+  <path class="cls-7" d="M109.7951,432.2931c7.7565-.0135,38.0176-1.6991,45.2574-3.6938,17.1172-4.7162,34.8663-10.3493,50.2883-19.2732,14.4081-8.3372,27.3471-19.2269,37.941-32.0725,4.1492-5.0329,7.5764-10.2748,10.7437-15.9582,25.0787-45.0015,27.5326-97.2532,36.4256-146.8828,12.0254-67.1108,34.502-156.2762,104.6069-184.3912C459.4515,4.1968,603.0101,7.6979,671.1959,7.6979"/>
+  <path class="cls-6" d="M109.7951,432.2931c49.0223-.0855,177.3826,3.8923,225.384-8.4408,35.3301-9.0775,65.3126-30.5016,83.1765-62.5569,25.0787-45.0015,27.5326-97.2532,36.4255-146.8827,10.159-56.6951,29.8324-127.0337,73.5805-166.9088C572.4681,7.3024,607.9846,7.6979,671.1959,7.6979"/>
+  <path class="cls-5" d="M109.7951,432.5656c48.5981-.0428,231.5362,1.948,279.1223-4.2243,35.0245-4.5429,64.7475-15.265,82.4569-31.3075,24.8618-22.5217,27.2944-48.6718,36.1104-73.5096,10.0711-28.3739,31.7956-59.3249,72.944-83.532,26.8343-15.7863,70.2906-19.9215,90.7672-19.9215"/>
+  <polyline class="cls-4" points="671.1959 434.8386 106.1011 434.8386 106.1011 9.3024"/>
+  <line class="cls-4" x1="91.1724" y1="9.3024" x2="106.1011" y2="9.3024"/>
+  <line class="cls-4" x1="91.1724" y1="434.8386" x2="106.1011" y2="434.8386"/>
+  <line class="cls-4" x1="106.1011" y1="449.7673" x2="106.1011" y2="434.8386"/>
+  <line class="cls-4" x1="186.8289" y1="449.7673" x2="186.8289" y2="434.8386"/>
+  <line class="cls-4" x1="267.5567" y1="449.7673" x2="267.5567" y2="434.8386"/>
+  <line class="cls-4" x1="348.2846" y1="449.7673" x2="348.2846" y2="434.8386"/>
+  <line class="cls-4" x1="429.0124" y1="449.7673" x2="429.0124" y2="434.8386"/>
+  <line class="cls-4" x1="509.7403" y1="449.7673" x2="509.7403" y2="434.8386"/>
+  <line class="cls-4" x1="590.4681" y1="449.7673" x2="590.4681" y2="434.8386"/>
+  <line class="cls-4" x1="671.1959" y1="449.7673" x2="671.1959" y2="434.8386"/>
+  <text class="cls-2" transform="translate(0 222.0705)"><tspan x="0" y="0">% Maximal</tspan><tspan x="2.8389" y="20.3999">Response</tspan></text>
+  <text class="cls-2" transform="translate(367.8635 496.6906)"><tspan x="0" y="0">Dose</tspan></text>
+  <text class="cls-3" transform="translate(46.067 13.7305)"><tspan x="0" y="0">100%</tspan></text>
+  <text class="cls-3" transform="translate(63.8639 439.11)"><tspan x="0" y="0">0%</tspan></text>
+  <text class="cls-3" transform="translate(90.5305 468.0707)"><tspan x="0" y="0">0.01</tspan></text>
+  <text class="cls-3" transform="translate(175.7076 468.0707)"><tspan x="0" y="0">0.1</tspan></text>
+  <text class="cls-3" transform="translate(263.1075 468.0707)"><tspan x="0" y="0">1</tspan></text>
+  <text class="cls-3" transform="translate(339.3863 468.0707)"><tspan x="0" y="0">10</tspan></text>
+  <text class="cls-3" transform="translate(415.6648 468.0707)"><tspan x="0" y="0">100</tspan></text>
+  <text class="cls-3" transform="translate(491.9437 468.0707)"><tspan x="0" y="0">1000</tspan></text>
+  <text class="cls-3" transform="translate(578.9757 468.0707)"><tspan x="0" y="0">10</tspan></text>
+  <text class="cls-3" transform="translate(596.7726 462.7426) scale(.583)"><tspan x="0" y="0">4</tspan></text>
+  <text class="cls-3" transform="translate(659.7034 468.0707)"><tspan x="0" y="0">10</tspan></text>
+  <text class="cls-3" transform="translate(677.5002 462.7426) scale(.583)"><tspan x="0" y="0">5</tspan></text>
+  <g>
+    <line class="cls-4" x1="622.5591" y1="17.7832" x2="622.5591" y2="197.9823"/>
+    <path d="M622.5591,210.0526c-2.1074-5.6796-5.7031-12.7266-9.5117-17.0947l9.5117,3.4404,9.5098-3.4404c-3.8086,4.3682-7.4044,11.4151-9.5098,17.0947Z"/>
+  </g>
+  <g>
+    <line class="cls-4" x1="297.4633" y1="236.1237" x2="430.7822" y2="236.1237"/>
+    <path d="M442.8525,236.1237c-5.6796,2.1074-12.7265,5.7031-17.0947,9.5117l3.4404-9.5117-3.4404-9.5098c4.3682,3.8086,11.4151,7.4043,17.0947,9.5098Z"/>
+  </g>
+  <text class="cls-3" transform="translate(630.4417 106.5631)"><tspan x="0" y="0">Decreased</tspan><tspan x="0" y="19.2002">E</tspan><tspan class="cls-1" x="10.6719" y="19.2002">f</tspan><tspan x="14.8281" y="19.2002">ficacy</tspan></text>
+  <text class="cls-3" transform="translate(331.4703 203.3317)"><tspan x="0" y="0">Decreased</tspan><tspan x="9.7812" y="19.2002">Potency</tspan></text>
+</svg>

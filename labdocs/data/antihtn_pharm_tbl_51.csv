@@ -1,0 +1,20 @@
+CCB,Bioavailability,Protein Binding,t1/2,CYP3A4 Activity,Onset of Action,Duration of Action
+Non-dihydropyridines,,,,,,
+Verapamil,20%Ð35%,90%,,"Inhibitor, Substrate",,
+IR,,,6Ð8 hrs,,1Ð2 hrs,8Ð10 hrs
+SR,,,12Ð24 hrs,,1Ð2 hrs,12 hrs
+ER/HS/PM*,,,24 hrs,,4Ð5 hrs,24 hrs
+Diltiazem,25%Ð75%,70%Ð80%,,"Inhibitor, Substrate",,
+IR,,,3Ð4.5 hrs,,1 hr,6Ð8 hrs
+SR,,,6Ð9 hrs,,2Ð3 hrs,12 hrs
+CD/LA/XR/XT ,,,24 hrs,,~2-3 hrs,24 hrs
+Dihydropyridines,,,,,,
+Amlodipine,64%Ð90%,93%Ð98%,30Ð50 hrs,Substrate,4 hrs,³24 hrs
+Bepridil,100%,99%,24Ð64 hrs,Substrate,2Ð3 hrs,³24 hrs
+Felodipine,15%,99%,11Ð16 hrs,Substrate,2Ð5 hrs,18Ð24 hrs
+Isradipine,15%Ð24%,95%,8 hrs,Substrate,2Ð3 hrs,12 hrs
+Nicardipine,35%,³95%,8Ð9 hrs,Substrate; Inhibitor,<1 hr,6Ð8 hrs
+Nifedipine,100%,92%Ð98%,,Substrate,,
+IR,,,2 hrs,,0.5Ð1 hr,4Ð6 hrs
+XL/CCà,,,7 hrs,,~3Ð4 hrs,~18 hrs
+Nisoldipine¤,5%,99%,7Ð12 hrs,Unknown,~1 hr,24 hrs

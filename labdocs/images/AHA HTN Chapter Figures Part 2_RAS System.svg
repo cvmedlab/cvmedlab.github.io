@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 744.6621 533.9499">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        font-size: 18px;
+      }
+
+      .cls-1, .cls-3 {
+        font-family: Helvetica, Helvetica;
+      }
+
+      .cls-4 {
+        stroke-dasharray: 0 0 5.8689 5.8689;
+      }
+
+      .cls-4, .cls-5, .cls-6, .cls-7, .cls-8 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4, .cls-5, .cls-6, .cls-8 {
+        stroke: #000;
+      }
+
+      .cls-2 {
+        fill: red;
+        font-family: Helvetica-Bold, Helvetica;
+        font-weight: 700;
+      }
+
+      .cls-9 {
+        letter-spacing: -.0737em;
+      }
+
+      .cls-3 {
+        font-size: 16px;
+      }
+
+      .cls-5 {
+        stroke-width: 2px;
+      }
+
+      .cls-7 {
+        stroke: red;
+      }
+
+      .cls-8 {
+        stroke-dasharray: 0 0 6.0192 6.0192;
+      }
+    </style>
+  </defs>
+  <text class="cls-1" transform="translate(402.3047 20.7812)"><tspan x="0" y="0">Angiotensinogen</tspan></text>
+  <text class="cls-1" transform="translate(477.3195 64.3878)"><tspan x="0" y="0">Renin</tspan></text>
+  <text class="cls-3" transform="translate(654.834 16.2454)"><tspan x="0" y="0">cathepsin G,</tspan><tspan x="0" y="19.2002">tonin</tspan></text>
+  <text class="cls-3" transform="translate(594.6345 124.7711)"><tspan x="0" y="0">chymase</tspan></text>
+  <text class="cls-2" transform="translate(327.9818 64.3878)"><tspan x="0" y="0">DRIs</tspan></text>
+  <text class="cls-1" transform="translate(477.3198 163.1354)"><tspan x="0" y="0">ACE</tspan></text>
+  <text class="cls-1" transform="translate(.0001 158.1354)"><tspan x="0" y="0">Kininase II</tspan></text>
+  <text class="cls-1" transform="translate(417.8114 114.0613)"><tspan x="0" y="0">Angiotensin I</tspan></text>
+  <text class="cls-1" transform="translate(415.3094 208.2943)"><tspan x="0" y="0">Angiotensin II</tspan></text>
+  <g>
+    <text class="cls-1" transform="translate(296.1426 306.8228)"><tspan class="cls-9" x="0" y="0">A</tspan><tspan x="10.6787" y="0">T</tspan></text>
+    <text class="cls-1" transform="translate(317.8164 312.817) scale(.583)"><tspan x="0" y="0">1</tspan></text>
+    <text class="cls-1" transform="translate(323.6528 306.8228)"><tspan x="0" y="0" xml:space="preserve"> receptor</tspan></text>
+    <text class="cls-1" transform="translate(543.6531 306.8228)"><tspan class="cls-9" x="0" y="0">A</tspan><tspan x="10.6787" y="0">T</tspan></text>
+    <text class="cls-1" transform="translate(565.3269 312.817) scale(.583)"><tspan x="0" y="0">2</tspan></text>
+    <text class="cls-1" transform="translate(571.1633 306.8228)"><tspan x="0" y="0" xml:space="preserve"> receptor</tspan></text>
+  </g>
+  <g>
+    <line class="cls-6" x1="470.335" y1="36.0896" x2="470.335" y2="82.5895"/>
+    <path d="M470.335,88.6247c-1.0537-2.8398-2.8516-6.3633-4.7559-8.5474l4.7559,1.7202,4.7549-1.7202c-1.9043,2.1841-3.7021,5.7076-4.7549,8.5474Z"/>
+  </g>
+  <g>
+    <line class="cls-6" x1="470.335" y1="130.4262" x2="470.335" y2="176.9261"/>
+    <path d="M470.335,182.9612c-1.0537-2.8398-2.8516-6.3633-4.7559-8.5474l4.7559,1.7202,4.7549-1.7202c-1.9043,2.1841-3.7021,5.7076-4.7549,8.5474Z"/>
+  </g>
+  <g>
+    <line class="cls-6" x1="344.2181" y1="316.4912" x2="344.2181" y2="375.0227"/>
+    <path d="M344.2181,381.0579c-1.0537-2.8398-2.8516-6.3633-4.7559-8.5474l4.7559,1.7202,4.7549-1.7202c-1.9043,2.1841-3.7022,5.7076-4.7549,8.5474Z"/>
+  </g>
+  <line class="cls-6" x1="470.335" y1="219.004" x2="470.335" y2="238.9601"/>
+  <g>
+    <polyline class="cls-6" points="344.2181 279.8248 344.2181 238.96 596.4518 238.96 596.4518 279.8248"/>
+    <path d="M344.2181,285.86c1.0537-2.8398,2.8516-6.3633,4.7559-8.5474l-4.7559,1.7202-4.7549-1.7202c1.9043,2.1841,3.7021,5.7076,4.7549,8.5474Z"/>
+    <path d="M596.4518,285.86c-1.0537-2.8398-2.8516-6.3633-4.7559-8.5474l4.7559,1.7202,4.7549-1.7202c-1.9043,2.1841-3.7021,5.7076-4.7549,8.5474Z"/>
+  </g>
+  <rect class="cls-5" x="381.2062" y="1" width="178.2575" height="30.4911"/>
+  <text class="cls-1" transform="translate(51.1079 89.568)"><tspan x="0" y="0">Bradykinin</tspan></text>
+  <rect class="cls-5" x="3.9999" y="69.7868" width="178.2575" height="30.4911"/>
+  <text class="cls-1" transform="translate(24.5873 221.5176)"><tspan x="0" y="0">Inactive Peptides</tspan></text>
+  <rect class="cls-5" x="3.9996" y="201.7364" width="178.2575" height="30.4911"/>
+  <rect class="cls-5" x="381.2062" y="94.2799" width="178.2575" height="30.4911"/>
+  <rect class="cls-5" x="381.2062" y="188.5128" width="178.2575" height="30.4911"/>
+  <text class="cls-1" transform="translate(295.6996 406.3458)"><tspan x="0" y="0">Aldosterone</tspan></text>
+  <rect class="cls-5" x="255.0894" y="386.5643" width="178.2575" height="30.4911"/>
+  <g>
+    <line class="cls-6" x1="344.2181" y1="423.2874" x2="344.2181" y2="474.3175"/>
+    <path d="M344.2181,480.3526c-1.0537-2.8398-2.8516-6.3633-4.7559-8.5473l4.7559,1.7202,4.7549-1.7202c-1.9043,2.184-3.7022,5.7075-4.7549,8.5473Z"/>
+  </g>
+  <text class="cls-1" transform="translate(276.1909 503.693)"><tspan x="0" y="0">Mineralocorticoid</tspan><tspan x="31.5088" y="21.6001">Receptor</tspan></text>
+  <g>
+    <line class="cls-6" x1="93.1284" y1="105.0324" x2="93.1284" y2="190.7885"/>
+    <path d="M93.1284,196.8237c-1.0537-2.8398-2.8516-6.3633-4.7559-8.5474l4.7559,1.7202,4.7549-1.7202c-1.9043,2.1841-3.7021,5.7076-4.7549,8.5474Z"/>
+  </g>
+  <polyline class="cls-7" points="373.3132 59.852 462.3096 59.852 462.3096 67.8241 462.3096 51.8799"/>
+  <text class="cls-2" transform="translate(242.5601 161.2296)"><tspan x="0" y="0">ACE inhibitors</tspan></text>
+  <polyline class="cls-7" points="373.3132 156.6937 462.3096 156.6937 462.3096 164.6658 462.3096 148.7216"/>
+  <polyline class="cls-7" points="234.7154 154.5 101.8057 154.5 101.8057 146.5279 101.8057 162.4721"/>
+  <text class="cls-2" transform="translate(200.2172 262.9738)"><tspan x="0" y="0">ARBs</tspan></text>
+  <polyline class="cls-7" points="261.6236 258.4379 334.0184 258.4379 334.0184 266.41 334.0184 250.4658"/>
+  <text class="cls-2" transform="translate(145.1377 443.3838)"><tspan x="0" y="0">Aldosterone</tspan><tspan x="0" y="21.6001">Antagonists</tspan></text>
+  <polyline class="cls-7" points="261.6236 448.8479 334.0184 448.8479 334.0184 456.82 334.0184 440.8758"/>
+  <g>
+    <path class="cls-6" d="M571.9303,13.8422c1.0033,0,2.0038,.0095,3.0013,.0285"/>
+    <path class="cls-8" d="M580.9465,14.1001c63.1108,3.6236,112.8793,44.9816,112.8793,95.4681,0,49.6784-48.188,90.5182-109.8591,95.2652"/>
+    <path class="cls-6" d="M580.9623,205.0355c-.996,.0573-1.9954,.1052-2.9979,.1436"/>
+    <path d="M571.9303,205.2943c2.8163-1.115,6.2999-2.9889,8.4423-4.9401l-1.6167,4.792,1.8229,4.7165c-2.2249-1.8565-5.7865-3.5775-8.6484-4.5685Z"/>
+  </g>
+  <g>
+    <path class="cls-6" d="M571.9303,108.0324c1.0042,0,1.993,.1334,2.9628,.3921"/>
+    <path class="cls-4" d="M580.0686,111.1069c8.5189,6.6969,14.5656,23.5998,14.5656,43.3932,0,17.9388-4.9667,33.5035-12.2391,41.248"/>
+    <path class="cls-6" d="M580.2491,197.7495c-.8069,.6506-1.6363,1.2094-2.4853,1.67"/>
+    <path d="M571.9303,200.9677c2.4329-1.8044,5.3146-4.5142,6.8804-6.9524l-.3245,5.047,2.9789,4.0858c-2.6288-1.2191-6.514-1.9621-9.5348-2.1805Z"/>
+  </g>
+</svg>
