@@ -2,32 +2,32 @@
 title: "Initial Antihypertensive Regimens in Newly Treated Patients: Real World Evidence from the OneFlorida+ Clinical Research Network"
 
 author: 
-  - name: Steven M. Smith, PharmD, MPH
+  - name: Steven M. Smith
     affiliations:
       - ref: ufpop
       - ref: ufcard
       - ref: ufcicmd
     attributes: 
       corresponding: true
-  - name: Almut G. Winterstein, PhD
+  - name: Almut G. Winterstein
     affiliations:
       - ref: ufpop
-  - name: Matthew J. Gurka, PhD
+  - name: Matthew J. Gurka
     affiliations: Department of Pediatrics, College of Medicine, University of Florida
-  - name: Marta G. Walsh, MS
+  - name: Marta G. Walsh
     affiliations:
       - ref: ufpop
-  - name: Shailina Keshwani, MS
+  - name: Shailina Keshwani
     affiliations:
       - ref: ufpop
-  - name: Anne Libby, PhD
+  - name: Anne Libby
     affiliations: Department of Emergency Medicine, School of Medicine, University of Colorado Denver
-  - name: William Hogan, MD, MS
+  - name: William Hogan
     affiliations: Department of Health Outcomes & Biomedical Informatics, College of Medicine, University of Florida
-  - name: Carl J. Pepine, MD
+  - name: Carl J. Pepine
     affiliations:
       - ref: ufcard
-  - name: Rhonda M. Cooper-DeHoff, PharmD, MS
+  - name: Rhonda M. Cooper-DeHoff
     affiliations: 
       - ref: ufcard
       - ref: ufptr
@@ -59,9 +59,13 @@ abstract: |
   
 citation:
   type: article-journal
-  container-title: "Journal of the American Heart Association"
-  #doi: ""
-  #url: https://example.com/summarizing-output
+  container-title: Journal of the American Heart Association
+  volume: 12
+  issued: 2023-01
+  page-first: e026652
+  doi: 10.1161/JAHA.122.026652
+  url: https://doi.org/10.1161/JAHA.122.026652
+  pdf-url: https://www.ahajournals.org/doi/pdf/10.1161/JAHA.122.026652?download=true
   
 bibliography: initial_antihypertensive_prescribing_onefl.bib
 
@@ -79,8 +83,6 @@ format:
     toc-depth: 4
     toc-title: "Sections"
 ---
-
-*Status: in press (Journal of the American Heart Association)*
 
 ### INTRODUCTION
 
@@ -108,7 +110,7 @@ Baseline characteristics were measured during the baseline period (generally 1 y
 
 #### Data Analysis
 
-We summarized baseline characteristics using mean and standard deviation for continuous variables and n (%) for categorical variables in the overall study population and stratified by insurer (Medicaid, Medicare). Within insurance strata, we calculated the proportion of individuals initiating each class and, within class, each drug. In addition to stratifying analyses by insurer, we performed stratified analyses by pre-specified demographic (sex, race, ethnicity) and comorbidity (chronic kidney disease [CKD], diabetes, and clinical atherosclerotic cardiovascular disease [ASCVD]) strata and assessed differences by calculating standardized mean differences (SMD) between groups.[@austin_using_2009] We further assessed use of recommended therapy among Black/African American patients with and without CKD or heart failure (HF), based on explicit recommendations in the current U.S. guidelines (i.e., DHP CCBs or thiazides as preferred initial agents among those without CKD or HF).[@whelton_2017_2018; @noauthor_2014_nodate] For patients initiating dual antihypertensive regimens, we calculated the proportion of regimens that were guideline concordant (two first-line antihypertensives from different classes), partially concordant (one first-line and one second-line) or discordant (two second-line agents or two first-line agents from the same class) according to current U.S. guidelines.[@whelton_2017_2018] Finally, we analyzed changes over time in initial antihypertensive regimens by stratifying medication use according to the year of the index date and graphically displaying these data to identify trends in proportion of each class prescribed. The Cochrane-Armitage test was used for trend tests of antihypertensive classes. All data were analyzed with R 4.2.0 (R Foundation, Vienna, Austria).
+We summarized baseline characteristics using mean and standard deviation for continuous variables and n (%) for categorical variables in the overall study population and stratified by insurer (Medicaid, Medicare). Within insurance strata, we calculated the proportion of individuals initiating each class and, within class, each drug. In addition to stratifying analyses by insurer, we performed stratified analyses by pre-specified demographic (sex, race, ethnicity) and comorbidity (chronic kidney disease \[CKD\], diabetes, and clinical atherosclerotic cardiovascular disease \[ASCVD\]) strata and assessed differences by calculating standardized mean differences (SMD) between groups.[@austin_using_2009] We further assessed use of recommended therapy among Black/African American patients with and without CKD or heart failure (HF), based on explicit recommendations in the current U.S. guidelines (i.e., DHP CCBs or thiazides as preferred initial agents among those without CKD or HF).[@whelton_2017_2018; @noauthor_2014_nodate] For patients initiating dual antihypertensive regimens, we calculated the proportion of regimens that were guideline concordant (two first-line antihypertensives from different classes), partially concordant (one first-line and one second-line) or discordant (two second-line agents or two first-line agents from the same class) according to current U.S. guidelines.[@whelton_2017_2018] Finally, we analyzed changes over time in initial antihypertensive regimens by stratifying medication use according to the year of the index date and graphically displaying these data to identify trends in proportion of each class prescribed. The Cochrane-Armitage test was used for trend tests of antihypertensive classes. All data were analyzed with R 4.2.0 (R Foundation, Vienna, Austria).
 
 ### RESULTS
 
