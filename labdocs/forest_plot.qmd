@@ -149,3 +149,23 @@ Now, patch them together.
 #| fig.height=9
 gridExtra::grid.arrange(p, p2, ncol=1, nrow=2)
 ```
+
+If you want to save the file, you can use the base R approach, by plotting the above, getting it to look just how you want it by adjusting spacing, or other options, then running `dev.copy()` and `dev.off()`. Another option is to arrange them in a grob, which you can then save w/ `ggsave()`.
+
+```{r saving}
+#| eval: false
+# base R approach, once the panel (or individual plot) has been plotted in your Viewer
+# Note this would saving as svg, but you could instead use other options: pdf, png, jpg, etc..
+dev.copy(svg, "path_to_location/filename.svg")
+dev.off()
+
+# grob approach
+g <- arrangeGrob(p, p2, nrow=2) 
+
+ggsave(file = "path_to_location/filename.svg",
+       g,
+       device = "svg",
+       width = 7,
+       height = 8.5,
+       units = "in")
+```

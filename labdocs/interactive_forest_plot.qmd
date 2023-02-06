@@ -2,7 +2,7 @@
 title: "Interactive Forest Plot"
 ---
 
-Ok, this may be a complete bust, but I'm going to try to create an interactive Forest Plot with Observable JS in Quarto. Here goes. 
+Ok, this may be a complete bust, but I'm going to try to create an interactive Forest Plot with Observable JS in Quarto. Here goes.
 
 ## Data
 
@@ -28,21 +28,353 @@ ojs_define(data = statins)
 
 ## Rendering the input fields
 
-First, we need to write the code to create the inputs. Then, we create the plot
+First, we need some imports, defaults, and functions to write the plot. 
 
 ```{ojs}
+//| label: imports
+//| code-fold: true
 
-/* inputs */
-viewof inputs = Inputs.form({
-  atc4: Inputs.select(atc4s, { value: "(All)", label: "ATC4 Marker Drug" }),
-  rankby: Inputs.radio(["Adjusted Sequence Ratio (Descending)", "ATC4 of marker drug (Alphabetically)", "ATC4 code of marker drug (Alphabetically)"], { value: "Adjusted Sequence Ratio (Descending)", label: "Rank by:" }),
-  twindow: Inputs.radio([90, 180, 360], { value: 90, label: "PSSA Time Window" }),
-  /*sigsig: Inputs.radio()*/
-  title: Inputs.text({ label: "Title", value: "Title of this plot" }),
-  /*xlabel: Inputs.text({ label: "X-label", value: "Units" }),*/
+import { interval } from "@mootari/range-slider@1326"
+
+columnsNames = _.keys(data[0])
+
+getExtent = function (data, lowerField, upperField) {
+  return [
+    Math.floor(d3.min(data, (d) => d[lowerField])),
+    Math.ceil(d3.max(data, (d) => d[upperField]))
+  ];
+}
+
+plotCalcs = {
+  const viewbox = [0, 0, width, data.length * plotSettings.rowHeight],
+    height = data.length * plotSettings.rowHeight,
+    margin = { top: 35, bottom: 35, left: textColConfig.plotXstart },
+    x = d3
+      .scaleLinear()
+      .domain(plotSettings.xrange)
+      .range([margin.left, margin.left + plotSettings.plotWidth])
+      .clamp(true),
+    y = d3
+      .scaleLinear()
+      .domain([-1, data.length])
+      .range([margin.top, height - margin.bottom]),
+    regY = d3
+      .scaleLinear()
+      .domain([-1, data.length + 2])
+      .range([margin.top, height - margin.bottom]),
+    yAxis = (g) =>
+      g.attr("transform", `translate(${margin.left},0)`).call(d3.axisLeft(y)),
+    xAxis = (g) =>
+      g
+        .attr("transform", `translate(0,${height - margin.bottom})`)
+        .call(d3.axisBottom(x).ticks(plotSettings.numTicks))
+        .style("font", "13px sans-serif"),
+    radiusScale = d3
+      .scaleSqrt()
+      .domain([1, d3.max(data, (d) => d[plotFields.radiusScaledTo])])
+      .range(plotSettings.radiusScale),
+    addPlotStyling = (svg, options) => {
+      const yscale = options.regression ? regY : y;
+      svg.append("g").call(xAxis);
+
+      const styles = svg
+        .append("g")
+        .attr("text-anchor", "middle")
+        .attr("class", "labels");
+
+      // title
+      styles
+        .append("text")
+        .attr("font-weight", "bold")
+        .attr("x", d3.mean(x.range()))
+        .attr("y", yscale(-1) - 5)
+        .text(plotSettings.title);
+
+      // x-label
+      styles
+        .append("text")
+        .attr("x", d3.mean(x.range()))
+        .attr("y", yscale.range()[1] + 33)
+        .text(plotSettings.xlabel);
+
+      // zero reference line
+      if (_.includes(plotSettings.referenceLines, "zero")) {
+        styles
+          .append("line")
+          .attr("stroke", "#A1A1A1")
+          .attr("stroke-width", 2)
+          .attr("stroke-dasharray", "4 4")
+          .attr("x1", (d) => x(0))
+          .attr("x2", (d) => x(0))
+          .attr("y1", yscale.range()[0])
+          .attr("y2", yscale.range()[1]);
+      }
+
+      // one reference line
+      if (_.includes(plotSettings.referenceLines, "one")) {
+        styles
+          .append("line")
+          .attr("stroke", "#A1A1A1")
+          .attr("stroke-width", 2)
+          .attr("stroke-dasharray", "4 4")
+          .attr("x1", (d) => x(1))
+          .attr("x2", (d) => x(1))
+          .attr("y1", yscale.range()[0])
+          .attr("y2", yscale.range()[1]);
+      }
+
+      // top lines
+      styles
+        .append("line")
+        .attr("stroke", "black")
+        .attr("stroke-width", 2)
+        .attr("x1", 0)
+        .attr("x2", width)
+        .attr("y1", yscale.range()[0])
+        .attr("y2", yscale.range()[0]);
+
+      // bottom lines
+      styles
+        .append("line")
+        .attr("stroke", "black")
+        .attr("stroke-width", 2)
+        .attr("x1", 0)
+        .attr("x2", width)
+        .attr("y1", yscale.range()[1])
+        .attr("y2", yscale.range()[1]);
+    },
+    addDataPoints = (svg, options) => {
+      const yscale = options.regression ? regY : y;
+      var points = svg.append("g"),
+        rh = plotSettings.rowHeight,
+        lower = plotFields.lowerCiField,
+        upper = plotFields.upperCiField,
+        estimate = plotFields.estimateField;
+
+      points
+        .selectAll("line")
+        .data(data)
+        .join("line")
+        .attr("stroke", "black")
+        .attr("stroke-width", 2)
+        .attr("x1", (d) => x(d[lower]))
+        .attr("x2", (d) => x(d[upper]))
+        .attr("y1", (d, i) => yscale(i))
+        .attr("y2", (d, i) => yscale(i));
+
+      points
+        .selectAll("path.lower")
+        .data(data)
+        .join("path")
+        .attr("stroke", "black")
+        .attr("stroke-width", 2)
+        .attr("d", (d, i) => {
+          const dx = d[lower] < plotSettings.xrange[0] ? rh * 0.3 : 0;
+          return d3.line()([
+            [x(d[lower]) + dx, yscale(i) - rh * 0.2],
+            [x(d[lower]), yscale(i)],
+            [x(d[lower]) + dx, yscale(i) + rh * 0.2]
+          ]);
+        });
+
+      points
+        .selectAll("path.upper")
+        .data(data)
+        .join("path")
+        .attr("stroke", "black")
+        .attr("stroke-width", 2)
+        .attr("d", (d, i) => {
+          const dx = d[upper] > plotSettings.xrange[1] ? rh * 0.3 : 0;
+          return d3.line()([
+            [x(d[upper]) - dx, yscale(i) - rh * 0.2],
+            [x(d[upper]), yscale(i)],
+            [x(d[upper]) - dx, yscale(i) + rh * 0.2]
+          ]);
+        });
+
+      points
+        .selectAll("circle")
+        .data(data)
+        .join("circle")
+        .attr("cx", (d) => x(d[estimate]))
+        .attr("cy", (d, i) => yscale(i))
+        .attr("r", (d) => radiusScale(d[plotFields.radiusScaledTo]));
+    },
+    addTextColumn = (
+      svg,
+      colName,
+      headerName,
+      xPosition,
+      textAnchor,
+      options
+    ) => {
+      const yscale = options.regression ? regY : y,
+        g = svg.append("g");
+
+      g.selectAll("text")
+        .data(data)
+        .join("text")
+        .attr("x", xPosition)
+        .attr("y", (d, i) => yscale(i))
+        .attr("text-anchor", textAnchor)
+        .attr("alignment-baseline", "central")
+        .text((d) => d[colName]);
+
+      g.append("text")
+        .attr("x", xPosition)
+        .attr("y", yscale(-1) - 5)
+        .attr("text-anchor", textAnchor)
+        .attr("font-weight", "bold")
+        .text((d) => headerName);
+    },
+    addRegressionLine = (svg) => {
+      // regression line
+      if (regressionInputs.showBaseline) {
+        svg
+          .append("g")
+          .append("line")
+          .attr("stroke", regressionInputs.color)
+          .attr("stroke-width", 2)
+          .attr("x1", (d) => x(regressionInputs.estimate))
+          .attr("x2", (d) => x(regressionInputs.estimate))
+          .attr("y1", regY.range()[0])
+          .attr("y2", regY.range()[1]);
+      }
+    },
+    addRegression = (svg) => {
+      // regression diamond
+      const regy = regY(data.length + 1);
+
+      svg
+        .append("path")
+        .attr("stroke", "black")
+        .attr("fill", regressionInputs.color)
+        .attr("stroke-width", 2)
+        .attr("d", (d, i) => {
+          return d3.line()([
+            [x(regressionInputs.lower_ci), regy],
+            [x(regressionInputs.estimate), regy + plotSettings.rowHeight * 0.4],
+            [x(regressionInputs.upper_ci), regy],
+            [x(regressionInputs.estimate), regy - plotSettings.rowHeight * 0.4],
+            [x(regressionInputs.lower_ci), regy]
+          ]);
+        });
+
+      // regression text - description
+      svg
+        .append("text")
+        .attr("font-weight", "bold")
+        .attr("x", regressionInputs.descriptionX)
+        .attr("y", regy)
+        .attr("text-anchor", "start")
+        .attr("alignment-baseline", "central")
+        .text(regressionInputs.description);
+
+      // regression text - result
+      if (regressionInputs.showResultsText){
+        const resultText = `${regressionInputs.estimate} [${regressionInputs.lower_ci}, ${regressionInputs.upper_ci}]`;
+        svg
+          .append("text")
+          .attr("font-weight", "bold")
+          .attr("x", regressionInputs.resultX)
+          .attr("y", regy)
+          .attr("text-anchor", "end")
+          .attr("alignment-baseline", "central")
+          .text(resultText);
+        }
+    };
+
+  return {
+    viewbox,
+    margin,
+    x,
+    y,
+    xAxis,
+    yAxis,
+    radiusScale,
+    addPlotStyling,
+    addDataPoints,
+    addTextColumn,
+    addRegressionLine,
+    addRegression
+  };
+}
+
+defaultValues = [
+  ["ATC4 Marker Drug", "ATC4 Marker Drug", 20, "start"],
+  ["Total Prescribed Index and Marker Drug", "Total Prescribed Index and Marker Drug", 190, "middle"],
+  ["Marker After", "Marker After", 265, "middle"], 
+  ["Marker Before", "Marker Before", 325, "middle"],
+  ["Adjusted Sequence Ratio (95% Confidence Interval)", "Adjusted Sequence Ratio (95% Confidence Interval)", 380, "middle"],
+  ["Potential Prescribing Cascade (PC)", "Potential Prescribing Cascade (PC)", 850, "end"]
+/*  ["Author(s) and Year", "Author(s) and Year", 20, "start"],
+  ["Confidence", "Confidence", 190, "middle"],
+  ["Timing", "Timing", 265, "middle"],
+  ["N", "N", 330, "end"],
+  ["Result", "Result", 750, "end"] */
+]
+
+tryDefault = (key1, key2, defaultValue) => {
+  try {
+    return defaultValues[key1][key2];
+  } catch (error) {
+    return defaultValue;
+  }
+}
+```
+
+## The inputs
+
+```{ojs}
+config = {
+  return {
+    plotFields: {
+      estimateField: "adjusted_sequence_ratio",
+      lowerCiField: "adjusted_sequence_ratio_lower_limit_of_95_percent_ci",
+      upperCiField: "adjusted_sequence_ratio_upper_limit_of_95_percent_ci",
+      radiusScaledTo: "total_prescribed_index_and_marker_drug"
+    },
+    plotSettings: {
+      title: "test",
+      xlabel: "test2",
+      plotWidth: 250,
+      rowHeight: 18,
+      xrange: [0.5, 10],
+      numTicks: 6,
+      radiusScale: [4, 8],
+      referenceLines: ["one"],
+      plotXstart: 350,
+      overallWidth: 1000
+    },
+    textFields: []
+  };
+}
+
+viewof plotFields = Inputs.form({
+  estimateField: Inputs.select(columnsNames, {
+    label: "Estimate field",
+    value: "adjusted_sequence_ratio"
+  }),
+  lowerCiField: Inputs.select(columnsNames, {
+    label: "Lower CI field",
+    value: "adjusted_sequence_ratio_lower_limit_of_95_percent_ci"
+  }),
+  upperCiField: Inputs.select(columnsNames, {
+    label: "Upper CI field",
+    value: "adjusted_sequence_ratio_upper_limit_of_95_percent_ci"
+  }),
+  radiusScaledTo: Inputs.select(columnsNames, {
+    label: "Scaling variable",
+    value: "total_prescribed_index_and_marker_drug"
+  })
+})
+
+viewof plotSettings = Inputs.form({
+  title: Inputs.text({ label: "Title", value: "Adjusted Sequence Ratio (95% CI)" }),
+  xlabel: Inputs.text({ label: "X-label", value: "Units" }),
   plotWidth: Inputs.range([50, 500], {
     value: 250,
-    step: 10,
+    step: 5,
     label: "Plot Width"
   }),
   rowHeight: Inputs.range([10, 45], {
@@ -50,172 +382,148 @@ viewof inputs = Inputs.form({
     step: 1,
     label: "Row height"
   }),
-  xdomain: Inputs.text({ label: "X domain", value: "-200, 150" })
-/*  numTicks: Inputs.range([3, 20], { value: 5, step: 1, label: "X Ticks" })*/
+  xrange: interval(
+    getExtent(data, plotFields.lowerCiField, plotFields.upperCiField),
+    {
+      step: 1,
+      label: "X-range",
+      value: [0.5, 10]
+    }
+  ),
+  numTicks: Inputs.range([3, 20], { value: 3, step: 1, label: "X Ticks" }),
+  radiusScale: interval([1, 15], { step: 1, label: "Radius", value: [4, 8] }),
+  referenceLines: Inputs.checkbox(["zero", "one"], {
+    label: "Reference line",
+    value: ["one"]
+  })
 })
 
-/* the plot */
-chart = {
+chart1 = {
   const svg = d3
-      .create("svg")
-      .attr("viewBox", [0, 0, width, data.length * inputs.rowHeight])
-      .style("font", "13px sans-serif"),
-    height = data.length * inputs.rowHeight,
-    margin = { top: 35, bottom: 35, left: 400 },
-    domainRegex = /(?:-?\d+),\s?(?:-?\d+)/,
-    xDomain = domainRegex.test(inputs.xdomain)
-      ? inputs.xdomain.split(",").map((d) => parseInt(d))
-      : [d3.min(data, (d) => d.adjusted_sequence_ratio_lower_limit_of_95_percent_ci), d3.max(data, (d) => d.adjusted_sequence_ratio_upper_limit_of_95_percent_ci)],
-    x = d3
-      .scaleLinear()
-      .domain(xDomain)
-      .range([margin.left, margin.left + inputs.plotWidth])
-      .clamp(true),
-    y = d3
-      .scaleLinear()
-      .domain([-1, data.length])
-      .range([margin.top, height - margin.bottom]),
-    yAxis = (g) =>
-      g.attr("transform", `translate(${margin.left},0)`).call(d3.axisLeft(y)),
-    xAxis = (g) =>
-      g
-        .attr("transform", `translate(0,${height - margin.bottom})`)
-        .call(d3.axisBottom(x).ticks(inputs.numTicks))
-        .style("font", "13px sans-serif"),
-    radiusScale = d3
-      .scaleSqrt()
-      .domain([1, d3.max(data, (d) => d.N)])
-      .range([3, 8]);
+    .create("svg")
+    .attr("viewBox", plotCalcs.viewbox)
+    .style("font", "13px sans-serif");
 
-  svg.append("g").call(xAxis);
-
-  const labels_g = svg
-    .append("g")
-    .attr("text-anchor", "middle")
-    .attr("class", "labels");
-
-  labels_g
-    .append("text")
-    .attr("font-weight", "bold")
-    .attr("x", d3.mean(x.range()))
-    .attr("y", y(-1) - 5)
-    .text(inputs.title);
-
-  labels_g
-    .append("text")
-    .attr("x", d3.mean(x.range()))
-    .attr("y", y(data.length) + 33)
-    .text(inputs.xlabel);
-
-  svg
-    .append("g")
-    .append("line")
-    .attr("stroke", "#A1A1A1")
-    .attr("stroke-width", 2)
-    .attr("stroke-dasharray", "4 4")
-    .attr("x1", (d) => x(0))
-    .attr("x2", (d) => x(0))
-    .attr("y1", y.range()[0])
-    .attr("y2", y.range()[1]);
-
-  var lines = svg.append("g");
-  lines
-    .selectAll("line.a")
-    .data(data)
-    .join("line")
-    .attr("stroke", "black")
-    .attr("stroke-width", 2)
-    .attr("x1", (d) => x(d.Lower))
-    .attr("x2", (d) => x(d.Upper))
-    .attr("y1", (d, i) => y(i))
-    .attr("y2", (d, i) => y(i));
-  lines
-    .selectAll("path.lower")
-    .data(data)
-    .join("path")
-    .attr("stroke", "black")
-    .attr("stroke-width", 2)
-    .attr("d", (d, i) => {
-      const dx = d.Lower < xDomain[0] ? inputs.rowHeight * 0.3 : 0;
-      return d3.line()([
-        [x(d.Lower) + dx, y(i) - inputs.rowHeight * 0.2],
-        [x(d.Lower), y(i)],
-        [x(d.Lower) + dx, y(i) + inputs.rowHeight * 0.2]
-      ]);
-    });
-
-  lines
-    .selectAll("path.upper")
-    .data(data)
-    .join("path")
-    .attr("stroke", "black")
-    .attr("stroke-width", 2)
-    .attr("d", (d, i) => {
-      const dx = d.Upper > xDomain[1] ? inputs.rowHeight * 0.3 : 0;
-      return d3.line()([
-        [x(d.Upper) - dx, y(i) - inputs.rowHeight * 0.2],
-        [x(d.Upper), y(i)],
-        [x(d.Upper) - dx, y(i) + inputs.rowHeight * 0.2]
-      ]);
-    });
-
-  const addText = (colName, xPosition, headerName, textAnchor) => {
-    let g = svg.append("g");
-
-    g.selectAll("text")
-      .data(data)
-      .join("text")
-      .attr("x", xPosition)
-      .attr("y", (d, i) => y(i))
-      .attr("text-anchor", textAnchor)
-      .attr("alignment-baseline", "central")
-      .text((d) => d[colName]);
-
-    g.append("text")
-      .attr("x", xPosition)
-      .attr("y", y(-1) - 5)
-      .attr("text-anchor", textAnchor)
-      .attr("font-weight", "bold")
-      .text((d) => headerName);
-  };
-  addText("Author(s) and Year", 20, "Author(s) and Year", "start");
-  addText("Confidence", 190, "Confidence", "middle");
-  addText("Timing", 265, "Timing", "middle");
-  addText("N", 330, "N", "end");
-  addText("Result", margin.left + inputs.plotWidth + 150, "Result", "end");
-
-  lines
-    .selectAll("line.upper")
-    .data(data)
-    .join("line")
-    .attr("stroke", "black")
-    .attr("stroke-width", 2)
-    .attr("x1", 0)
-    .attr("x2", width)
-    .attr("y1", y(data.length))
-    .attr("y2", y(data.length));
-
-  lines
-    .selectAll("line.lower")
-    .data(data)
-    .join("line")
-    .attr("stroke", "black")
-    .attr("stroke-width", 2)
-    .attr("x1", 0)
-    .attr("x2", width)
-    .attr("y1", y(-1))
-    .attr("y2", y(-1));
-
-  svg
-    .append("g")
-    .selectAll("circle")
-    .data(data)
-    .join("circle")
-    .attr("cx", (d) => x(d.Estimate))
-    .attr("cy", (d, i) => y(i))
-    .attr("r", (d) => radiusScale(d.N));
+  plotCalcs.addPlotStyling(svg, { regression: false });
+  plotCalcs.addDataPoints(svg, { regression: false });
 
   return svg.node();
 }
 ```
 
+```{ojs}
+viewof textColSettings = Inputs.form({
+  numTextColumns: Inputs.range([1, 10], {
+    value: 6,
+    step: 1,
+    label: "# text columns"
+  })
+})
+
+viewof textColConfig = {
+  const colInputs = {
+    plotXstart: Inputs.range([0, width - plotSettings.plotWidth], {
+      value: 435,
+      step: 5,
+      label: "Plot X start"
+    })
+  };
+
+  for (var i = 0; i < textColSettings.numTextColumns; i++) {
+    colInputs[`a_header_${i}`] = md`#### Column #${i + 1}`;
+    colInputs[`b_field_${i}`] = Inputs.select(columnsNames, {
+      label: "Field name",
+      value: tryDefault(i, 0, colInputs[0])
+    });
+    colInputs[`c_header_${i}`] = Inputs.text({
+      label: "Title",
+      value: tryDefault(i, 1, colInputs[0])
+    });
+    colInputs[`d_start_${i}`] = Inputs.range([0, width], {
+      value: tryDefault(i, 2, i * 100),
+      label: "X-start",
+      step: 5
+    });
+    colInputs[`e_align_${i}`] = Inputs.radio(["start", "middle", "end"], {
+      value: tryDefault(i, 3, "start"),
+      label: "Alignment"
+    });
+    colInputs[`f_spacer_${i}`] = md`<hr/>`;
+  }
+  return Inputs.form(colInputs);
+}
+
+chart2 = {
+  const svg = d3
+    .create("svg")
+    .attr("viewBox", plotCalcs.viewbox)
+    .style("font", "13px sans-serif");
+
+  plotCalcs.addPlotStyling(svg, { regression: false });
+  plotCalcs.addDataPoints(svg, { regression: false });
+
+  _.range(textColSettings.numTextColumns).forEach((i) => {
+    plotCalcs.addTextColumn(
+      svg,
+      textColConfig[`b_field_${i}`],
+      textColConfig[`c_header_${i}`],
+      textColConfig[`d_start_${i}`],
+      textColConfig[`e_align_${i}`],
+      { regression: false }
+    );
+  });
+
+  return svg.node();
+}
+
+viewof regressionInputs = Inputs.form({
+  description: Inputs.text({
+    label: "Description",
+    value: "Regression model, all studies, Ln Scale (Q-pval = 0.05, I² = 39.2%)"
+  }),
+  estimate: Inputs.number({ label: "Estimate", value: -28.6 }),
+  lower_ci: Inputs.number({ label: "Lower CI", value: -43.5 }),
+  upper_ci: Inputs.number({ label: "Upper CI", value: -13.6 }),
+  color: Inputs.color({ label: "Color", value: "#87c4c3" }),
+  showBaseline: Inputs.toggle({ label: "Show baseline?", value: true }),
+  descriptionX: Inputs.range([0, width], {
+    value: 20,
+    step: 5,
+    label: "Description location"
+  }),
+  showResultsText: Inputs.toggle({ label: "Show results text?", value: true }),
+  resultX: Inputs.range([0, width], {
+    value: 750,
+    step: 5,
+    label: "Result location"
+  })
+})
+
+chart3 = {
+  const svg = d3
+    .create("svg")
+    .attr("viewBox", plotCalcs.viewbox)
+    .style("font", "13px sans-serif");
+
+  plotCalcs.addPlotStyling(svg, { regression: true });
+  plotCalcs.addRegressionLine(svg);
+  plotCalcs.addDataPoints(svg, { regression: true });
+
+  _.range(textColSettings.numTextColumns).forEach((i) => {
+    plotCalcs.addTextColumn(
+      svg,
+      textColConfig[`b_field_${i}`],
+      textColConfig[`c_header_${i}`],
+      textColConfig[`d_start_${i}`],
+      textColConfig[`e_align_${i}`],
+      { regression: true }
+    );
+  });
+
+  plotCalcs.addRegression(svg);
+
+  return svg.node();
+}
+```
+
+Did this work? 
