@@ -1,0 +1,15 @@
+---
+title: "High-Throughput Screening for Statin Prescribing Cascades"
+author: "Steven M. Smith"
+date: "2023-03-21"
+categories: [paper]
+image: "pds_paper.png"
+---
+
+Our lab has been collaborating with the Vouri Lab and now leading multiple projects using high-throughput screening with large-scale sequence symmetry analysis to detect prescribing cascades. One of these projects, funded internally by the UF COP [PROSPER program](https://facultyaffairs.pharmacy.ufl.edu/faculty-resources/educational-resources/college-of-pharmacy-prosper-excellence-awards/), focused on statins. The first paper from that project has [now been published](https://onlinelibrary.wiley.com/doi/10.1002/pds.5607) in *Pharmacoepidemiology and Drug Safety*. 
+
+If you don't have access to PDS, see below for a PDF copy of the paper. More to come from this and our other similar project on antihypertensives!
+
+
+<iframe width="100%" height="800" src="Pharmacoepidemiology and Drug - 2023 - Vouri - High‐throughput screening for prescribing cascades among real world statin.pdf">
+</iframe>

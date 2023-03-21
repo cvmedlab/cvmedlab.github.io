@@ -17,8 +17,8 @@ website:
         href: people.qmd
       - text: "research"
         href: research.qmd
-      - text: "papers"
-        href: papers.qmd
+      # - text: "papers"
+      #   href: papers.qmd
       - text: "tools"
         href: https://github.com/ssmithm?tab=repositories
       - text: "lab docs"
@@ -35,6 +35,8 @@ website:
             href: labdocs/antihypertensive_pharmacology.qmd
       - text: "lab manual"
         href: https://labmanual.cvmedlab.org/
+      - text: "news"
+        href: news/index.qmd
 
     right:
       - icon: github

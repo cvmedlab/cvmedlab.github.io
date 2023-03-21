@@ -1,0 +1,13 @@
+---
+title: "Research Presentation: 2023 AHA Epi/Lifestyle Meeting"
+author: "Steven M. Smith"
+date: "2023-03-07"
+categories: [meetings]
+image: "IMG_2092.png"
+---
+
+[Dr. Kayla Smith](https://pop.pharmacy.ufl.edu/people/students/kayla-smith/) represented us well at the 2023 AHA Epi/Lifestyle meeting this past week in Boston, MA. She presented her work on initial antihypertensive prescribing among Medicaid and Medicare recipients, which focused on what types of regimens are started in these populations, and particularly, on the extent to which combination therapy is initiated in the context of baseline blood pressure. 
+
+Her poster is here:
+
+<iframe width="100%" height="500" src="kayla_poster.pdf">
