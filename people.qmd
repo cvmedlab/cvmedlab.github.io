@@ -37,6 +37,14 @@ format:
 :::
 
 ::: g-col-2
+![](assets/earl_morris.jpg){fig-align="center"}
+:::
+
+::: g-col-10
+[**Earl Morris, PharmD, MPH**]{style="color: #1E354B"} is a PhD student in the Department of Pharmaceutical Outcomes and Policy. His research is focused on xanthine oxidase inhibitor utilization and their comparative effects on cardiovascular and related outcomes. His work is funded by an [American Heart Association](https://www.heart.org/) Predoctoral Fellowship award.
+:::
+
+::: g-col-2
 ![](assets/shailina_keshwani.jpg){fig-align="center"}
 :::
 

@@ -1,0 +1,41 @@
+---
+title: "2023 COP Research Showcase"
+author: "Steven M. Smith"
+date: "2023-02-12"
+categories: [meetings]
+image: "shailina_poster_cop_rs2023.jpg"
+---
+
+Our lab had a great showing at the 2023 COP Research Showcase, with posters by each of our graduate students.
+
+## Predictors of initial antihypertensive intensity in newly-treated hypertensive patients
+
+![](shailina_poster_cop_rs2023.jpg)
+
+Shailina presented on our work in the Personalized Hypertension Care project, funded by NHLBI. Her poster focused on sex and race disparities in initial antihypertensive prescribing, and whether such disparities are explained by differences in clinical factors between these populations.
+
+Here's her poster:
+
+<iframe width="100%" height="500" src="shailina_poster.pdf"></iframe>
+
+## The role of anticoagulants clinics in anticoagulant therapy initiation
+
+Asinamai presented some data from UF Health showing choice of anticoagulation therapy initiation differs across clinics with imbedded pharmacists providing anticoagulation monitoring services versus those without.
+
+His poster is here:
+
+<iframe width="100%" height="500" src="asinamai_poster.pdf"></iframe>
+
+## Initial antihypertensive prescribing among Medicaid and Medicare recipients
+
+![](kayla_poster_cop_rs2023.jpg)
+
+Kayla presented additional data from our Personalized Hypertension Care project. Her poster focused on initial antihypertensives prescribed in Medicaid and Medicare patients, stratified by baseline blood pressure.
+
+Her poster is here:
+
+<iframe width="100%" height="500" src="kayla_poster.pdf"></iframe>
+
+## Dr. Smith also participated in the judging
+
+![](steve_judging_cop_rs2023.jpg)

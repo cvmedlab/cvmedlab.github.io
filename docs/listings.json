@@ -16,5 +16,14 @@
     "items": [
       "/lab_pubs/initial_antihypertensive_prescribing_onefl.html"
     ]
+  },
+  {
+    "listing": "/news/index.html",
+    "items": [
+      "/news/posts/high-thruput-statin-cascades/index.html",
+      "/news/posts/aha-epilifestyle-2023/index.html",
+      "/news/posts/2023-cop-research-showcase/index.html",
+      "/news/posts/cop-centennial/index.html"
+    ]
   }
 ]
