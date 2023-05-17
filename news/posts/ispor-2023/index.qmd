@@ -1,0 +1,36 @@
+---
+title: "Research Presentation: 2023 ISPOR Meeting"
+author: "Steven M. Smith"
+date: "2023-05-15"
+categories: [meetings]
+image: "IMG_2686.png"
+---
+
+We had a great showing at the 2023 International Society for Pharmacoeconomics and Outcomes Research (ISPOR) in Boston, MA. Three students presented work from our lab. Special thanks to the [UF CICMD](https://cicmd.center.ufl.edu/) for travel support of all 3 students. 
+
+## Asinamai Ndai
+
+![](IMG_2694.png)
+
+[Asinamai Ndai](https://pop.pharmacy.ufl.edu/people/students/asinamai-ndai/) had an oral podium presentation for his work on anticoagulant utilization comparing outpatient clinics with and without specialized anticoagulation services. He [ended up winning best student podium presentation](../asinamai-ndai-ispor-2023/) for this presentation! For those interested, here's the presentation:
+
+<iframe width="100%" height="500" src="NDAI_ISPOR_2023_PRESENTATION.pdf"></iframe>
+
+## Shailina Keshwani 
+
+![](IMG_2686.png)
+
+[Shailina Keshwani](https://pop.pharmacy.ufl.edu/people/students/shailina-keshwani/) presented her work on predictors of initial antihypertensive regimen intensity, funded by the NHLBI. Find her poster below. 
+
+<iframe width="100%" height="500" src="ISPOR23_Keshwani_POSTER.pdf"></iframe>
+
+## Priyanka Kulkarni
+
+[Priyanka Kulkarni](https://pop.pharmacy.ufl.edu/people/students/priyanka-kulkarni/) also represented our group with her poster presentation from our high-throughput statin prescribing cascades project, funded by the College of Pharmacy. Her poster was specifically focused on use of the SIDER database as a tool for supporting prescribing cascade work. Here's her poster:
+
+<iframe width="100%" height="500" src="ISPOR23_Kulkarni_POSTER.pdf">
+
+
+Her poster is here:
+
+<iframe width="100%" height="500" src="kayla_poster.pdf"></iframe>
