@@ -16,7 +16,9 @@ Shailina presented on our work in the Personalized Hypertension Care project, fu
 
 Here's her poster:
 
-<iframe width="100%" height="500" src="shailina_poster.pdf"></iframe>
+<iframe width="100%" height="500" src="shailina_poster.pdf">
+
+</iframe>
 
 ## The role of anticoagulants clinics in anticoagulant therapy initiation
 
@@ -24,7 +26,9 @@ Asinamai presented some data from UF Health showing choice of anticoagulation th
 
 His poster is here:
 
-<iframe width="100%" height="500" src="asinamai_poster.pdf"></iframe>
+<iframe width="100%" height="500" src="asinamai_poster.pdf">
+
+</iframe>
 
 ## Initial antihypertensive prescribing among Medicaid and Medicare recipients
 
@@ -34,7 +38,9 @@ Kayla presented additional data from our Personalized Hypertension Care project.
 
 Her poster is here:
 
-<iframe width="100%" height="500" src="kayla_poster.pdf"></iframe>
+<iframe width="100%" height="500" src="kayla_poster.pdf">
+
+</iframe>
 
 ## Dr. Smith also participated in the judging
 
