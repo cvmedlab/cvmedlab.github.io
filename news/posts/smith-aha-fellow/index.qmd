@@ -6,5 +6,4 @@ categories: [news]
 image: "Steve-Smith.jpg"
 ---
 
-Dr. Smith will be elected as an [American Heart Association](https://heart.org) Fellow of the Hypertension Council this year. The 
-College of Pharmacy has a nice write-up, which can be found [here](https://pharmacy.ufl.edu/2023/04/17/dr-steven-smith-named-fellow-of-the-american-heart-association/). 
+Dr. Smith was elected as an [American Heart Association](https://heart.org) Fellow of the Hypertension Council this year. The College of Pharmacy has a nice write-up, which can be found [here](https://pharmacy.ufl.edu/2023/04/17/dr-steven-smith-named-fellow-of-the-american-heart-association/).
