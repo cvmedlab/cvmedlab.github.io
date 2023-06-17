@@ -21,18 +21,6 @@ format:
 :::
 
 ::: g-col-12
-##### Current Postdoc(s) {style="color: #7f7f7f"}
-:::
-
-::: g-col-2
-![](assets/christie_monahan.jpg){fig-align="center"}
-:::
-
-::: g-col-10
-[**Christie Monahan, PharmD**]{style="color: #1E354B"} is the 2021-2023 postdoctoral fellow in the Departments of Pharmacotherapy and Translational Research and Community Health and Family Medicine. Her work is primarily centered on health services research around pharmacist-managed transitions of care. She is also involved in our hypertension research.
-:::
-
-::: g-col-12
 ##### Current Grad Students {style="color: #7f7f7f"}
 :::
 
@@ -69,7 +57,19 @@ format:
 :::
 
 ::: g-col-12
-##### Analyst(s) {style="color: #7f7f7f"}
+##### Research Coordinator(s) {style="color: #7f7f7f"}
+:::
+
+::: g-col-2
+![](assets/Mirian-Hay-Roe.jpg){fig-align="center"}
+:::
+
+::: g-col-10
+[**Mirian Hay-Roe, PhD**]{style="color: #1E354B"} is the Research Coordinator for the [UF Center for Integrative Cardiovascular and Metabolic Disease](https://cicmd.center.ufl.edu/) and basically single-handedly runs the day-to-day activities of the CICMD. She's also adjunct faculty at Sante Fe College.
+:::
+
+::: g-col-12
+##### Former Lab Members {style="color: #7f7f7f"}
 :::
 
 ::: g-col-2
@@ -77,11 +77,15 @@ format:
 :::
 
 ::: g-col-10
-[**Marta Walsh, MS**]{style="color: #1E354B"} is our analyst and basically single-handedly manages our messy data and keeps us moving forward. She's a former UF and Embry-Riddle grad and our shop wouldn't be what it is without her.
+[**Marta Walsh, MS**]{style="color: #1E354B"} was our data analyst from from 2021 through early 2023. She now works as a business analyst for the Mayo Clinic in Rochester, MN. 
 :::
 
-::: g-col-12
-##### Former Trainees {style="color: #7f7f7f"}
+::: g-col-2
+![](assets/christie_monahan.jpg){fig-align="center"}
+:::
+
+::: g-col-10
+[**Christie Monahan, PharmD**]{style="color: #1E354B"} was the 2021-2023 clinical postdoctoral fellow in the Departments of Pharmacotherapy and Translational Research and Community Health and Family Medicine. Her work was primarily centered on pharmacist-managed transitions of care as well as continuous glucose monitoring in patients with diabetes.
 :::
 
 ::: g-col-2
