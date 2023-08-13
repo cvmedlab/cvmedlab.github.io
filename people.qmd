@@ -25,14 +25,6 @@ format:
 :::
 
 ::: g-col-2
-![](assets/earl_morris.jpg){fig-align="center"}
-:::
-
-::: g-col-10
-[**Earl Morris, PharmD, MPH**]{style="color: #1E354B"} is a PhD student in the Department of Pharmaceutical Outcomes and Policy. His research is focused on xanthine oxidase inhibitor utilization and their comparative effects on cardiovascular and related outcomes. His work is funded by an [American Heart Association](https://www.heart.org/) Predoctoral Fellowship award.
-:::
-
-::: g-col-2
 ![](assets/shailina_keshwani.jpg){fig-align="center"}
 :::
 
@@ -73,11 +65,19 @@ format:
 :::
 
 ::: g-col-2
+![](assets/earl_morris.jpg){fig-align="center"}
+:::
+
+::: g-col-10
+[**Earl Morris, PharmD, MPH, PhD**]{style="color: #1E354B"} is our most recent PhD grad in the Department of Pharmaceutical Outcomes and Policy. His dissertation focused on xanthine oxidase inhibitor utilization and their comparative effects on cardiovascular and related outcomes, funded by an [American Heart Association](https://www.heart.org/) Predoctoral Fellowship award. Earl is now on Faculty in the POP Department. 
+:::
+
+::: g-col-2
 ![](assets/marta-profile-photo.jpg){fig-align="center"}
 :::
 
 ::: g-col-10
-[**Marta Walsh, MS**]{style="color: #1E354B"} was our data analyst from from 2021 through early 2023. She now works as a business analyst for the Mayo Clinic in Rochester, MN. 
+[**Marta Walsh, MS**]{style="color: #1E354B"} was our data analyst from from 2021 through early 2023. She now works as a business analyst for the Mayo Clinic in Rochester, MN.
 :::
 
 ::: g-col-2
