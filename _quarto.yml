@@ -19,6 +19,12 @@ website:
         href: research.qmd
       # - text: "papers"
       #   href: papers.qmd
+      - text: "projects"
+        menu: 
+          - text: "Antihypertensive Prescribing Cascades"
+            href: projects/antihtn_cascades/index.qmd
+          - text: "Personalized Hypertension Care"
+            href: projects/personal_htn_care/index.qmd
       - text: "tools"
         href: https://github.com/ssmithm?tab=repositories
       - text: "lab docs"
