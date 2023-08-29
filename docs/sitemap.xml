@@ -2,98 +2,106 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://cvmedlab.org/labdocs/table1_table1.html</loc>
-    <lastmod>2023-08-29T20:57:33.894Z</lastmod>
+    <lastmod>2023-08-29T21:36:31.960Z</lastmod>
   </url>
   <url>
     <loc>https://cvmedlab.org/labdocs/interactive_forest_plot.html</loc>
-    <lastmod>2023-08-29T20:57:39.332Z</lastmod>
+    <lastmod>2023-08-29T21:36:43.198Z</lastmod>
   </url>
   <url>
     <loc>https://cvmedlab.org/labdocs/forest_plot.html</loc>
-    <lastmod>2023-08-29T20:57:40.042Z</lastmod>
+    <lastmod>2023-08-29T21:36:47.860Z</lastmod>
   </url>
   <url>
     <loc>https://cvmedlab.org/labdocs/table1_gtsummary.html</loc>
-    <lastmod>2023-08-29T20:57:41.867Z</lastmod>
+    <lastmod>2023-08-29T21:37:20.299Z</lastmod>
   </url>
   <url>
     <loc>https://cvmedlab.org/labdocs/index.html</loc>
-    <lastmod>2023-08-29T20:57:42.454Z</lastmod>
+    <lastmod>2023-08-29T21:37:20.931Z</lastmod>
   </url>
   <url>
     <loc>https://cvmedlab.org/labdocs/cumulative_incidence.html</loc>
-    <lastmod>2023-08-29T20:57:43.235Z</lastmod>
+    <lastmod>2023-08-29T21:37:28.230Z</lastmod>
   </url>
   <url>
     <loc>https://cvmedlab.org/labdocs/writing.html</loc>
-    <lastmod>2023-03-21T18:52:58.568Z</lastmod>
+    <lastmod>2023-08-29T21:37:29.193Z</lastmod>
   </url>
   <url>
     <loc>https://cvmedlab.org/labdocs/antihypertensive_pharmacology.html</loc>
-    <lastmod>2023-08-29T20:57:46.246Z</lastmod>
+    <lastmod>2023-08-29T21:37:32.053Z</lastmod>
   </url>
   <url>
     <loc>https://cvmedlab.org/research.html</loc>
-    <lastmod>2023-08-29T20:57:46.701Z</lastmod>
+    <lastmod>2023-08-29T21:37:32.475Z</lastmod>
   </url>
   <url>
     <loc>https://cvmedlab.org/papers.html</loc>
-    <lastmod>2023-08-29T20:57:47.332Z</lastmod>
+    <lastmod>2023-08-29T21:37:33.058Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cvmedlab.org/projects/personal_htn_care/index.html</loc>
+    <lastmod>2023-08-29T21:37:33.485Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cvmedlab.org/projects/antihtn_cascades/index.html</loc>
+    <lastmod>2023-08-29T21:40:04.398Z</lastmod>
   </url>
   <url>
     <loc>https://cvmedlab.org/lab_pubs/initial_antihypertensive_prescribing_onefl.html</loc>
-    <lastmod>2023-08-29T20:57:53.150Z</lastmod>
+    <lastmod>2023-08-29T21:38:07.983Z</lastmod>
   </url>
   <url>
     <loc>https://cvmedlab.org/index.html</loc>
-    <lastmod>2023-08-29T20:57:53.540Z</lastmod>
+    <lastmod>2023-08-29T21:38:08.360Z</lastmod>
   </url>
   <url>
     <loc>https://cvmedlab.org/about.html</loc>
-    <lastmod>2023-08-29T20:58:07.428Z</lastmod>
+    <lastmod>2023-08-29T21:38:08.749Z</lastmod>
   </url>
   <url>
     <loc>https://cvmedlab.org/news/posts/high-thruput-statin-cascades/index.html</loc>
-    <lastmod>2023-08-29T20:57:53.935Z</lastmod>
-  </url>
-  <url>
-    <loc>https://cvmedlab.org/news/posts/aha-epilifestyle-2023/index.html</loc>
-    <lastmod>2023-08-29T20:57:55.089Z</lastmod>
-  </url>
-  <url>
-    <loc>https://cvmedlab.org/news/posts/cop-centennial/index.html</loc>
-    <lastmod>2023-08-29T20:57:55.469Z</lastmod>
-  </url>
-  <url>
-    <loc>https://cvmedlab.org/news/posts/2023-cop-research-showcase/index.html</loc>
-    <lastmod>2023-08-29T20:57:56.971Z</lastmod>
-  </url>
-  <url>
-    <loc>https://cvmedlab.org/news/index.html</loc>
-    <lastmod>2023-08-29T20:57:57.501Z</lastmod>
-  </url>
-  <url>
-    <loc>https://cvmedlab.org/people.html</loc>
-    <lastmod>2023-08-29T20:57:57.928Z</lastmod>
-  </url>
-  <url>
-    <loc>https://cvmedlab.org/news/posts/ispor-2023/index.html</loc>
-    <lastmod>2023-08-29T20:57:56.593Z</lastmod>
+    <lastmod>2023-08-29T21:38:09.117Z</lastmod>
   </url>
   <url>
     <loc>https://cvmedlab.org/news/posts/asinamai-ndai-ispor-2023/index.html</loc>
-    <lastmod>2023-08-29T20:57:54.302Z</lastmod>
+    <lastmod>2023-08-29T21:38:09.529Z</lastmod>
   </url>
   <url>
     <loc>https://cvmedlab.org/news/posts/2023-cicmd-research-showcase/index.html</loc>
-    <lastmod>2023-08-29T20:57:54.699Z</lastmod>
+    <lastmod>2023-08-29T21:38:09.920Z</lastmod>
   </url>
   <url>
-    <loc>https://cvmedlab.org/news/posts/smith-aha-fellow/index.html</loc>
-    <lastmod>2023-08-29T20:57:56.202Z</lastmod>
+    <loc>https://cvmedlab.org/news/posts/aha-epilifestyle-2023/index.html</loc>
+    <lastmod>2023-08-29T21:38:10.383Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cvmedlab.org/news/posts/cop-centennial/index.html</loc>
+    <lastmod>2023-08-29T21:38:10.794Z</lastmod>
   </url>
   <url>
     <loc>https://cvmedlab.org/news/posts/earl-morris-graduation/index.html</loc>
-    <lastmod>2023-08-29T20:57:55.856Z</lastmod>
+    <lastmod>2023-08-29T21:38:11.170Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cvmedlab.org/news/posts/smith-aha-fellow/index.html</loc>
+    <lastmod>2023-08-29T21:38:11.552Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cvmedlab.org/news/posts/ispor-2023/index.html</loc>
+    <lastmod>2023-08-29T21:38:11.918Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cvmedlab.org/news/posts/2023-cop-research-showcase/index.html</loc>
+    <lastmod>2023-08-29T21:38:12.363Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cvmedlab.org/news/index.html</loc>
+    <lastmod>2023-08-29T21:38:12.915Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cvmedlab.org/people.html</loc>
+    <lastmod>2023-08-29T21:38:13.339Z</lastmod>
   </url>
 </urlset>
