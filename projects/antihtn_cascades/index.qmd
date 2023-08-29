@@ -3,10 +3,12 @@ format:
   html:
     include-in-header: 
       - includes/icons.html
+resources:
+  - "ATC4_drugs.xlsx"
 ---
 
 ### [Antihypertensive Prescribing Cascades]{style="color: #1E354B"}
 
-Page coming soon. 
+Page coming soon.
 
-[ATC4 List](ATC4_drugs.xlsx)
+[ATC4 List](./ATC4_drugs.xlsx)
