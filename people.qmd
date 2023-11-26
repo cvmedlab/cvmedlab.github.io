@@ -17,7 +17,7 @@ format:
 :::
 
 ::: g-col-10
-[**Steven Smith, PharmD, MPH**]{style="color: #1E354B"} is an Assistant Professor in the Department of Pharmaceutical Outcomes & Policy (College of Pharmacy) and Division of Cardiovascular Medicine (College of Medicine) at the University of Florida. I also serve as the Associate Director (population sciences) for the UF Center for Integrative Cardiovascular and Metabolic Disease. My research methodology is fairly wide-ranging, encompassing clinical trial work and observational methods (e.g., with claims and electronic health record data), though my therapeutic focus is primarily in the field of hypertension.
+[**Steven Smith, PharmD, MPH**]{style="color: #1E354B"} is Interim Chair & Assistant Professor in the Department of Pharmaceutical Outcomes & Policy (College of Pharmacy) and Division of Cardiovascular Medicine (College of Medicine) at the University of Florida. I also serve as the Associate Director (population sciences) for the UF Center for Integrative Cardiovascular and Metabolic Disease. My research methodology is fairly wide-ranging, encompassing clinical trial work and observational methods (e.g., with claims and electronic health record data), though my therapeutic focus is primarily in the field of hypertension.
 :::
 
 ::: g-col-12
@@ -69,7 +69,7 @@ format:
 :::
 
 ::: g-col-10
-[**Earl Morris, PharmD, MPH, PhD**]{style="color: #1E354B"} is our most recent PhD grad in the Department of Pharmaceutical Outcomes and Policy. His dissertation focused on xanthine oxidase inhibitor utilization and their comparative effects on cardiovascular and related outcomes, funded by an [American Heart Association](https://www.heart.org/) Predoctoral Fellowship award. Earl is now on Faculty in the POP Department. 
+[**Earl Morris, PharmD, MPH, PhD**]{style="color: #1E354B"} is our most recent PhD grad in the Department of Pharmaceutical Outcomes and Policy. His dissertation focused on xanthine oxidase inhibitor utilization and their comparative effects on cardiovascular and related outcomes, funded by an [American Heart Association](https://www.heart.org/) Predoctoral Fellowship award. Earl is now on Faculty in the POP Department.
 :::
 
 ::: g-col-2
