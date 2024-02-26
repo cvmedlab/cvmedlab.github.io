@@ -1,0 +1,46 @@
+---
+format: 
+  html:
+    include-in-header: 
+      - /includes/icons.html
+---
+
+## [Minocycline Mechanisms in Treatment-Resistant Hypertension ("Mino-TRH")]{style="color: #1E354B"}
+
+#### Funder
+
+[National Heart, Lung and Blood Institute](https://nhlbi.nih.gov/)
+
+#### Award
+
+2R01HL132448
+
+#### PI(s)
+
+Steven Smith, Carl Pepine
+
+#### Funding Period
+
+February 2024 - January 2029
+
+#### Overview
+
+Hypertension (HTN) is the most prevalent modifiable risk for cardiovascular disease (CVD) and disorders directly influencing CVD (i.e., diabetes, chronic kidney disease, obstructive sleep apnea, etc.). Despite lifestyle changes and drug therapy advances, \~20-30% of patients with treated HTN are “resistant” to (require ≥3) antihypertensive drugs. TRH is generally thought to originate through volume overload and autonomic nervous system (ANS) dysfunction that impairs immune function and inflammatory response. However, few treatment options are available for patients with TRH and promising procedures (e.g., renal artery sympathetic denervation) remain inaccessible to most. Thus, a mechanism-based breakthrough is imperative to foster development of novel medical-based strategies to better control blood pressure (BP) and potentially cure and/or prevent TRH. Our prior work provides strong evidence for an altered gut microbiota-gut leakiness- neuroinflammation interaction hypothesis in which gut dysbiosis and gut leakiness, combined with neuroinflammation, perpetuate neurogenic HTN and contribute to TRH and possibly to racial disparities in TRH (@fig-central). We have also shown that minocycline, an antibiotic with anti-inflammatory properties, appears to reduce BP in animal HTN models as well as among patients with TRH. In this project, we propose to elucidate mechanisms that underlie the effects of minocycline on BP-lowering in White and African American individuals with TRH.
+
+![](images/Central%20Figure.png){#fig-central}
+
+Our overarching objective is to test the hypothesis that minocycline rebalances gut dysbiosis, namely by increasing butyrate-producing functional capacity, attenuating gut-mediated inflammatory response and gut leakiness, and that these effects explain BP-lowering effects in TRH. Four specific aims are proposed to support/refute this altered gut microbiota-gut leakiness- neuroinflammation interaction hypothesis in TRH:
+
+-   **Aim 1** will investigate the hypothesis that minocycline alters gut microbiota (primarily butyrate-producing capacity) that mediates minocycline-induced BP lowering in TRH.
+
+-   **Aim 2** will assess the extent to which minocycline alters gut-associated inflammation and gut leakiness, and their response with BP changes after minocycline treatment.
+
+-   **Aim 3** will evaluate the hypothesis that minocycline reduces neuroinflammation in TRH.
+
+-   **Aim 4** will evaluate the hypothesis that these effects of minocycline differ in White versus African American individuals.
+
+Together, these studies will elucidate ANS-based mechanisms of host-microbiota interactions in TRH, evaluate potential of minocycline to reduce TRH, and serve as proof of concept for other therapeutic options that rebalance microbiota or mitigate TRH-associated inflammation, to improve BP control in patients with TRH, who remain at high risk.
+
+#### Associated Manuscripts
+
+1.  Pepine CJ, et al. Potential of Minocycline for Treatment of Resistant Hypertension. Am J Cardiol 2021;156:147-149. doi: [10.1016/j.amjcard.2021.07.004](https://doi.org/10.1016/j.amjcard.2021.07.004). PubMed PMID: [34348841](https://pubmed.ncbi.nlm.nih.gov/34348841/)

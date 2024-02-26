@@ -2,9 +2,41 @@
 format: 
   html:
     include-in-header: 
-      - includes/icons.html
+      - /includes/icons.html
 ---
 
-### [Personalized Hypertension Care]{style="color: #1E354B"}
+## [Personalized Hypertension Care]{style="color: #1E354B"}
 
-Page coming soon. 
+#### Funder
+
+[National Heart, Lung and Blood Institute](https://nhlbi.nih.gov/)
+
+#### Award
+
+K01 HL138172
+
+#### PI(s)
+
+Steven Smith
+
+#### Funding Period
+
+July 2018 - June 2023
+
+#### Overview
+
+The current hypertension (HTN) treatment paradigm of trial-and-error drug selection has remained essentially unchanged for nearly half a century. Personalizing care has been challenging because patients and clinicians too often lack adequate evidence to inform individual care decisions. But, broad electronic health record (EHR) adoption has created opportunities for using routinely-collected clinical data to inform evidence. Applying principles of causal inference, such data can be used to identify clinical factors that influence observed variation in treatment response and, in turn, incorporate these factors into statistical models for predicting future treatment response for individuals. The overall objective with this project is to better understand real world use of antihypertensive drugs and factors that influence response to such drugs, with the goal of creating prediction models for use in clinical decision support tools to make personalized HTN management recommendations. The specific research aims include characterizing real world antihypertensive drug prescribing patterns and their determinants (**Aim 1**), identifying treatment effect modifiers for both effectiveness and safety of two common antihypertensive classes, angiotensin-converting enzyme inhibitors (ACE-Is) and thiazide diuretics (**Aim 2**) and, developing models for predicting response to ACE-Is and thiazide diuretics to maximize antihypertensive efficacy (**Aim 3**). This work will leverage observational research methodologies with the OneFlorida Data Trust, a statewide repository of longitudinal EHR data on \>8 million Floridians.
+
+#### Associated Manuscripts
+
+1.  Smith KM, et al. Initial antihypertensive prescribing in relation to blood pressure among Florida Medicaid and Medicare recipients in the OneFlorida+ Research Consortium. Hypertension 2024;81(2):e7-e9. doi: [10.1161/HYPERTENSIONAHA.123.21901](https://doi.org/10.1161/hypertensionaha.123.21901). PubMed PMID: [38232142](https://pubmed.ncbi.nlm.nih.gov/38232142/).
+
+2.  Smith SM, et al. Initial antihypertensive regimens in newly treated patients: Real world evidence from the OneFlorida+ Clinical Research Network. J Amer Heart Assoc 2023;12(1):e026652. doi: [10.1161/JAHA.122.026652](https://doi.org/10.1161/jaha.122.026652). PubMed PMID: [36565195](https://pubmed.ncbi.nlm.nih.gov/36565195/).
+
+3.  Chamberlain AM, et al. Disruption in blood pressure control with the COVID-19 pandemic: The PCORnet Blood Pressure Control Laboratory. Mayo Clin Proc 2023;98(5):662-75. doi: [10.1016/j.mayocp.2022.12.024](https://doi.org/10.1016/j.mayocp.2022.12.024). PubMed PMID: [37137641](https://pubmed.ncbi.nlm.nih.gov/37137641/).
+
+4.  Smith SM, et al. Angiotensin-converting enzyme inhibitors, angiotensin receptor blockers, and COVID-19-related outcomes: A patient-level analysis of the PCORnet blood pressure control lab. Am Heart J Plus 2022;13:100112. doi: [10.1016/j.ahjo.2022.100112](https://doi.org/10.1016/j.ahjo.2022.100112). PubMed PMID: [35252907](https://pubmed.ncbi.nlm.nih.gov/35252907/).
+
+5.  Derington CG, et al. Angiotensin II receptor blocker or angiotensin-converting enzyme inhibitor use and COVID-19-related outcomes among US Veterans. PLoS One 2021;16(4):e0248080. doi: [10.1371/journal.pone.0248080](https://doi.org/10.1371/journal.pone.0248080). PubMed PMID: [33891615](https://pubmed.ncbi.nlm.nih.gov/33891615/).
+
+6.  McDonough CW, et al. Optimizing Antihypertensive Medication Classification in Electronic Health Record-Based Data: Classification System Development and Methodological Comparison. JMIR Med Inform 2020;8(2):e14777. doi: [10.2196/14777](https://doi.org/10.2196/14777). PubMed PMID: [32130152](https://pubmed.ncbi.nlm.nih.gov/32130152/).
