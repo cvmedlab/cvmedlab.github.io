@@ -2,7 +2,7 @@
 format: 
   html:
     include-in-header: 
-      - /includes/icons.html
+      - ../../include/icons.html
 ---
 
 ## [Minocycline Mechanisms in Treatment-Resistant Hypertension ("Mino-TRH")]{style="color: #1E354B"}
