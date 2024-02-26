@@ -1,0 +1,15 @@
+---
+title: "Initial Antihypertensive Prescribing in Relation to Blood Pressure among Florida Medicaid and Medicare Recipients in the OneFlorida+ Research Consortium"
+author: "Steven M. Smith"
+date: "2024-01-17"
+categories: [paper]
+image: "htn_paper.png"
+---
+
+Another excellent pub for the lab, this time led by Dr. Kayla Smith. This paper is part of our [Personalized Hypertension Care project](../../../projects/personal_htn_care/), describing initiation of antihypertensive therapy in relation to baseline blood pressure. 
+
+If you don't have access to Hypertension, see below for a PDF copy of the paper. 
+
+<iframe width="100%" height="800" src="smith-et-al-2024-initial-antihypertensive-prescribing-in-relation-to-blood-pressure-among-florida-medicaid-and-medicare.pdf">
+
+</iframe>

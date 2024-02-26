@@ -11,7 +11,7 @@ The Cardiovascular Medications Lab (CVmedLab) at the University of Florida inves
 
 [Current and previous lab members](people.qmd) include graduate students pursuing master's or doctoral degrees, postdoctoral researcher associates, and Doctor of Pharmacy (Pharm.D.) students. If you are interested in cardiovascular disease treatment and using computational techniques for designing and executing studies, analyzing data, and developing new technologies, then you may be interested in joining the team.
 
-The lab is located in the [Department of Pharmaceutical Outcomes & Policy](https://pop.pharmacy.ufl.edu) in the [College of Pharmacy](https://pharmacy.ufl.edu/) at [UF](https://www.ufl.edu/), and affiliated with the [Center for Drug Evaluation and Safety](https://codes.pharmacy.ufl.edu/) and the [Center for Integrative Cardiovascular and Metabolic Disease](https://cicmd.center.ufl.edu).
+The lab is located in the [Department of Pharmaceutical Outcomes & Policy](https://pop.pharmacy.ufl.edu) in the [College of Pharmacy](https://pharmacy.ufl.edu/) at [UF](https://www.ufl.edu/), and affiliated with the [Center for Drug Evaluation and Safety](https://codes.pharmacy.ufl.edu/) and the [Center for Integrative Cardiovascular and Metabolic Disease](https://cicmd.center.ufl.edu). 
 
 ## Contact
 

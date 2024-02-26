@@ -21,6 +21,8 @@ website:
       #   href: papers.qmd
       - text: "projects"
         menu: 
+          - text: "Minocycline Mechanisms in TRH"
+            href: projects/mino_trh/index.qmd
           - text: "Antihypertensive Prescribing Cascades"
             href: projects/antihtn_cascades/index.qmd
           - text: "Personalized Hypertension Care"
