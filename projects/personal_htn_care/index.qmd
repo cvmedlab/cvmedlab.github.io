@@ -2,7 +2,7 @@
 format: 
   html:
     include-in-header: 
-      - /includes/icons.html
+      - ../../include/icons.html
 ---
 
 ## [Personalized Hypertension Care]{style="color: #1E354B"}
