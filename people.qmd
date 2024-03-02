@@ -17,7 +17,7 @@ format:
 :::
 
 ::: g-col-10
-[**Steven Smith, PharmD, MPH**]{style="color: #1E354B"} is Interim Chair & Assistant Professor in the Department of Pharmaceutical Outcomes & Policy (College of Pharmacy) and Division of Cardiovascular Medicine (College of Medicine) at the University of Florida. I also serve as the Associate Director (population sciences) for the UF Center for Integrative Cardiovascular and Metabolic Disease. My research methodology is fairly wide-ranging, encompassing clinical trial work and observational methods (e.g., with claims and electronic health record data), though my therapeutic focus is primarily in the field of hypertension.
+[**Steven Smith, PharmD, MPH**]{style="color: #1E354B"} is Interim Chair & Assistant Professor in the [Department of Pharmaceutical Outcomes & Policy](https://pop.pharmacy.ufl.edu/) ([College of Pharmacy](https://pharmacy.ufl.edu/)) and [Division of Cardiovascular Medicine](https://cardiology.medicine.ufl.edu/) ([College of Medicine](https://med.ufl.edu)) at the [University of Florida](https://www.ufl.edu/). He also serve as Co-Director for the [UF Center for Integrative Cardiovascular and Metabolic Disease](https://cicmd.center.ufl.edu/). His research methodology is fairly wide-ranging, encompassing clinical trial work and observational methods (e.g., with claims and electronic health record data), though the therapeutic focus is primarily in the field of hypertension and related cardiometabolic disease.
 :::
 
 ::: g-col-12
