@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.52">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -92,7 +92,7 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -110,7 +110,7 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
 <span class="menu-text">research</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">projects</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-projects">    
@@ -133,7 +133,7 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
 <span class="menu-text">tools</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lab-docs" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lab-docs" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">lab docs</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-lab-docs">    
@@ -181,7 +181,7 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -203,13 +203,13 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
 </figure>
 </div>
 <p>The Cardiovascular Medications Lab (CVmedLab) at the University of Florida investigates real world safety and effectiveness of cardiovascular medications. We ask questions like how are cardiovascular diseases treated in the real world and how do these treatment regimens evolve over time? Are certain medications more effective than others for a particular cardiovascular disease? To what extent are well-known disparities in cardiovascular disease outcomes explained by differences in treatment approaches? These kinds of questions are investigated using observational data (e.g., electronic health records, insurance claims data) and epidemiologic methods, as well as with prospective clinical trials. The CVmedLab uses a variety of computational methods and tools to conduct and communicate research.</p>
-<p><a href="./people.html">Current and previous lab members</a> include graduate students pursuing master’s or doctoral degrees, postdoctoral researcher associates, and Doctor of Pharmacy (Pharm.D.) students. If you are interested in cardiovascular disease treatment and using computational techniques for designing and executing studies, analyzing data, and developing new technologies, then you may be interested in joining the team.</p>
+<p><a href="./people.html">Current and previous lab members</a> include graduate students pursuing master’s or doctoral degrees, postdoctoral researcher associates, and Doctor of Pharmacy (PharmD) students. If you are interested in cardiovascular disease treatment and using computational techniques for designing and executing studies, analyzing data, and developing new technologies, then you may be interested in joining the team.</p>
 <p>The lab is located in the <a href="https://pop.pharmacy.ufl.edu">Department of Pharmaceutical Outcomes &amp; Policy</a> in the <a href="https://pharmacy.ufl.edu/">College of Pharmacy</a> at <a href="https://www.ufl.edu/">UF</a>, and affiliated with the <a href="https://codes.pharmacy.ufl.edu/">Center for Drug Evaluation and Safety</a> and the <a href="https://cicmd.center.ufl.edu">Center for Integrative Cardiovascular and Metabolic Disease</a>.</p>
 <section id="contact" class="level2">
 <h2 class="anchored" data-anchor-id="contact">Contact</h2>
 <p><strong>Steven Smith, PharmD, MPH, FCCP, FAHA</strong></p>
 <ul>
-<li>Interim Chair &amp; Assistant Professor</li>
+<li>Interim Chair &amp; Associate Professor</li>
 <li>Department of Pharmaceutical Outcomes &amp; Policy</li>
 <li>UF College of Pharmacy</li>
 <li>PO Box 100496, Gainesville, FL 32610</li>
@@ -256,18 +256,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -299,7 +288,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/cvmedlab\.org\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -334,7 +363,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
