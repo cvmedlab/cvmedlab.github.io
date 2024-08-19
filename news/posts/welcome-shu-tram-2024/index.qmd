@@ -1,0 +1,22 @@
+---
+title: "Welcome to two new CVmedLab members"
+author: "Steven M. Smith"
+date: "2024-09-18"
+categories: [news]
+image: "people_icon-04.svg"
+---
+
+It's that time of year again to welcome some new members to the lab. We have two PhD students joining this fall. 
+
+Shu Niu, a 3rd year PhD student, who comes to us from Mikael Svensson's lab. She is primarily focused on cardio-oncology, i.e., the intersection of chemotherapy and adverse cardiovascular outcomes, which represents a somewhat new area of focus for us. 
+
+Tram Nguyen is a 1st year PhD student, who just completed her Master's in Pharmacoepi/Pharmacoecon at the University of Groningen in the Netherlands. 
+
+::: {#fig-newlabmems layout-ncol=2}
+
+![Shu Niu, MS](shu-niu.png){#fig-shu width=2in}
+
+![Tram Nguyen, MS](tram_nguyen.jpg){#fig-tram width=2in}
+
+2024 New Lab Members
+:::
