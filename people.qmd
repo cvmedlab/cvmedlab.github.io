@@ -2,7 +2,7 @@
 format: 
   html:
     include-in-header: 
-      - includes/icons.html
+      - include/icons.html
 ---
 
 ::: grid
@@ -17,7 +17,7 @@ format:
 :::
 
 ::: g-col-10
-[**Steven Smith, PharmD, MPH**]{style="color: #1E354B"} is Interim Chair & Associate Professor in the [Department of Pharmaceutical Outcomes & Policy](https://pop.pharmacy.ufl.edu/) ([College of Pharmacy](https://pharmacy.ufl.edu/)) and [Division of Cardiovascular Medicine](https://cardiology.medicine.ufl.edu/) ([College of Medicine](https://med.ufl.edu)) at the [University of Florida](https://www.ufl.edu/). He also serve as Co-Director for the [UF Center for Integrative Cardiovascular and Metabolic Disease](https://cicmd.center.ufl.edu/). His research methodology is fairly wide-ranging, encompassing clinical trial work and observational methods (e.g., with claims and electronic health record data), though the therapeutic focus is primarily in the field of hypertension and related cardiometabolic disease.
+[**Steven Smith, PharmD, MPH**]{style="color: #1E354B"} is Chair & Associate Professor in the [Department of Pharmaceutical Outcomes & Policy](https://pop.pharmacy.ufl.edu/) ([College of Pharmacy](https://pharmacy.ufl.edu/)) at the [University of Florida](https://www.ufl.edu/). He has a secondary (courtesy) appointment in the [Division of Cardiovascular Medicine](https://cardiology.medicine.ufl.edu/) ([College of Medicine](https://med.ufl.edu)). He also serve as Co-Director for the [UF Center for Integrative Cardiovascular and Metabolic Disease](https://cicmd.center.ufl.edu/). His research methodology is fairly wide-ranging, encompassing clinical trial work and observational methods (e.g., with claims and electronic health record data), though the therapeutic focus is primarily in the field of hypertension and related cardiometabolic disease.
 :::
 
 ::: g-col-12
@@ -56,6 +56,14 @@ format:
 [**Shu Niu, MS**]{style="color: #1E354B"} is a PhD student in the Department of Pharmaceutical Outcomes and Policy. She is interested in the intersection of oncology drugs and cardiovascular outcomes.
 :::
 
+::: g-col-2
+![](assets/tram_nguyen.jpg){fig-align="center"}
+:::
+
+::: g-col-10
+[**Ngoc Thuy Tram (Tram) Nguyen, MS**]{style="color: #1E354B"} is a PhD student in the Department of Pharmaceutical Outcomes and Policy.
+:::
+
 ::: g-col-12
 ##### Research Coordinator(s) {style="color: #7f7f7f"}
 :::
@@ -65,7 +73,7 @@ format:
 :::
 
 ::: g-col-10
-[**Mirian Hay-Roe, PhD**]{style="color: #1E354B"} is the Research Coordinator for the [UF Center for Integrative Cardiovascular and Metabolic Disease](https://cicmd.center.ufl.edu/) and basically single-handedly runs the day-to-day activities of the CICMD. She's also adjunct faculty at Sante Fe College.
+[**Mirian Hay-Roe, PhD**]{style="color: #1E354B"} is our Research Coordinator for the [UF Center for Integrative Cardiovascular and Metabolic Disease](https://cicmd.center.ufl.edu/).
 :::
 
 ::: g-col-12
