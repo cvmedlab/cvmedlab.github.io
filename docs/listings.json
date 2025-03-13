@@ -1,23 +1,5 @@
 [
   {
-    "listing": "/labdocs/index.html",
-    "items": [
-      "/labdocs/antihypertensive_pharmacology.html",
-      "/labdocs/table1_table1.html",
-      "/labdocs/table1_gtsummary.html",
-      "/labdocs/cumulative_incidence.html",
-      "/labdocs/forest_plot.html",
-      "/labdocs/interactive_forest_plot.html",
-      "/labdocs/writing.html"
-    ]
-  },
-  {
-    "listing": "/papers.html",
-    "items": [
-      "/lab_pubs/initial_antihypertensive_prescribing_onefl.html"
-    ]
-  },
-  {
     "listing": "/news/index.html",
     "items": [
       "/news/posts/welcome-shu-tram-2024/index.html",
@@ -34,6 +16,25 @@
       "/news/posts/aha-epilifestyle-2023/index.html",
       "/news/posts/2023-cop-research-showcase/index.html",
       "/news/posts/cop-centennial/index.html"
+    ]
+  },
+  {
+    "listing": "/labdocs/index.html",
+    "items": [
+      "/labdocs/antihypertensive_pharmacology.html",
+      "/labdocs/table1_table1.html",
+      "/labdocs/table1_gtsummary.html",
+      "/labdocs/cumulative_incidence.html",
+      "/labdocs/forest_plot.html",
+      "/labdocs/interactive_forest_plot.html",
+      "/labdocs/writing.html",
+      "/labdocs/misclassification.html"
+    ]
+  },
+  {
+    "listing": "/papers.html",
+    "items": [
+      "/lab_pubs/initial_antihypertensive_prescribing_onefl.html"
     ]
   }
 ]

@@ -1,0 +1,12 @@
+---
+title: "Misclassification Demos"
+author: Steven M. Smith
+date: last-modified
+format: html
+---
+
+The following two Shiny apps demonstrate the effect of imperfect sensitivity and/or specificity of exposure and outcome measurements on risk differences, relative risk, and odds ratios.
+
+- [Exposure Misclassification](https://cvmedlab.shinyapps.io/exposure_misclassification/)
+
+- [Outcome Misclassification](https://cvmedlab.shinyapps.io/outcome_misclassification/)

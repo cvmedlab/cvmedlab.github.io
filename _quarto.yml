@@ -45,6 +45,8 @@ website:
             href: labdocs/writing.qmd
           - text: "Antihypertensive Pharmacology"
             href: labdocs/antihypertensive_pharmacology.qmd
+          - text: "Misclassification"
+            href: labdocs/misclassification.qmd
       - text: "lab manual"
         href: https://labmanual.cvmedlab.org/
       - text: "news"

@@ -68,7 +68,7 @@ I already have my data loaded in an object called `aim1cohort`, so I'm just goin
 
 ```{r a1c}
 #| code-fold: true
-load(file = "/Users/stevensmith/Dropbox (UFL)/R Projects/K01-Initial_Antihtn_Prescribing/data/aim1cohort.rda")
+load(file = "/Users/ssmithm/UFL Dropbox/Steven Smith/R Projects/K01-Initial_Antihtn_Prescribing/data/aim1cohort.rda")
 
 tab1 <- aim1cohort 
 ```
