@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CV med Lab - Lab Docs</title>
+<title>Lab Docs – CV med Lab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,8 +62,10 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script>
@@ -99,41 +107,69 @@ gtag('js', new Date());
 gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
 <body class="nav-fixed fullcontent">
 
-
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">{CVmedLab}</span>
     </a>
   </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about.html">
- <span class="menu-text">about</span></a>
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">about</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../people.html">
- <span class="menu-text">people</span></a>
+    <a class="nav-link" href="../people.html"> 
+<span class="menu-text">people</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../research.html">
- <span class="menu-text">research</span></a>
+    <a class="nav-link" href="../research.html"> 
+<span class="menu-text">research</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">projects</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-projects">    
@@ -142,17 +178,29 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
  <span class="dropdown-text">Antihypertensive Prescribing Cascades</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../projects/bp_telehealth/index.html">
+ <span class="dropdown-text">BP Telehealth</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../projects/mino_trh/index.html">
+ <span class="dropdown-text">Minocycline Mechanisms in TRH</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../projects/personal_htn_care/index.html">
  <span class="dropdown-text">Personalized Hypertension Care</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://warrior.medicine.ufl.edu/">
+ <span class="dropdown-text">WARRIOR Trial</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/ssmithm?tab=repositories">
- <span class="menu-text">tools</span></a>
+    <a class="nav-link" href="https://github.com/ssmithm?tab=repositories"> 
+<span class="menu-text">tools</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lab-docs" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lab-docs" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">lab docs</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-lab-docs">    
@@ -179,28 +227,29 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="https://labmanual.cvmedlab.org/">
- <span class="menu-text">lab manual</span></a>
+    <a class="nav-link" href="https://labmanual.cvmedlab.org/"> 
+<span class="menu-text">lab manual</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../news/index.html">
- <span class="menu-text">news</span></a>
+    <a class="nav-link" href="../news/index.html"> 
+<span class="menu-text">news</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/cvmedlab"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/cvmedlab"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/CVmedLab"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/CVmedLab"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -227,7 +276,9 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
   </div>
   
 
+
 </header>
+
 
 
 
@@ -235,25 +286,25 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1691903742000" data-listing-file-modified-sort="1691903742128" data-listing-reading-time-sort="106.5">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1691903742000" data-listing-file-modified-sort="1691903742000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="107" data-listing-word-count-sort="21300">
 <div class="thumbnail">
-<p><a href="../labdocs/antihypertensive_pharmacology.html"> <img src="../labdocs/images/AHA HTN Chapter Figures Part 2_Response and Toxicity Curves.svg" class="thumnail-image"> </a></p>
+<p><a href="../labdocs/antihypertensive_pharmacology.html" class="no-external"></a></p><a href="../labdocs/antihypertensive_pharmacology.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../labdocs/antihypertensive_pharmacology.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../labdocs/antihypertensive_pharmacology.html">
 <h3 class="no-anchor listing-title">
-Antihypertensive Pharmacology
+<a href="../labdocs/antihypertensive_pharmacology.html" class="no-external">Antihypertensive Pharmacology</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../labdocs/antihypertensive_pharmacology.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<em>Note: This is a pre-peer-reviewed version of a chapter in the AHA Comprehensive Guide on Hypertension.</em>
+<a href="../labdocs/antihypertensive_pharmacology.html" class="no-external"><em>Note: This is a pre-peer-reviewed version of a chapter in the AHA Comprehensive Guide on Hypertension.</em></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../labdocs/antihypertensive_pharmacology.html">
+<a href="../labdocs/antihypertensive_pharmacology.html" class="no-external">
 <div class="listing-date">
 Aug 13, 2023
 </div>
@@ -263,56 +314,47 @@ Steven M. Smith
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1691903742348" data-listing-reading-time-sort="16.85">
+<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1741835989749" data-listing-reading-time-sort="17" data-listing-word-count-sort="3371">
 <div class="thumbnail">
-<a href="../labdocs/table1_table1.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="../labdocs/table1_table1.html"></a></p>
+<p><a href="../labdocs/table1_table1.html" class="no-external"></a></p><a href="../labdocs/table1_table1.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../labdocs/table1_table1.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../labdocs/table1_table1.html">
 <h3 class="no-anchor listing-title">
-Baseline Characteristics Table
+<a href="../labdocs/table1_table1.html" class="no-external">Baseline Characteristics Table</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../labdocs/table1_table1.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-
-A common task for us is putting together a baseline characteristics table, or “Table 1.” This is usually painful to do by hand…<code></code>
+<a href="../labdocs/table1_table1.html" class="no-external">A common task for us is putting together a baseline characteristics table, or “Table 1.” This is usually painful to do by hand, particularly when you often have to do it…<code></code></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../labdocs/table1_table1.html"> </a>
+<p><a href="../labdocs/table1_table1.html" class="no-external"></a></p><a href="../labdocs/table1_table1.html" class="no-external">
+</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1691903742000" data-listing-file-modified-sort="1691903742347" data-listing-reading-time-sort="16.2">
+<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1691903742000" data-listing-file-modified-sort="1691903742000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="17" data-listing-word-count-sort="3240">
 <div class="thumbnail">
-<a href="../labdocs/table1_gtsummary.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="../labdocs/table1_gtsummary.html"></a></p>
+<p><a href="../labdocs/table1_gtsummary.html" class="no-external"></a></p><a href="../labdocs/table1_gtsummary.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../labdocs/table1_gtsummary.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../labdocs/table1_gtsummary.html">
 <h3 class="no-anchor listing-title">
-Baseline Characteristics Table {R}
+<a href="../labdocs/table1_gtsummary.html" class="no-external">Baseline Characteristics Table {R}</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../labdocs/table1_gtsummary.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-
-A common task for us is putting together a baseline characteristics table, or “Table 1.” This is usually painful to do by hand…<code></code>
+<a href="../labdocs/table1_gtsummary.html" class="no-external">A common task for us is putting together a baseline characteristics table, or “Table 1.” This is usually painful to do by hand, particularly when you often have to do it…<code></code></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../labdocs/table1_gtsummary.html">
+<a href="../labdocs/table1_gtsummary.html" class="no-external">
 <div class="listing-date">
 Aug 13, 2023
 </div>
@@ -322,102 +364,121 @@ Steven M. Smith
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1691903742129" data-listing-reading-time-sort="4.925">
+<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1741836831753" data-listing-reading-time-sort="5" data-listing-word-count-sort="986">
 <div class="thumbnail">
-<a href="../labdocs/cumulative_incidence.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="../labdocs/cumulative_incidence.html"></a></p>
+<p><a href="../labdocs/cumulative_incidence.html" class="no-external"></a></p><a href="../labdocs/cumulative_incidence.html" class="no-external">
+<p class="card-img-top"><img src="cumulative_incidence_files/figure-html/T1FU_plot-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="../labdocs/cumulative_incidence.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../labdocs/cumulative_incidence.html">
 <h3 class="no-anchor listing-title">
-Cumulative Incidence Curves {R}
+<a href="../labdocs/cumulative_incidence.html" class="no-external">Cumulative Incidence Curves {R}</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../labdocs/cumulative_incidence.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-This is an…
+<a href="../labdocs/cumulative_incidence.html" class="no-external">This is an example of creating cumulative incidence curves for a time-to-event outcome. Here, we’re using our Personal Hypertension Care project data from the OneFlorida…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../labdocs/cumulative_incidence.html"> </a>
+<p><a href="../labdocs/cumulative_incidence.html" class="no-external"></a></p><a href="../labdocs/cumulative_incidence.html" class="no-external">
+</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-listing-file-modified-sort="1691903742282" data-listing-reading-time-sort="7.94">
+<div class="quarto-post image-right" data-index="4" data-listing-file-modified-sort="1691903742000" data-listing-reading-time-sort="8" data-listing-word-count-sort="1585">
 <div class="thumbnail">
-<p><a href="../labdocs/forest_plot.html"> <img src="../assets/screengrabs/labdocs_forestplot1.png" class="thumnail-image"> </a></p>
+<p><a href="../labdocs/forest_plot.html" class="no-external"></a></p><a href="../labdocs/forest_plot.html" class="no-external">
+<p class="card-img-top"><img src="../assets/screengrabs/labdocs_forestplot1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="../labdocs/forest_plot.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../labdocs/forest_plot.html">
 <h3 class="no-anchor listing-title">
-Forest Plot
+<a href="../labdocs/forest_plot.html" class="no-external">Forest Plot</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../labdocs/forest_plot.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-We often do stratified analyses, in which we wish to show hazard ratios, or odds ratios, and their confidence…<em></em>
+<a href="../labdocs/forest_plot.html" class="no-external">We often do stratified analyses, in which we wish to show hazard ratios, or odds ratios, and their confidence intervals graphically, stratified across levels of a variable.…<em></em></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../labdocs/forest_plot.html"> </a>
+<p><a href="../labdocs/forest_plot.html" class="no-external"></a></p><a href="../labdocs/forest_plot.html" class="no-external">
+</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-listing-file-modified-sort="1691903742298" data-listing-reading-time-sort="16.465">
+<div class="quarto-post image-right" data-index="5" data-listing-file-modified-sort="1691903742000" data-listing-reading-time-sort="17" data-listing-word-count-sort="3293">
 <div class="thumbnail">
-<a href="../labdocs/interactive_forest_plot.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="../labdocs/interactive_forest_plot.html"></a></p>
+<p><a href="../labdocs/interactive_forest_plot.html" class="no-external"></a></p><a href="../labdocs/interactive_forest_plot.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../labdocs/interactive_forest_plot.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../labdocs/interactive_forest_plot.html">
 <h3 class="no-anchor listing-title">
-Interactive Forest Plot
+<a href="../labdocs/interactive_forest_plot.html" class="no-external">Interactive Forest Plot</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../labdocs/interactive_forest_plot.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-Ok, this may be a complete bust, but I’m going to try to create an interactive Forest Plot with Observable JS in Quarto. Here goes.
+<a href="../labdocs/interactive_forest_plot.html" class="no-external">Ok, this may be a complete bust, but I’m going to try to create an interactive Forest Plot with Observable JS in Quarto. Here goes.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../labdocs/interactive_forest_plot.html"> </a>
+<p><a href="../labdocs/interactive_forest_plot.html" class="no-external"></a></p><a href="../labdocs/interactive_forest_plot.html" class="no-external">
+</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-listing-date-sort="1669757169000" data-listing-file-modified-sort="1669757169000" data-listing-reading-time-sort="28.885">
+<div class="quarto-post image-right" data-index="6" data-listing-date-sort="1669757169000" data-listing-file-modified-sort="1669757169000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="29" data-listing-word-count-sort="5777">
 <div class="thumbnail">
-<a href="../labdocs/writing.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="../labdocs/writing.html"></a></p>
+<p><a href="../labdocs/writing.html" class="no-external"></a></p><a href="../labdocs/writing.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../labdocs/writing.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../labdocs/writing.html">
 <h3 class="no-anchor listing-title">
-Manuscript Writing
+<a href="../labdocs/writing.html" class="no-external">Manuscript Writing</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../labdocs/writing.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-Whether writing for medical journals, patient notes, or any other professional reason, you should strive to effectively and efficiently communicate your ideas to the reader.…
+<a href="../labdocs/writing.html" class="no-external">Whether writing for medical journals, patient notes, or any other professional reason, you should strive to effectively and efficiently communicate your ideas to the reader.…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../labdocs/writing.html">
+<a href="../labdocs/writing.html" class="no-external">
 <div class="listing-date">
 Nov 29, 2022
+</div>
+<div class="listing-author">
+Steven M. Smith
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="7" data-listing-date-sort="1741836615000" data-listing-file-modified-sort="1741836615851" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="30">
+<div class="thumbnail">
+<p><a href="../labdocs/misclassification.html" class="no-external"></a></p><a href="../labdocs/misclassification.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../labdocs/misclassification.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../labdocs/misclassification.html" class="no-external">Misclassification Demos</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../labdocs/misclassification.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="../labdocs/misclassification.html" class="no-external">The following two Shiny apps demonstrate the effect of imperfect sensitivity and/or specificity of exposure and outcome measurements on risk differences, relative risk, and…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../labdocs/misclassification.html" class="no-external">
+<div class="listing-date">
+Mar 12, 2025
 </div>
 <div class="listing-author">
 Steven M. Smith
@@ -457,12 +518,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
     }
-  });
-  clipboard.on('success', function(e) {
+    return false;
+  }
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -494,11 +558,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/cvmedlab\.org\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -508,8 +611,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -521,9 +633,245 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -564,6 +912,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

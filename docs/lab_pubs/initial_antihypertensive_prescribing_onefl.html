@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -16,7 +16,7 @@
 <meta name="author" content="Carl J. Pepine">
 <meta name="author" content="Rhonda M. Cooper-DeHoff">
 
-<title>CV med Lab - Initial Antihypertensive Regimens in Newly Treated Patients: Real World Evidence from the OneFlorida+ Clinical Research Network</title>
+<title>Initial Antihypertensive Regimens in Newly Treated Patients: Real World Evidence from the OneFlorida+ Clinical Research Network – CV med Lab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -26,14 +26,15 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -47,8 +48,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -73,7 +73,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -82,8 +88,10 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-K32ECMZR0R"></script>
@@ -101,35 +109,35 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
 
 <body class="nav-fixed">
 
-
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">{CVmedLab}</span>
     </a>
   </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about.html">
- <span class="menu-text">about</span></a>
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">about</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../people.html">
- <span class="menu-text">people</span></a>
+    <a class="nav-link" href="../people.html"> 
+<span class="menu-text">people</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../research.html">
- <span class="menu-text">research</span></a>
+    <a class="nav-link" href="../research.html"> 
+<span class="menu-text">research</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">projects</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-projects">    
@@ -138,17 +146,29 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
  <span class="dropdown-text">Antihypertensive Prescribing Cascades</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../projects/bp_telehealth/index.html">
+ <span class="dropdown-text">BP Telehealth</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../projects/mino_trh/index.html">
+ <span class="dropdown-text">Minocycline Mechanisms in TRH</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../projects/personal_htn_care/index.html">
  <span class="dropdown-text">Personalized Hypertension Care</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://warrior.medicine.ufl.edu/">
+ <span class="dropdown-text">WARRIOR Trial</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/ssmithm?tab=repositories">
- <span class="menu-text">tools</span></a>
+    <a class="nav-link" href="https://github.com/ssmithm?tab=repositories"> 
+<span class="menu-text">tools</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lab-docs" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lab-docs" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">lab docs</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-lab-docs">    
@@ -175,28 +195,29 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="https://labmanual.cvmedlab.org/">
- <span class="menu-text">lab manual</span></a>
+    <a class="nav-link" href="https://labmanual.cvmedlab.org/"> 
+<span class="menu-text">lab manual</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../news/index.html">
- <span class="menu-text">news</span></a>
+    <a class="nav-link" href="../news/index.html"> 
+<span class="menu-text">news</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/cvmedlab"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/cvmedlab"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/CVmedLab"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/CVmedLab"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -224,9 +245,9 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
   <li><a href="#stratified-analyses-demographics-and-comorbidities" id="toc-stratified-analyses-demographics-and-comorbidities" class="nav-link" data-scroll-target="#stratified-analyses-demographics-and-comorbidities">Stratified Analyses: Demographics and Comorbidities</a></li>
   </ul></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">DISCUSSION</a></li>
-  <li><a href="#funding" id="toc-funding" class="nav-link" data-scroll-target="#funding">Funding</a></li>
-  <li><a href="#disclosures" id="toc-disclosures" class="nav-link" data-scroll-target="#disclosures">Disclosures</a></li>
-  <li><a href="#supplement" id="toc-supplement" class="nav-link" data-scroll-target="#supplement">Supplement</a></li>
+  
+  
+  
   </ul>
 </nav>
     </div>
@@ -244,9 +265,9 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
   <div class="quarto-title-meta-heading">Affiliations</div>
   
     <div class="quarto-title-meta-contents">
-    Steven M. Smith 
+    <p class="author">Steven M. Smith </p>
   </div>
-    <div class="quarto-title-meta-contents">
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             Department of Pharmaceutical Outcomes &amp; Policy, College of Pharmacy, University of Florida
           </p>
@@ -257,66 +278,66 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
             Center for Integrative Cardiovascular and Metabolic Disease, University of Florida
           </p>
       </div>
-      <div class="quarto-title-meta-contents">
-    Almut G. Winterstein 
-  </div>
     <div class="quarto-title-meta-contents">
+    <p class="author">Almut G. Winterstein </p>
+  </div>
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             Department of Pharmaceutical Outcomes &amp; Policy, College of Pharmacy, University of Florida
           </p>
       </div>
-      <div class="quarto-title-meta-contents">
-    Matthew J. Gurka 
-  </div>
     <div class="quarto-title-meta-contents">
+    <p class="author">Matthew J. Gurka </p>
+  </div>
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             Department of Pediatrics, College of Medicine, University of Florida
           </p>
       </div>
-      <div class="quarto-title-meta-contents">
-    Marta G. Walsh 
-  </div>
     <div class="quarto-title-meta-contents">
+    <p class="author">Marta G. Walsh </p>
+  </div>
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             Department of Pharmaceutical Outcomes &amp; Policy, College of Pharmacy, University of Florida
           </p>
       </div>
-      <div class="quarto-title-meta-contents">
-    Shailina Keshwani 
-  </div>
     <div class="quarto-title-meta-contents">
+    <p class="author">Shailina Keshwani </p>
+  </div>
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             Department of Pharmaceutical Outcomes &amp; Policy, College of Pharmacy, University of Florida
           </p>
       </div>
-      <div class="quarto-title-meta-contents">
-    Anne Libby 
-  </div>
     <div class="quarto-title-meta-contents">
+    <p class="author">Anne Libby </p>
+  </div>
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             Department of Emergency Medicine, School of Medicine, University of Colorado Denver
           </p>
       </div>
-      <div class="quarto-title-meta-contents">
-    William Hogan 
-  </div>
     <div class="quarto-title-meta-contents">
+    <p class="author">William Hogan </p>
+  </div>
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             Department of Health Outcomes &amp; Biomedical Informatics, College of Medicine, University of Florida
           </p>
       </div>
-      <div class="quarto-title-meta-contents">
-    Carl J. Pepine 
-  </div>
     <div class="quarto-title-meta-contents">
+    <p class="author">Carl J. Pepine </p>
+  </div>
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             Division of Cardiovascular Medicine, Department of Medicine, College of Medicine, University of Florida
           </p>
       </div>
-      <div class="quarto-title-meta-contents">
-    Rhonda M. Cooper-DeHoff 
-  </div>
     <div class="quarto-title-meta-contents">
+    <p class="author">Rhonda M. Cooper-DeHoff </p>
+  </div>
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             Division of Cardiovascular Medicine, Department of Medicine, College of Medicine, University of Florida
           </p>
@@ -324,7 +345,7 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
             Department of Pharmacotherapy &amp; Translational Research, College of Pharmacy, University of Florida
           </p>
       </div>
-    </div>
+  </div>
 
 <div class="quarto-title-meta">
 
@@ -335,14 +356,16 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
   
 <div>
   <div class="abstract">
-    <div class="abstract-title">Abstract</div>
+    <div class="block-title">Abstract</div>
     <p>Background: Knowledge of real-world antihypertensive use is limited to prevalent hypertension, limiting our understanding of how treatment evolves and its contribution to persistently poor BP control. We sought to characterize antihypertensive initiation among new users.</p>
     <p>Methods and Results: Using Medicaid and Medicare data from the OneFlorida+ Clinical Research Consortium, we identified new users of ≥1 first-line antihypertensives (angiotensin converting enzyme inhibitor [ACEI], calcium channel blocker [CCB], angiotensin receptor blocker [ARB], thiazide diuretic, or β-blocker) between 2013 and 2021 among adults with diagnosed hypertension, and no antihypertensive fill during the 12 months prior. We evaluated initial antihypertensive regimens by class and drug overall and across study years, and examined variation in antihypertensive initiation across demographic (sex, race, ethnicity), comorbidity (chronic kidney disease, diabetes, and atherosclerotic cardiovascular disease). We identified 143,054 patients initiating 188,995 antihypertensives (75% monotherapy; 25% combination therapy), with mean age, 59 years and 57% of whom were women. The most commonly initiated antihypertensive class overall was ACEIs (39%) followed by β-blockers (31%), CCBs (24%), thiazides (19%), and ARBs (11%). Excepting β-blockers, a single drug accounted for ≥75% of use of each class. β-blocker use decreased (35% to 26%) and CCB use increased (24% to 28%) over the study period, while initiation of most other classes remained relatively stable. We also observed significant differences in antihypertensive selection across demographic and comorbidity strata.</p>
     <p>Conclusions: These findings indicate substantial variation exists in initial antihypertensive prescribing and there remain significant gaps between current guideline recommendations and real-world implementation in early hypertension care.</p>
   </div>
 </div>
 
+
 </header>
+
 
 <section id="introduction" class="level3">
 <h3 class="anchored" data-anchor-id="introduction">INTRODUCTION</h3>
@@ -372,11 +395,15 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
 </section>
 <section id="results" class="level3">
 <h3 class="anchored" data-anchor-id="results">RESULTS</h3>
-<p>We identified a total of 143,054 patients with newly-treated hypertension, with approximately similar numbers of Medicaid (n=71,774; 50.1% of total cohort) and Medicare (n=71,280; 49.8% of total cohort) recipients (<a href="initial_antihypertensive_prescribing_onefl_suppl.pdf" target="_blank">Figure S2</a>). Baseline characteristics of the cohort are summarized in <a href="#tbl-1">Table&nbsp;1</a>. Briefly, patients were aged 59 years on average (Medicaid, 47 years vs.&nbsp;Medicare, 72 years) and 57% were women. A plurality of patients self-reported as White (49% overall; Medicaid, 35% vs.&nbsp;Medicare, 63%), 24% (Medicaid, 31%; Medicare, 17%) as Black or African American, and 12% had missing race information; 16% (Medicaid, 18%; Medicare, 14%) were Hispanic. The most common comorbidities were diabetes (21%) and depression (18%), and nearly one-quarter were current smokers. Chronic kidney disease and ASCVD were considerably more common in the Medicare versus Medicaid population.</p>
+<p>We identified a total of 143,054 patients with newly-treated hypertension, with approximately similar numbers of Medicaid (n=71,774; 50.1% of total cohort) and Medicare (n=71,280; 49.8% of total cohort) recipients (<a href="initial_antihypertensive_prescribing_onefl_suppl.pdf" target="_blank">Figure S2</a>). Baseline characteristics of the cohort are summarized in <a href="#tbl-1" class="quarto-xref">Table&nbsp;1</a>. Briefly, patients were aged 59 years on average (Medicaid, 47 years vs.&nbsp;Medicare, 72 years) and 57% were women. A plurality of patients self-reported as White (49% overall; Medicaid, 35% vs.&nbsp;Medicare, 63%), 24% (Medicaid, 31%; Medicare, 17%) as Black or African American, and 12% had missing race information; 16% (Medicaid, 18%; Medicare, 14%) were Hispanic. The most common comorbidities were diabetes (21%) and depression (18%), and nearly one-quarter were current smokers. Chronic kidney disease and ASCVD were considerably more common in the Medicare versus Medicaid population.</p>
 <div class="cell">
+<div id="tbl-1" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Baseline characteristics of new antihypertensive users.
+</figcaption>
+<div aria-describedby="tbl-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-1" class="anchored">
-
 <div id="rmdqbqnfri" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#rmdqbqnfri table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -817,277 +844,401 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption>Table&nbsp;1:  Baseline characteristics of new antihypertensive users. </caption>
-  <thead>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<strong>Characteristic</strong>"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>Overall</strong>, N = 143,054<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>"><strong>Overall</strong>, N = 143,054<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>Medicaid</strong>, N = 71,774<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>"><strong>Medicaid</strong>, N = 71,774<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>Medicare</strong>, N = 71,280<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>"><strong>Medicare</strong>, N = 71,280<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="label" class="gt_row gt_left">Age, years</td>
-<td headers="stat_0" class="gt_row gt_center">57 ± 18</td>
-<td headers="stat_1" class="gt_row gt_center">46 ± 14</td>
-<td headers="stat_2" class="gt_row gt_center">69 ± 14</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;(Missing)</td>
-<td headers="stat_0" class="gt_row gt_center">282</td>
-<td headers="stat_1" class="gt_row gt_center">282</td>
-<td headers="stat_2" class="gt_row gt_center">0</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Age Category</td>
-<td headers="stat_0" class="gt_row gt_center"></td>
-<td headers="stat_1" class="gt_row gt_center"></td>
-<td headers="stat_2" class="gt_row gt_center"></td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;&lt;45 y</td>
-<td headers="stat_0" class="gt_row gt_center">38,213 (27%)</td>
-<td headers="stat_1" class="gt_row gt_center">33,176 (46%)</td>
-<td headers="stat_2" class="gt_row gt_center">5,037 (7.1%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;45-64 y</td>
-<td headers="stat_0" class="gt_row gt_center">51,007 (36%)</td>
-<td headers="stat_1" class="gt_row gt_center">34,274 (48%)</td>
-<td headers="stat_2" class="gt_row gt_center">16,733 (23%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;&gt;65 y</td>
-<td headers="stat_0" class="gt_row gt_center">53,834 (38%)</td>
-<td headers="stat_1" class="gt_row gt_center">4,324 (6.0%)</td>
-<td headers="stat_2" class="gt_row gt_center">49,510 (69%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Sex</td>
-<td headers="stat_0" class="gt_row gt_center"></td>
-<td headers="stat_1" class="gt_row gt_center"></td>
-<td headers="stat_2" class="gt_row gt_center"></td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Female</td>
-<td headers="stat_0" class="gt_row gt_center">81,555 (57%)</td>
-<td headers="stat_1" class="gt_row gt_center">43,011 (60%)</td>
-<td headers="stat_2" class="gt_row gt_center">38,544 (54%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Male</td>
-<td headers="stat_0" class="gt_row gt_center">61,493 (43%)</td>
-<td headers="stat_1" class="gt_row gt_center">28,760 (40%)</td>
-<td headers="stat_2" class="gt_row gt_center">32,733 (46%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
-<td headers="stat_0" class="gt_row gt_center">6 (&lt;0.1%)</td>
-<td headers="stat_1" class="gt_row gt_center">3 (&lt;0.1%)</td>
-<td headers="stat_2" class="gt_row gt_center">3 (&lt;0.1%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Race</td>
-<td headers="stat_0" class="gt_row gt_center"></td>
-<td headers="stat_1" class="gt_row gt_center"></td>
-<td headers="stat_2" class="gt_row gt_center"></td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;American Indian or Alaska Native</td>
-<td headers="stat_0" class="gt_row gt_center">334 (0.2%)</td>
-<td headers="stat_1" class="gt_row gt_center">165 (0.2%)</td>
-<td headers="stat_2" class="gt_row gt_center">169 (0.2%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Asian</td>
-<td headers="stat_0" class="gt_row gt_center">1,447 (1.0%)</td>
-<td headers="stat_1" class="gt_row gt_center">659 (0.9%)</td>
-<td headers="stat_2" class="gt_row gt_center">788 (1.1%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Black or African American</td>
-<td headers="stat_0" class="gt_row gt_center">33,814 (24%)</td>
-<td headers="stat_1" class="gt_row gt_center">22,041 (31%)</td>
-<td headers="stat_2" class="gt_row gt_center">11,773 (17%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Native Hawaiian or Other Pacific</td>
-<td headers="stat_0" class="gt_row gt_center">33 (&lt;0.1%)</td>
-<td headers="stat_1" class="gt_row gt_center">11 (&lt;0.1%)</td>
-<td headers="stat_2" class="gt_row gt_center">22 (&lt;0.1%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;White</td>
-<td headers="stat_0" class="gt_row gt_center">70,156 (49%)</td>
-<td headers="stat_1" class="gt_row gt_center">25,304 (35%)</td>
-<td headers="stat_2" class="gt_row gt_center">44,852 (63%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Multiple Race</td>
-<td headers="stat_0" class="gt_row gt_center">503 (0.4%)</td>
-<td headers="stat_1" class="gt_row gt_center">167 (0.2%)</td>
-<td headers="stat_2" class="gt_row gt_center">336 (0.5%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Other</td>
-<td headers="stat_0" class="gt_row gt_center">20,555 (14%)</td>
-<td headers="stat_1" class="gt_row gt_center">11,610 (16%)</td>
-<td headers="stat_2" class="gt_row gt_center">8,945 (13%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
-<td headers="stat_0" class="gt_row gt_center">16,212 (11%)</td>
-<td headers="stat_1" class="gt_row gt_center">11,817 (16%)</td>
-<td headers="stat_2" class="gt_row gt_center">4,395 (6.2%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Ethnicity</td>
-<td headers="stat_0" class="gt_row gt_center"></td>
-<td headers="stat_1" class="gt_row gt_center"></td>
-<td headers="stat_2" class="gt_row gt_center"></td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Hispanic</td>
-<td headers="stat_0" class="gt_row gt_center">22,680 (16%)</td>
-<td headers="stat_1" class="gt_row gt_center">13,016 (18%)</td>
-<td headers="stat_2" class="gt_row gt_center">9,664 (14%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Not Hispanic</td>
-<td headers="stat_0" class="gt_row gt_center">99,483 (70%)</td>
-<td headers="stat_1" class="gt_row gt_center">44,696 (62%)</td>
-<td headers="stat_2" class="gt_row gt_center">54,787 (77%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
-<td headers="stat_0" class="gt_row gt_center">20,891 (15%)</td>
-<td headers="stat_1" class="gt_row gt_center">14,062 (20%)</td>
-<td headers="stat_2" class="gt_row gt_center">6,829 (9.6%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Current Smoker</td>
-<td headers="stat_0" class="gt_row gt_center">32,080 (22%)</td>
-<td headers="stat_1" class="gt_row gt_center">17,035 (24%)</td>
-<td headers="stat_2" class="gt_row gt_center">15,045 (21%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Diabetes</td>
-<td headers="stat_0" class="gt_row gt_center">29,633 (21%)</td>
-<td headers="stat_1" class="gt_row gt_center">13,802 (19%)</td>
-<td headers="stat_2" class="gt_row gt_center">15,831 (22%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Chronic kidney disease</td>
-<td headers="stat_0" class="gt_row gt_center">17,626 (12%)</td>
-<td headers="stat_1" class="gt_row gt_center">5,111 (7.1%)</td>
-<td headers="stat_2" class="gt_row gt_center">12,515 (18%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">End-stage renal disease</td>
-<td headers="stat_0" class="gt_row gt_center">1,072 (0.7%)</td>
-<td headers="stat_1" class="gt_row gt_center">233 (0.3%)</td>
-<td headers="stat_2" class="gt_row gt_center">839 (1.2%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Heart failure w/ reduced EF</td>
-<td headers="stat_0" class="gt_row gt_center">2,858 (2.0%)</td>
-<td headers="stat_1" class="gt_row gt_center">1,264 (1.8%)</td>
-<td headers="stat_2" class="gt_row gt_center">1,594 (2.2%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Coronary heart disease</td>
-<td headers="stat_0" class="gt_row gt_center">7,940 (5.6%)</td>
-<td headers="stat_1" class="gt_row gt_center">2,742 (3.8%)</td>
-<td headers="stat_2" class="gt_row gt_center">5,198 (7.3%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Prior coronary revascularization</td>
-<td headers="stat_0" class="gt_row gt_center">728 (0.5%)</td>
-<td headers="stat_1" class="gt_row gt_center">142 (0.2%)</td>
-<td headers="stat_2" class="gt_row gt_center">586 (0.8%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Prior stroke or TIA</td>
-<td headers="stat_0" class="gt_row gt_center">2,292 (1.6%)</td>
-<td headers="stat_1" class="gt_row gt_center">309 (0.4%)</td>
-<td headers="stat_2" class="gt_row gt_center">1,983 (2.8%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Peripheral arterial disease</td>
-<td headers="stat_0" class="gt_row gt_center">9,388 (6.6%)</td>
-<td headers="stat_1" class="gt_row gt_center">1,483 (2.1%)</td>
-<td headers="stat_2" class="gt_row gt_center">7,905 (11%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">History of clinical ASCVD</td>
-<td headers="stat_0" class="gt_row gt_center">17,416 (12%)</td>
-<td headers="stat_1" class="gt_row gt_center">4,229 (5.9%)</td>
-<td headers="stat_2" class="gt_row gt_center">13,187 (19%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Atrial fibrillation</td>
-<td headers="stat_0" class="gt_row gt_center">10,024 (7.0%)</td>
-<td headers="stat_1" class="gt_row gt_center">1,375 (1.9%)</td>
-<td headers="stat_2" class="gt_row gt_center">8,649 (12%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Chronic obstructive pulmonary disease</td>
-<td headers="stat_0" class="gt_row gt_center">7,769 (5.4%)</td>
-<td headers="stat_1" class="gt_row gt_center">4,588 (6.4%)</td>
-<td headers="stat_2" class="gt_row gt_center">3,181 (4.5%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Asthma</td>
-<td headers="stat_0" class="gt_row gt_center">6,066 (4.2%)</td>
-<td headers="stat_1" class="gt_row gt_center">4,855 (6.8%)</td>
-<td headers="stat_2" class="gt_row gt_center">1,211 (1.7%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Depression</td>
-<td headers="stat_0" class="gt_row gt_center">25,690 (18%)</td>
-<td headers="stat_1" class="gt_row gt_center">10,670 (15%)</td>
-<td headers="stat_2" class="gt_row gt_center">15,020 (21%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Combined Comorbidity Score</td>
-<td headers="stat_0" class="gt_row gt_center">2.5 ± 3.5</td>
-<td headers="stat_1" class="gt_row gt_center">1.6 ± 2.8</td>
-<td headers="stat_2" class="gt_row gt_center">3.5 ± 3.9</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Statin</td>
-<td headers="stat_0" class="gt_row gt_center">31,421 (22%)</td>
-<td headers="stat_1" class="gt_row gt_center">13,201 (18%)</td>
-<td headers="stat_2" class="gt_row gt_center">18,220 (26%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Aspirin</td>
-<td headers="stat_0" class="gt_row gt_center">11,663 (8.2%)</td>
-<td headers="stat_1" class="gt_row gt_center">6,115 (8.5%)</td>
-<td headers="stat_2" class="gt_row gt_center">5,548 (7.8%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Index Year</td>
-<td headers="stat_0" class="gt_row gt_center"></td>
-<td headers="stat_1" class="gt_row gt_center"></td>
-<td headers="stat_2" class="gt_row gt_center"></td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;2012</td>
-<td headers="stat_0" class="gt_row gt_center">32 (&lt;0.1%)</td>
-<td headers="stat_1" class="gt_row gt_center">1 (&lt;0.1%)</td>
-<td headers="stat_2" class="gt_row gt_center">31 (&lt;0.1%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;2013</td>
-<td headers="stat_0" class="gt_row gt_center">17,728 (12%)</td>
-<td headers="stat_1" class="gt_row gt_center">485 (0.7%)</td>
-<td headers="stat_2" class="gt_row gt_center">17,243 (24%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;2014</td>
-<td headers="stat_0" class="gt_row gt_center">31,711 (22%)</td>
-<td headers="stat_1" class="gt_row gt_center">11,457 (16%)</td>
-<td headers="stat_2" class="gt_row gt_center">20,254 (28%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;2015</td>
-<td headers="stat_0" class="gt_row gt_center">27,205 (19%)</td>
-<td headers="stat_1" class="gt_row gt_center">11,039 (15%)</td>
-<td headers="stat_2" class="gt_row gt_center">16,166 (23%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;2016</td>
-<td headers="stat_0" class="gt_row gt_center">19,283 (13%)</td>
-<td headers="stat_1" class="gt_row gt_center">10,664 (15%)</td>
-<td headers="stat_2" class="gt_row gt_center">8,619 (12%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;2017</td>
-<td headers="stat_0" class="gt_row gt_center">18,661 (13%)</td>
-<td headers="stat_1" class="gt_row gt_center">9,694 (14%)</td>
-<td headers="stat_2" class="gt_row gt_center">8,967 (13%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;2018</td>
-<td headers="stat_0" class="gt_row gt_center">8,963 (6.3%)</td>
-<td headers="stat_1" class="gt_row gt_center">8,963 (12%)</td>
-<td headers="stat_2" class="gt_row gt_center">0 (0%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;2019</td>
-<td headers="stat_0" class="gt_row gt_center">8,164 (5.7%)</td>
-<td headers="stat_1" class="gt_row gt_center">8,164 (11%)</td>
-<td headers="stat_2" class="gt_row gt_center">0 (0%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;2020</td>
-<td headers="stat_0" class="gt_row gt_center">7,520 (5.3%)</td>
-<td headers="stat_1" class="gt_row gt_center">7,520 (10%)</td>
-<td headers="stat_2" class="gt_row gt_center">0 (0%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;2021</td>
-<td headers="stat_0" class="gt_row gt_center">3,787 (2.6%)</td>
-<td headers="stat_1" class="gt_row gt_center">3,787 (5.3%)</td>
-<td headers="stat_2" class="gt_row gt_center">0 (0%)</td></tr>
-  </tbody>
-  
-  <tfoot class="gt_footnotes">
-    <tr>
-      <td class="gt_footnote" colspan="4"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Mean ± SD; n (%)</td>
-    </tr>
-  </tfoot>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="<strong>Overall</strong>, N = 143,054<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Overall</strong>, N = 143,054<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+<th id="<strong>Medicaid</strong>, N = 71,774<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Medicaid</strong>, N = 71,774<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+<th id="<strong>Medicare</strong>, N = 71,280<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Medicare</strong>, N = 71,280<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Age, years</td>
+<td class="gt_row gt_center" headers="stat_0">57 ± 18</td>
+<td class="gt_row gt_center" headers="stat_1">46 ± 14</td>
+<td class="gt_row gt_center" headers="stat_2">69 ± 14</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;(Missing)</td>
+<td class="gt_row gt_center" headers="stat_0">282</td>
+<td class="gt_row gt_center" headers="stat_1">282</td>
+<td class="gt_row gt_center" headers="stat_2">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Age Category</td>
+<td class="gt_row gt_center" headers="stat_0"></td>
+<td class="gt_row gt_center" headers="stat_1"></td>
+<td class="gt_row gt_center" headers="stat_2"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;&lt;45 y</td>
+<td class="gt_row gt_center" headers="stat_0">38,213 (27%)</td>
+<td class="gt_row gt_center" headers="stat_1">33,176 (46%)</td>
+<td class="gt_row gt_center" headers="stat_2">5,037 (7.1%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;45-64 y</td>
+<td class="gt_row gt_center" headers="stat_0">51,007 (36%)</td>
+<td class="gt_row gt_center" headers="stat_1">34,274 (48%)</td>
+<td class="gt_row gt_center" headers="stat_2">16,733 (23%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;&gt;65 y</td>
+<td class="gt_row gt_center" headers="stat_0">53,834 (38%)</td>
+<td class="gt_row gt_center" headers="stat_1">4,324 (6.0%)</td>
+<td class="gt_row gt_center" headers="stat_2">49,510 (69%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Sex</td>
+<td class="gt_row gt_center" headers="stat_0"></td>
+<td class="gt_row gt_center" headers="stat_1"></td>
+<td class="gt_row gt_center" headers="stat_2"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Female</td>
+<td class="gt_row gt_center" headers="stat_0">81,555 (57%)</td>
+<td class="gt_row gt_center" headers="stat_1">43,011 (60%)</td>
+<td class="gt_row gt_center" headers="stat_2">38,544 (54%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Male</td>
+<td class="gt_row gt_center" headers="stat_0">61,493 (43%)</td>
+<td class="gt_row gt_center" headers="stat_1">28,760 (40%)</td>
+<td class="gt_row gt_center" headers="stat_2">32,733 (46%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td class="gt_row gt_center" headers="stat_0">6 (&lt;0.1%)</td>
+<td class="gt_row gt_center" headers="stat_1">3 (&lt;0.1%)</td>
+<td class="gt_row gt_center" headers="stat_2">3 (&lt;0.1%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Race</td>
+<td class="gt_row gt_center" headers="stat_0"></td>
+<td class="gt_row gt_center" headers="stat_1"></td>
+<td class="gt_row gt_center" headers="stat_2"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;American Indian or Alaska Native</td>
+<td class="gt_row gt_center" headers="stat_0">334 (0.2%)</td>
+<td class="gt_row gt_center" headers="stat_1">165 (0.2%)</td>
+<td class="gt_row gt_center" headers="stat_2">169 (0.2%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Asian</td>
+<td class="gt_row gt_center" headers="stat_0">1,447 (1.0%)</td>
+<td class="gt_row gt_center" headers="stat_1">659 (0.9%)</td>
+<td class="gt_row gt_center" headers="stat_2">788 (1.1%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Black or African American</td>
+<td class="gt_row gt_center" headers="stat_0">33,814 (24%)</td>
+<td class="gt_row gt_center" headers="stat_1">22,041 (31%)</td>
+<td class="gt_row gt_center" headers="stat_2">11,773 (17%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Native Hawaiian or Other Pacific</td>
+<td class="gt_row gt_center" headers="stat_0">33 (&lt;0.1%)</td>
+<td class="gt_row gt_center" headers="stat_1">11 (&lt;0.1%)</td>
+<td class="gt_row gt_center" headers="stat_2">22 (&lt;0.1%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;White</td>
+<td class="gt_row gt_center" headers="stat_0">70,156 (49%)</td>
+<td class="gt_row gt_center" headers="stat_1">25,304 (35%)</td>
+<td class="gt_row gt_center" headers="stat_2">44,852 (63%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Multiple Race</td>
+<td class="gt_row gt_center" headers="stat_0">503 (0.4%)</td>
+<td class="gt_row gt_center" headers="stat_1">167 (0.2%)</td>
+<td class="gt_row gt_center" headers="stat_2">336 (0.5%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Other</td>
+<td class="gt_row gt_center" headers="stat_0">20,555 (14%)</td>
+<td class="gt_row gt_center" headers="stat_1">11,610 (16%)</td>
+<td class="gt_row gt_center" headers="stat_2">8,945 (13%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td class="gt_row gt_center" headers="stat_0">16,212 (11%)</td>
+<td class="gt_row gt_center" headers="stat_1">11,817 (16%)</td>
+<td class="gt_row gt_center" headers="stat_2">4,395 (6.2%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Ethnicity</td>
+<td class="gt_row gt_center" headers="stat_0"></td>
+<td class="gt_row gt_center" headers="stat_1"></td>
+<td class="gt_row gt_center" headers="stat_2"></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Hispanic</td>
+<td class="gt_row gt_center" headers="stat_0">22,680 (16%)</td>
+<td class="gt_row gt_center" headers="stat_1">13,016 (18%)</td>
+<td class="gt_row gt_center" headers="stat_2">9,664 (14%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Not Hispanic</td>
+<td class="gt_row gt_center" headers="stat_0">99,483 (70%)</td>
+<td class="gt_row gt_center" headers="stat_1">44,696 (62%)</td>
+<td class="gt_row gt_center" headers="stat_2">54,787 (77%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td class="gt_row gt_center" headers="stat_0">20,891 (15%)</td>
+<td class="gt_row gt_center" headers="stat_1">14,062 (20%)</td>
+<td class="gt_row gt_center" headers="stat_2">6,829 (9.6%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Current Smoker</td>
+<td class="gt_row gt_center" headers="stat_0">32,080 (22%)</td>
+<td class="gt_row gt_center" headers="stat_1">17,035 (24%)</td>
+<td class="gt_row gt_center" headers="stat_2">15,045 (21%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Diabetes</td>
+<td class="gt_row gt_center" headers="stat_0">29,633 (21%)</td>
+<td class="gt_row gt_center" headers="stat_1">13,802 (19%)</td>
+<td class="gt_row gt_center" headers="stat_2">15,831 (22%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Chronic kidney disease</td>
+<td class="gt_row gt_center" headers="stat_0">17,626 (12%)</td>
+<td class="gt_row gt_center" headers="stat_1">5,111 (7.1%)</td>
+<td class="gt_row gt_center" headers="stat_2">12,515 (18%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">End-stage renal disease</td>
+<td class="gt_row gt_center" headers="stat_0">1,072 (0.7%)</td>
+<td class="gt_row gt_center" headers="stat_1">233 (0.3%)</td>
+<td class="gt_row gt_center" headers="stat_2">839 (1.2%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Heart failure w/ reduced EF</td>
+<td class="gt_row gt_center" headers="stat_0">2,858 (2.0%)</td>
+<td class="gt_row gt_center" headers="stat_1">1,264 (1.8%)</td>
+<td class="gt_row gt_center" headers="stat_2">1,594 (2.2%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Coronary heart disease</td>
+<td class="gt_row gt_center" headers="stat_0">7,940 (5.6%)</td>
+<td class="gt_row gt_center" headers="stat_1">2,742 (3.8%)</td>
+<td class="gt_row gt_center" headers="stat_2">5,198 (7.3%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Prior coronary revascularization</td>
+<td class="gt_row gt_center" headers="stat_0">728 (0.5%)</td>
+<td class="gt_row gt_center" headers="stat_1">142 (0.2%)</td>
+<td class="gt_row gt_center" headers="stat_2">586 (0.8%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Prior stroke or TIA</td>
+<td class="gt_row gt_center" headers="stat_0">2,292 (1.6%)</td>
+<td class="gt_row gt_center" headers="stat_1">309 (0.4%)</td>
+<td class="gt_row gt_center" headers="stat_2">1,983 (2.8%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Peripheral arterial disease</td>
+<td class="gt_row gt_center" headers="stat_0">9,388 (6.6%)</td>
+<td class="gt_row gt_center" headers="stat_1">1,483 (2.1%)</td>
+<td class="gt_row gt_center" headers="stat_2">7,905 (11%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">History of clinical ASCVD</td>
+<td class="gt_row gt_center" headers="stat_0">17,416 (12%)</td>
+<td class="gt_row gt_center" headers="stat_1">4,229 (5.9%)</td>
+<td class="gt_row gt_center" headers="stat_2">13,187 (19%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Atrial fibrillation</td>
+<td class="gt_row gt_center" headers="stat_0">10,024 (7.0%)</td>
+<td class="gt_row gt_center" headers="stat_1">1,375 (1.9%)</td>
+<td class="gt_row gt_center" headers="stat_2">8,649 (12%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Chronic obstructive pulmonary disease</td>
+<td class="gt_row gt_center" headers="stat_0">7,769 (5.4%)</td>
+<td class="gt_row gt_center" headers="stat_1">4,588 (6.4%)</td>
+<td class="gt_row gt_center" headers="stat_2">3,181 (4.5%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Asthma</td>
+<td class="gt_row gt_center" headers="stat_0">6,066 (4.2%)</td>
+<td class="gt_row gt_center" headers="stat_1">4,855 (6.8%)</td>
+<td class="gt_row gt_center" headers="stat_2">1,211 (1.7%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Depression</td>
+<td class="gt_row gt_center" headers="stat_0">25,690 (18%)</td>
+<td class="gt_row gt_center" headers="stat_1">10,670 (15%)</td>
+<td class="gt_row gt_center" headers="stat_2">15,020 (21%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Combined Comorbidity Score</td>
+<td class="gt_row gt_center" headers="stat_0">2.5 ± 3.5</td>
+<td class="gt_row gt_center" headers="stat_1">1.6 ± 2.8</td>
+<td class="gt_row gt_center" headers="stat_2">3.5 ± 3.9</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Statin</td>
+<td class="gt_row gt_center" headers="stat_0">31,421 (22%)</td>
+<td class="gt_row gt_center" headers="stat_1">13,201 (18%)</td>
+<td class="gt_row gt_center" headers="stat_2">18,220 (26%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Aspirin</td>
+<td class="gt_row gt_center" headers="stat_0">11,663 (8.2%)</td>
+<td class="gt_row gt_center" headers="stat_1">6,115 (8.5%)</td>
+<td class="gt_row gt_center" headers="stat_2">5,548 (7.8%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Index Year</td>
+<td class="gt_row gt_center" headers="stat_0"></td>
+<td class="gt_row gt_center" headers="stat_1"></td>
+<td class="gt_row gt_center" headers="stat_2"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2012</td>
+<td class="gt_row gt_center" headers="stat_0">32 (&lt;0.1%)</td>
+<td class="gt_row gt_center" headers="stat_1">1 (&lt;0.1%)</td>
+<td class="gt_row gt_center" headers="stat_2">31 (&lt;0.1%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2013</td>
+<td class="gt_row gt_center" headers="stat_0">17,728 (12%)</td>
+<td class="gt_row gt_center" headers="stat_1">485 (0.7%)</td>
+<td class="gt_row gt_center" headers="stat_2">17,243 (24%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2014</td>
+<td class="gt_row gt_center" headers="stat_0">31,711 (22%)</td>
+<td class="gt_row gt_center" headers="stat_1">11,457 (16%)</td>
+<td class="gt_row gt_center" headers="stat_2">20,254 (28%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2015</td>
+<td class="gt_row gt_center" headers="stat_0">27,205 (19%)</td>
+<td class="gt_row gt_center" headers="stat_1">11,039 (15%)</td>
+<td class="gt_row gt_center" headers="stat_2">16,166 (23%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2016</td>
+<td class="gt_row gt_center" headers="stat_0">19,283 (13%)</td>
+<td class="gt_row gt_center" headers="stat_1">10,664 (15%)</td>
+<td class="gt_row gt_center" headers="stat_2">8,619 (12%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2017</td>
+<td class="gt_row gt_center" headers="stat_0">18,661 (13%)</td>
+<td class="gt_row gt_center" headers="stat_1">9,694 (14%)</td>
+<td class="gt_row gt_center" headers="stat_2">8,967 (13%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2018</td>
+<td class="gt_row gt_center" headers="stat_0">8,963 (6.3%)</td>
+<td class="gt_row gt_center" headers="stat_1">8,963 (12%)</td>
+<td class="gt_row gt_center" headers="stat_2">0 (0%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2019</td>
+<td class="gt_row gt_center" headers="stat_0">8,164 (5.7%)</td>
+<td class="gt_row gt_center" headers="stat_1">8,164 (11%)</td>
+<td class="gt_row gt_center" headers="stat_2">0 (0%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2020</td>
+<td class="gt_row gt_center" headers="stat_0">7,520 (5.3%)</td>
+<td class="gt_row gt_center" headers="stat_1">7,520 (10%)</td>
+<td class="gt_row gt_center" headers="stat_2">0 (0%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2021</td>
+<td class="gt_row gt_center" headers="stat_0">3,787 (2.6%)</td>
+<td class="gt_row gt_center" headers="stat_1">3,787 (5.3%)</td>
+<td class="gt_row gt_center" headers="stat_2">0 (0%)</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="even">
+<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Mean ± SD; n (%)</td>
+</tr>
+</tfoot>
+
 </table>
+
 </div>
 </div>
+</div>
+</figure>
 </div>
 </div>
 <section id="initial-antihypertensive-use" class="level4">
 <h4 class="anchored" data-anchor-id="initial-antihypertensive-use">Initial Antihypertensive Use</h4>
 <p>In the overall population, most patients (75.4%) were initiated on a single agent, whereas 18.8% were initiated on 2 agents simultaneously, and 5.8% on ≥3 agents simultaneously. Crude rates of combination therapy were higher among Medicare- (28%) versus Medicaid-insured (21%) individuals, though these differences were minimized substantially after age-adjustment (<a href="initial_antihypertensive_prescribing_onefl_suppl.pdf" target="_blank">Table S3</a>).</p>
-<p><a href="#fig-1">Figure&nbsp;1</a> summarizes the proportion of Medicaid-insured patients initiating each class of antihypertensives, as well as proportion initiating each drug within each class. Briefly, the most common classes initiated were ACEIs (39% of patients) and β-blockers (31%), followed by DHP CCBs (22%), thiazide diuretics (19%) and ARBs (11%). Use of most classes was predominated by a single agent, namely lisinopril (94% of ACEI initiators), amlodipine (87% of DHP CCB initiators), hydrochlorothiazide (94% of thiazide initiators), and losartan (88% of ARB initiators). β-blockers were more evenly distributed across metoprolol (47%), propranolol (17%), carvedilol (14%) and atenolol and labetalol (each 11%). <a href="#fig-2">Figure&nbsp;2</a> presents corresponding information for Medicare-insured patients, in which ACEIs (37%) and β-blockers (36%) were the most often initiated, followed by DHP CCBs (21%), thiazide diuretics (17%), and ARBs (13%). The rank-order of drugs within class was generally similar among the Medicare-, compared with Medicaid-insured, cohorts.</p>
-<div id="fig-1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: Proportion of patients prescribed each antihypertensive class, among Medicaid-insured patients with newly-treated hypertension. Numbers to the right of bars represent distinct patients. Patients initiating multiple therapies are included in each category. ACEI, angiotensin-converting enzyme inhibitor; ARB, angiotensin receptor blocker; DHP CCB, dihydropyridine calcium channel blocker; DRI, direct renin inhibitor (aliskiren)</figcaption><p></p>
-<p><img src="initial_antihypertensive_prescribing_onefl_fig1.svg" class="img-fluid figure-img"></p>
+<p><a href="#fig-1" class="quarto-xref">Figure&nbsp;1</a> summarizes the proportion of Medicaid-insured patients initiating each class of antihypertensives, as well as proportion initiating each drug within each class. Briefly, the most common classes initiated were ACEIs (39% of patients) and β-blockers (31%), followed by DHP CCBs (22%), thiazide diuretics (19%) and ARBs (11%). Use of most classes was predominated by a single agent, namely lisinopril (94% of ACEI initiators), amlodipine (87% of DHP CCB initiators), hydrochlorothiazide (94% of thiazide initiators), and losartan (88% of ARB initiators). β-blockers were more evenly distributed across metoprolol (47%), propranolol (17%), carvedilol (14%) and atenolol and labetalol (each 11%). <a href="#fig-2" class="quarto-xref">Figure&nbsp;2</a> presents corresponding information for Medicare-insured patients, in which ACEIs (37%) and β-blockers (36%) were the most often initiated, followed by DHP CCBs (21%), thiazide diuretics (17%), and ARBs (13%). The rank-order of drugs within class was generally similar among the Medicare-, compared with Medicaid-insured, cohorts.</p>
+<div id="fig-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Proportion of patients prescribed each antihypertensive class, among Medicaid-insured patients with newly-treated hypertension. Numbers to the right of bars represent distinct patients. Patients initiating multiple therapies are included in each category. ACEI, angiotensin-converting enzyme inhibitor; ARB, angiotensin receptor blocker; DHP CCB, dihydropyridine calcium channel blocker; DRI, direct renin inhibitor (aliskiren)
+</figcaption>
+<div aria-describedby="fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="initial_antihypertensive_prescribing_onefl_fig1.svg" class="img-fluid figure-img">
+</div>
 </figure>
 </div>
-<div id="fig-2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: Proportion of patients prescribed each antihypertensive class, among Medicare-insured patients with newly-treated hypertension. Numbers to the right of bars represent distinct patients. Patients initiating multiple therapies are included in each category. ACEI, angiotensin-converting enzyme inhibitor; ARB, angiotensin receptor blocker; DHP CCB, dihydropyridine calcium channel blocker; DRI, direct renin inhibitor (aliskiren).</figcaption><p></p>
-<p><img src="initial_antihypertensive_prescribing_onefl_fig2.svg" class="img-fluid figure-img"></p>
+<div id="fig-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Proportion of patients prescribed each antihypertensive class, among Medicare-insured patients with newly-treated hypertension. Numbers to the right of bars represent distinct patients. Patients initiating multiple therapies are included in each category. ACEI, angiotensin-converting enzyme inhibitor; ARB, angiotensin receptor blocker; DHP CCB, dihydropyridine calcium channel blocker; DRI, direct renin inhibitor (aliskiren).
+</figcaption>
+<div aria-describedby="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="initial_antihypertensive_prescribing_onefl_fig2.svg" class="img-fluid figure-img">
+</div>
 </figure>
 </div>
 <p>Antihypertensive use patterns among patients initiating monotherapy within the Medicaid cohort were generally similar to the overall Medicaid cohort in terms of rank ordering of classes and drugs within class (<a href="initial_antihypertensive_prescribing_onefl_suppl.pdf" target="_blank">Figure S3</a>). Likewise, compared to the overall Medicare cohort, patients initiating monotherapy had similar antihypertensive initiation patterns except that ARBs were initiated more often than thiazide diuretics (10% vs.&nbsp;7% among monotherapy initiators; 13% vs.&nbsp;17% among all Medicare patients) (<a href="initial_antihypertensive_prescribing_onefl_suppl.pdf" target="_blank">Figure S4</a>). Among patients initiating two antihypertensives simultaneously, the most common combination was an ACEI + thiazide diuretic (24% of all 2-drug combinations overall), which was the preferred two-drug combination in both cohorts (31% of all 2-drug combinations in the Medicaid cohort and 18% in the Medicare cohort; <a href="initial_antihypertensive_prescribing_onefl_suppl.pdf" target="_blank">Table S4</a>). The next three most common combinations were ACEI + β-blocker (14% overall), ARB + thiazide diuretic (11% overall) and ACEI + CCB (10% overall). Among Medicaid recipients, only 59% of all two-drug combinations were considered guideline-concordant (i.e., using drugs from two first-line antihypertensives) per current U.S. guidelines, whereas 36% were partially concordant (combining one first-line and one second-line antihypertensive) and 5% were fully discordant (<a href="initial_antihypertensive_prescribing_onefl_suppl.pdf" target="_blank">Figure S5</a>). Among Medicare recipients, 47% of patients initiated guideline-concordant two-drug combinations, whereas 45% were partially concordant and 8% were fully discordant (<a href="initial_antihypertensive_prescribing_onefl_suppl.pdf" target="_blank">Figure S6</a>). Finally, among all patients initiating ≥2 antihypertensives concomitantly, nearly one-third (33.8%) used at least one fixed-dose combination product, with a slightly higher proportion among Medicaid vs.&nbsp;Medicare recipients (35.2% vs.&nbsp;32.7%).</p>
 </section>
 <section id="time-trends" class="level4">
 <h4 class="anchored" data-anchor-id="time-trends">Time Trends</h4>
-<p><a href="#fig-3">Figure&nbsp;3</a> and <a href="initial_antihypertensive_prescribing_onefl_suppl.pdf" target="_blank">Figure S7</a> summarize the proportion of patients starting each class over time. Notable changes from 2013 through 2021 were increased use of DHP CCBs (20% to 27% overall; p&lt;0.0001) and decreased use of β-blockers (32% to 26%; p&lt;0.0001) among Medicaid recipients. Dihydropyridine CCB initiation also increased over time in Medicare recipients (20% in 2013 to 24% in 2017), whereas but no change was observed for β-blockers. ACEI initiation decreased modestly overall (39% to 36%; p&lt;0.0001) and in each cohort separately, as did thiazide use (Medicaid, 26% to 16%, p&lt;0.0001; Medicare, 18% to 14%, p&lt;0.0001). ARB initiation increased by a similar magnitude (Medicaid, 3% to 13%, p&lt;0.0001; Medicare, 11% to 15%, p&lt;0.0001). Time trends of drug within class are presented in <a href="initial_antihypertensive_prescribing_onefl_suppl.pdf" target="_blank">Figure S8</a> and <a href="initial_antihypertensive_prescribing_onefl_suppl.pdf" target="_blank">S9</a>. Analyses limited to patients initiating monotherapy showed remarkably similar trends (data not shown).</p>
-<div id="fig-3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;3: Time trends in initial use of antihypertensive classes, 2013-2021. Panel A represents Medicaid-insured individuals; Panel B represents Medicare-insured individuals. All trends for major classes of antihypertensives in each cohort were significant at p&lt;0.0001, excepting β-blockers in the Medicare cohort, p=0.48, using the Cochrane-Armitage test. ACEI, angiotensin-converting enzyme inhibitor; ARB, angiotensin receptor blocker; DHP CCB, dihydropyridine calcium channel blocker; DRI, direct renin inhibitor (aliskiren).</figcaption><p></p>
-<p><img src="initial_antihypertensive_prescribing_onefl_fig3.svg" class="img-fluid figure-img"></p>
+<p><a href="#fig-3" class="quarto-xref">Figure&nbsp;3</a> and <a href="initial_antihypertensive_prescribing_onefl_suppl.pdf" target="_blank">Figure S7</a> summarize the proportion of patients starting each class over time. Notable changes from 2013 through 2021 were increased use of DHP CCBs (20% to 27% overall; p&lt;0.0001) and decreased use of β-blockers (32% to 26%; p&lt;0.0001) among Medicaid recipients. Dihydropyridine CCB initiation also increased over time in Medicare recipients (20% in 2013 to 24% in 2017), whereas but no change was observed for β-blockers. ACEI initiation decreased modestly overall (39% to 36%; p&lt;0.0001) and in each cohort separately, as did thiazide use (Medicaid, 26% to 16%, p&lt;0.0001; Medicare, 18% to 14%, p&lt;0.0001). ARB initiation increased by a similar magnitude (Medicaid, 3% to 13%, p&lt;0.0001; Medicare, 11% to 15%, p&lt;0.0001). Time trends of drug within class are presented in <a href="initial_antihypertensive_prescribing_onefl_suppl.pdf" target="_blank">Figure S8</a> and <a href="initial_antihypertensive_prescribing_onefl_suppl.pdf" target="_blank">S9</a>. Analyses limited to patients initiating monotherapy showed remarkably similar trends (data not shown).</p>
+<div id="fig-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Time trends in initial use of antihypertensive classes, 2013-2021. Panel A represents Medicaid-insured individuals; Panel B represents Medicare-insured individuals. All trends for major classes of antihypertensives in each cohort were significant at p&lt;0.0001, excepting β-blockers in the Medicare cohort, p=0.48, using the Cochrane-Armitage test. ACEI, angiotensin-converting enzyme inhibitor; ARB, angiotensin receptor blocker; DHP CCB, dihydropyridine calcium channel blocker; DRI, direct renin inhibitor (aliskiren).
+</figcaption>
+<div aria-describedby="fig-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="initial_antihypertensive_prescribing_onefl_fig3.svg" class="img-fluid figure-img">
+</div>
 </figure>
 </div>
 </section>
 <section id="stratified-analyses-demographics-and-comorbidities" class="level4">
 <h4 class="anchored" data-anchor-id="stratified-analyses-demographics-and-comorbidities">Stratified Analyses: Demographics and Comorbidities</h4>
-<p>The proportions of patients initiating each of the 5 major classes across pre-specified strata are summarized in <a href="#fig-4">Figure&nbsp;4</a> (Medicaid) and <a href="#fig-5">Figure&nbsp;5</a> (Medicare), with additional detailed data in <a href="initial_antihypertensive_prescribing_onefl_suppl.pdf" target="_blank">Table S5</a>. Among both cohorts, men were more likely than women to initiate ACEIs, whereas the reverse was true for thiazides, especially among Medicaid recipients (Panel A). Black patients were more likely to initiate CCBs (primarily DHP CCBs) or thiazides, compared with White and Asian patients in both cohorts (Panel B). Black patients, compared with White and Asian patients, were also less likely to initiate ACEIs in the Medicaid cohort, whereas no meaningful difference was observed in Medicare-insured individuals. Additional analyses among monotherapy-treated Black participants with and without CKD or HF are summarized in <a href="initial_antihypertensive_prescribing_onefl_suppl.pdf" target="_blank">Figure S10</a>. Briefly, comparing those with either CKD or HF versus without CKD nor HF, we observed fewer patients initiating ACEIs (24% vs.&nbsp;27% [SMD, 0.08] in the Medicaid cohort; 20% vs.&nbsp;31% [SMD, 0.26] in the Medicare cohort) and thiazides (12% vs.&nbsp;18% [SMD, 0.16] in Medicaid; 6% vs.&nbsp;12% [SMD, 0.23] in Medicare), and similar proportions initiating ARBs. In the Medicare cohort, β-blocker use was much higher in the CKD/HF population (36%) compared to those with neither CKD nor HF (22%; SMD, 0.31), whereas we observed little difference in β-blocker use in these populations among Medicaid-insured (22% vs.&nbsp;18%; SMD, 0.08).</p>
-<div id="fig-4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;4: Proportion of Medicaid-insured patients prescribed first-line antihypertensive classes, stratified by selected demographics and comorbidities. Data are presented by sex (panel A), race including only racial groups with sufficient representation (B), ethnicity (C), and presence/absence of type 2 diabetes (D), CKD (E), or clinical ASCVD (F). Legends for each panel correspond to darker or lighter shaded bars within each antihypertensive class. ACEI, angiotensin-converting enzyme inhibitor; ARB, angiotensin receptor blocker; ASCVD, atherosclerotic cardiovascular disease; CKD, chronic kidney disease; DHP CCB, dihydropyridine calcium channel blocker; T2DM, type 2 diabetes mellitus.</figcaption><p></p>
-<p><img src="initial_antihypertensive_prescribing_onefl_fig4.svg" class="img-fluid figure-img"></p>
+<p>The proportions of patients initiating each of the 5 major classes across pre-specified strata are summarized in <a href="#fig-4" class="quarto-xref">Figure&nbsp;4</a> (Medicaid) and <a href="#fig-5" class="quarto-xref">Figure&nbsp;5</a> (Medicare), with additional detailed data in <a href="initial_antihypertensive_prescribing_onefl_suppl.pdf" target="_blank">Table S5</a>. Among both cohorts, men were more likely than women to initiate ACEIs, whereas the reverse was true for thiazides, especially among Medicaid recipients (Panel A). Black patients were more likely to initiate CCBs (primarily DHP CCBs) or thiazides, compared with White and Asian patients in both cohorts (Panel B). Black patients, compared with White and Asian patients, were also less likely to initiate ACEIs in the Medicaid cohort, whereas no meaningful difference was observed in Medicare-insured individuals. Additional analyses among monotherapy-treated Black participants with and without CKD or HF are summarized in <a href="initial_antihypertensive_prescribing_onefl_suppl.pdf" target="_blank">Figure S10</a>. Briefly, comparing those with either CKD or HF versus without CKD nor HF, we observed fewer patients initiating ACEIs (24% vs.&nbsp;27% [SMD, 0.08] in the Medicaid cohort; 20% vs.&nbsp;31% [SMD, 0.26] in the Medicare cohort) and thiazides (12% vs.&nbsp;18% [SMD, 0.16] in Medicaid; 6% vs.&nbsp;12% [SMD, 0.23] in Medicare), and similar proportions initiating ARBs. In the Medicare cohort, β-blocker use was much higher in the CKD/HF population (36%) compared to those with neither CKD nor HF (22%; SMD, 0.31), whereas we observed little difference in β-blocker use in these populations among Medicaid-insured (22% vs.&nbsp;18%; SMD, 0.08).</p>
+<div id="fig-4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Proportion of Medicaid-insured patients prescribed first-line antihypertensive classes, stratified by selected demographics and comorbidities. Data are presented by sex (panel A), race including only racial groups with sufficient representation (B), ethnicity (C), and presence/absence of type 2 diabetes (D), CKD (E), or clinical ASCVD (F). Legends for each panel correspond to darker or lighter shaded bars within each antihypertensive class. ACEI, angiotensin-converting enzyme inhibitor; ARB, angiotensin receptor blocker; ASCVD, atherosclerotic cardiovascular disease; CKD, chronic kidney disease; DHP CCB, dihydropyridine calcium channel blocker; T2DM, type 2 diabetes mellitus.
+</figcaption>
+<div aria-describedby="fig-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="initial_antihypertensive_prescribing_onefl_fig4.svg" class="img-fluid figure-img">
+</div>
 </figure>
 </div>
-<div id="fig-5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p></p><figcaption class="figure-caption">Figure&nbsp;5: Proportion of Medicare-insured patients prescribed first-line antihypertensive classes, stratified by selected demographics and comorbidities. Data are presented by sex (panel A), race including only racial groups with sufficient representation (B), ethnicity (C), and presence/absence of type 2 diabetes (D), CKD (E), or clinical ASCVD (F). Legends for each panel correspond to darker or lighter shaded bars within each antihypertensive class. ACEI, angiotensin-converting enzyme inhibitor; ARB, angiotensin receptor blocker; ASCVD, atherosclerotic cardiovascular disease; CKD, chronic kidney disease; DHP CCB, dihydropyridine calcium channel blocker; T2DM, type 2 diabetes mellitus.</figcaption><p></p>
-<p><img src="initial_antihypertensive_prescribing_onefl_fig5.svg" class="img-fluid figure-img"></p>
+<div id="fig-5" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Proportion of Medicare-insured patients prescribed first-line antihypertensive classes, stratified by selected demographics and comorbidities. Data are presented by sex (panel A), race including only racial groups with sufficient representation (B), ethnicity (C), and presence/absence of type 2 diabetes (D), CKD (E), or clinical ASCVD (F). Legends for each panel correspond to darker or lighter shaded bars within each antihypertensive class. ACEI, angiotensin-converting enzyme inhibitor; ARB, angiotensin receptor blocker; ASCVD, atherosclerotic cardiovascular disease; CKD, chronic kidney disease; DHP CCB, dihydropyridine calcium channel blocker; T2DM, type 2 diabetes mellitus.
+</figcaption>
+<div aria-describedby="fig-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="initial_antihypertensive_prescribing_onefl_fig5.svg" class="img-fluid figure-img">
+</div>
 </figure>
 </div>
-<p>Hispanic patients had moderately higher initiation of ACEI or ARB therapy and lower initiation of CCBs or β-blockers in each cohort (<a href="#fig-4">Figure&nbsp;4</a> &amp; <a href="#fig-5">Figure&nbsp;5</a>, Panel C). Diabetes, versus no diabetes, was associated with greater ACEI but not ARB use in both cohorts, as well as higher β-blocker use, but lower CCB and thiazide use (<a href="#fig-4">Figure&nbsp;4</a> &amp; <a href="#fig-5">Figure&nbsp;5</a>, Panel D). ACEIs were initiated in only 30% of patients meeting CKD criteria overall (Medicaid, 35%; Medicare, 28%), versus 40% of those not meeting CKD criteria (Medicaid, 42%; Medicare, 39%); CCB and β-blockers were each initiated considerably more commonly in those with CKD, whereas thiazides were initiated more commonly in those without CKD (<a href="#fig-4">Figure&nbsp;4</a> &amp; <a href="#fig-5">Figure&nbsp;5</a>, Panel E). Finally, among patients with ASCVD in both cohorts, approximately half initiated a β-blocker, whereas only 10% initiated a thiazide, and use of other classes differed only modestly (≤6%) between those with and without ASCVD (<a href="#fig-4">Figure&nbsp;4</a> &amp; <a href="#fig-5">Figure&nbsp;5</a>, Panel F).</p>
+<p>Hispanic patients had moderately higher initiation of ACEI or ARB therapy and lower initiation of CCBs or β-blockers in each cohort (<a href="#fig-4" class="quarto-xref">Figure&nbsp;4</a> &amp; <a href="#fig-5" class="quarto-xref">Figure&nbsp;5</a>, Panel C). Diabetes, versus no diabetes, was associated with greater ACEI but not ARB use in both cohorts, as well as higher β-blocker use, but lower CCB and thiazide use (<a href="#fig-4" class="quarto-xref">Figure&nbsp;4</a> &amp; <a href="#fig-5" class="quarto-xref">Figure&nbsp;5</a>, Panel D). ACEIs were initiated in only 30% of patients meeting CKD criteria overall (Medicaid, 35%; Medicare, 28%), versus 40% of those not meeting CKD criteria (Medicaid, 42%; Medicare, 39%); CCB and β-blockers were each initiated considerably more commonly in those with CKD, whereas thiazides were initiated more commonly in those without CKD (<a href="#fig-4" class="quarto-xref">Figure&nbsp;4</a> &amp; <a href="#fig-5" class="quarto-xref">Figure&nbsp;5</a>, Panel E). Finally, among patients with ASCVD in both cohorts, approximately half initiated a β-blocker, whereas only 10% initiated a thiazide, and use of other classes differed only modestly (≤6%) between those with and without ASCVD (<a href="#fig-4" class="quarto-xref">Figure&nbsp;4</a> &amp; <a href="#fig-5" class="quarto-xref">Figure&nbsp;5</a>, Panel F).</p>
 </section>
 </section>
 <section id="discussion" class="level3">
@@ -1104,117 +1255,117 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
 
 
 
-<div id="quarto-appendix" class="default"><section id="funding" class="level2 appendix"><h2 class="quarto-appendix-heading">Funding</h2><div class="quarto-appendix-contents">
+<div id="quarto-appendix" class="default"><section id="funding" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">Funding</h2><div class="quarto-appendix-contents">
 
 <p>This work was funded by the National Heart, Lung, and Blood Institute, K01 HL138172 (Dr.&nbsp;Smith). Research reported in this publication was also supported in part by the UF Center for Drug Evaluation and Safety; in part by the OneFlorida Clinical Data Network, funded by the Patient-Centered Outcomes Research Institute numbers CDRN-1501-26692 and RI-CRN-2020-005; in part by the OneFlorida Cancer Control Alliance, funded by the Florida Department of Health’s James and Esther King Biomedical Research Program number 4KB16; and in part by the University of Florida Clinical and Translational Science Institute and its Clinical and Translational Science Award (CTSA) hub partner, Florida State University, which are supported in part by three CTSA Program grants awarded on August 15, 2015, and renewed for five years on July 2, 2019, by the National Center for Advancing Translational Sciences of the National Institutes of Health. The UF-FSU CTSA grant numbers are UL1TR001427, KL2TR001429 and TL1TR001428. The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health, Patient-Centered Outcomes Research Institute (PCORI) or its Board of Governors or Methodology, the OneFlorida Clinical Research Consortium, the UF-FSU Clinical and Translational Science Institute, or the Florida Department of Health.</p>
-</div></section><section id="disclosures" class="level2 appendix"><h2 class="quarto-appendix-heading">Disclosures</h2><div class="quarto-appendix-contents">
+</div></section><section id="disclosures" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">Disclosures</h2><div class="quarto-appendix-contents">
 
 <p>The authors have no conflicts of interest to disclose.</p>
-</div></section><section id="supplement" class="level2 appendix"><h2 class="quarto-appendix-heading">Supplement</h2><div class="quarto-appendix-contents">
+</div></section><section id="supplement" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">Supplement</h2><div class="quarto-appendix-contents">
 
 <p>The data supplement for this paper can be found <a href="initial_antihypertensive_prescribing_onefl_suppl.pdf">here</a>.</p>
 
 
 
-</div></section><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="doc-bibliography">
-<div id="ref-muntner_blood_2022" class="csl-entry" role="doc-biblioentry">
+</div></section><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-muntner_blood_2022" class="csl-entry" role="listitem">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Muntner P, Miles MA, Jaeger BC, et al. Blood pressure control among <span>US</span> adults, 2009 to 2012 through 2017 to 2020. <em>Hypertension</em>. 2022;79(9):1971-1980. doi:<a href="https://doi.org/10.1161/HYPERTENSIONAHA.122.19222">10.1161/HYPERTENSIONAHA.122.19222</a></div>
 </div>
-<div id="ref-williams_2018_2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-williams_2018_2018" class="csl-entry" role="listitem">
 <div class="csl-left-margin">2. </div><div class="csl-right-inline">Williams B, Mancia G, Spiering W, et al. 2018 <span>ESC</span>/<span>ESH</span> guidelines for the management of arterial hypertension. <em>Eur Heart J</em>. 2018;39(33):3021-3104. doi:<a href="https://doi.org/10.1093/eurheartj/ehy339">10.1093/eurheartj/ehy339</a></div>
 </div>
-<div id="ref-whelton_2017_2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-whelton_2017_2018" class="csl-entry" role="listitem">
 <div class="csl-left-margin">3. </div><div class="csl-right-inline">Whelton PK, Carey RM, Aronow WS, et al. 2017 <span>ACC</span>/<span>AHA</span>/<span>AAPA</span>/<span>ABC</span>/<span>ACPM</span>/<span>AGS</span>/<span>APhA</span>/<span>ASH</span>/<span>ASPC</span>/<span>NMA</span>/<span>PCNA</span> guideline for the prevention, detection, evaluation, and management of high blood pressure in adults: A report of the american college of cardiology/american heart association task force on clinical practice guidelines. <em>Hypertension</em>. 2018;71(6):e13-e115. doi:<a href="https://doi.org/10.1161/HYP.0000000000000065">10.1161/HYP.0000000000000065</a></div>
 </div>
-<div id="ref-hou_frequency_2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-hou_frequency_2021" class="csl-entry" role="listitem">
 <div class="csl-left-margin">4. </div><div class="csl-right-inline">Hou W, Li D, Shen S, Lin J, Lou A, Wen A. Frequency and patterns of prescribing antihypertensive agents in outpatient kidney transplant recipients among six cities in china from 2011 to 2018. <em>Clin Ther</em>. 2021;43(3):602-612. doi:<a href="https://doi.org/10.1016/j.clinthera.2021.01.013">10.1016/j.clinthera.2021.01.013</a></div>
 </div>
-<div id="ref-gu_age_2016" class="csl-entry" role="doc-biblioentry">
+<div id="ref-gu_age_2016" class="csl-entry" role="listitem">
 <div class="csl-left-margin">5. </div><div class="csl-right-inline">Gu A, Yue Y, Argulian E. Age differences in treatment and control of hypertension in <span>US</span> physician offices, 2003-2010: A serial cross-sectional study. <em>Am J Med</em>. 2016;129(1):50-58.e4. doi:<a href="https://doi.org/10.1016/j.amjmed.2015.07.031">10.1016/j.amjmed.2015.07.031</a></div>
 </div>
-<div id="ref-gu_patterns_2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-gu_patterns_2019" class="csl-entry" role="listitem">
 <div class="csl-left-margin">6. </div><div class="csl-right-inline">Gu A, Farzadeh SN, Chang YJ, Kwong A, Lam S. Patterns of antihypertensive drug utilization among <span>US</span> adults with diabetes and comorbid hypertension: The national health and nutrition examination survey 1999-2014. <em>Clin Med Insights Cardiol</em>. 2019;13:1179546819839418. doi:<a href="https://doi.org/10.1177/1179546819839418">10.1177/1179546819839418</a></div>
 </div>
-<div id="ref-gu_racial_2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-gu_racial_2017" class="csl-entry" role="listitem">
 <div class="csl-left-margin">7. </div><div class="csl-right-inline">Gu A, Yue Y, Desai RP, Argulian E. Racial and ethnic differences in antihypertensive medication use and blood pressure control among <span>US</span> adults with hypertension: The national health and nutrition examination survey, 2003 to 2012. <em>Circ Cardiovasc Qual Outcomes</em>. 2017;10(1):e003166. doi:<a href="https://doi.org/10.1161/CIRCOUTCOMES.116.003166">10.1161/CIRCOUTCOMES.116.003166</a></div>
 </div>
-<div id="ref-shah_current_2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-shah_current_2017" class="csl-entry" role="listitem">
 <div class="csl-left-margin">8. </div><div class="csl-right-inline">Shah SJ, Stafford RS. Current trends of hypertension treatment in the united states. <em>Am J Hypertens</em>. 2017;30(10):1008-1014. doi:<a href="https://doi.org/10.1093/ajh/hpx085">10.1093/ajh/hpx085</a></div>
 </div>
-<div id="ref-zhou_national_2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-zhou_national_2015" class="csl-entry" role="listitem">
 <div class="csl-left-margin">9. </div><div class="csl-right-inline">Zhou M, Daubresse M, Stafford RS, Alexander GC. National trends in the ambulatory treatment of hypertension in the united states, 1997-2012. <em><span>PLoS</span> One</em>. 2015;10(3):e0119292. doi:<a href="https://doi.org/10.1371/journal.pone.0119292">10.1371/journal.pone.0119292</a></div>
 </div>
-<div id="ref-koifman_trends_2014" class="csl-entry" role="doc-biblioentry">
+<div id="ref-koifman_trends_2014" class="csl-entry" role="listitem">
 <div class="csl-left-margin">10. </div><div class="csl-right-inline">Koifman E, Tanne D, Molshatzki N, Leibowitz A, Grossman E. Trends in antihypertensive treatment–lessons from the national acute stroke israeli (<span>NASIS</span>) registry. <em>Blood Press</em>. 2014;23(5):262-269. doi:<a href="https://doi.org/10.3109/08037051.2013.876771">10.3109/08037051.2013.876771</a></div>
 </div>
-<div id="ref-wang_hypertension_2014" class="csl-entry" role="doc-biblioentry">
+<div id="ref-wang_hypertension_2014" class="csl-entry" role="listitem">
 <div class="csl-left-margin">11. </div><div class="csl-right-inline">Wang Z, Wang X, Chen Z, et al. Hypertension control in community health centers across china: Analysis of antihypertensive drug treatment patterns. <em>Am J Hypertens</em>. 2014;27(2):252-259. doi:<a href="https://doi.org/10.1093/ajh/hpt186">10.1093/ajh/hpt186</a></div>
 </div>
-<div id="ref-weir_how_2011" class="csl-entry" role="doc-biblioentry">
+<div id="ref-weir_how_2011" class="csl-entry" role="listitem">
 <div class="csl-left-margin">12. </div><div class="csl-right-inline">Weir MR, Zappe D, Orloski LA, Sowers JR. How early should blood pressure control be achieved for optimal cardiovascular outcomes? <em>J Hum Hypertens</em>. 2011;25(4):211-217. doi:<a href="https://doi.org/10.1038/jhh.2010.64">10.1038/jhh.2010.64</a></div>
 </div>
-<div id="ref-zheutlin_factors_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-zheutlin_factors_2022" class="csl-entry" role="listitem">
 <div class="csl-left-margin">13. </div><div class="csl-right-inline">Zheutlin AR, Derington CG, King JB, et al. Factors associated with antihypertensive monotherapy among <span>US</span> adults with treated hypertension and uncontrolled blood pressure overall and by race/ethnicity, national health and nutrition examination survey 2013-2018. <em>Am Heart J</em>. 2022;248:150-159. doi:<a href="https://doi.org/10.1016/j.ahj.2021.10.184">10.1016/j.ahj.2021.10.184</a></div>
 </div>
-<div id="ref-derington_trends_2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-derington_trends_2020" class="csl-entry" role="listitem">
 <div class="csl-left-margin">14. </div><div class="csl-right-inline">Derington CG, King JB, Herrick JS, et al. Trends in antihypertensive medication monotherapy and combination use among <span>US</span> adults, national health and nutrition examination survey 2005-2016. <em>Hypertension</em>. 2020;75(4):973-981. doi:<a href="https://doi.org/10.1161/HYPERTENSIONAHA.119.14360">10.1161/HYPERTENSIONAHA.119.14360</a></div>
 </div>
-<div id="ref-oconnor_benefits_2013" class="csl-entry" role="doc-biblioentry">
+<div id="ref-oconnor_benefits_2013" class="csl-entry" role="listitem">
 <div class="csl-left-margin">15. </div><div class="csl-right-inline">O’Connor PJ, Vazquez-Benitez G, Schmittdiel JA, et al. Benefits of early hypertension control on cardiovascular outcomes in patients with diabetes. <em>Diabetes Care</em>. 2013;36(2):322-327. doi:<a href="https://doi.org/10.2337/dc12-0284">10.2337/dc12-0284</a></div>
 </div>
-<div id="ref-austin_using_2009" class="csl-entry" role="doc-biblioentry">
+<div id="ref-austin_using_2009" class="csl-entry" role="listitem">
 <div class="csl-left-margin">16. </div><div class="csl-right-inline">Austin PC. Using the standardized difference to compare the prevalence of a binary variable between two groups in observational research. <em>Communications in Statistics - Simulation and Computation</em>. 2009;38(6):1228-1234. doi:<a href="https://doi.org/10.1080/03610910902859574">10.1080/03610910902859574</a></div>
 </div>
-<div id="ref-noauthor_2014_nodate" class="csl-entry" role="doc-biblioentry">
+<div id="ref-noauthor_2014_nodate" class="csl-entry" role="listitem">
 <div class="csl-left-margin">17. </div><div class="csl-right-inline">2014 evidence-based guideline for the management of high blood pressure in adults: Report from the panel members appointed to the eighth joint national committee (<span>JNC</span> 8) <span></span> chronic kidney disease <span></span> <span>JAMA</span> <span></span> <span>JAMA</span> network. Accessed November 29, 2022. <a href="https://jamanetwork.com/journals/jama/fullarticle/1791497">https://jamanetwork.com/journals/jama/fullarticle/1791497</a></div>
 </div>
-<div id="ref-anderson_national_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-anderson_national_2022" class="csl-entry" role="listitem">
 <div class="csl-left-margin">18. </div><div class="csl-right-inline">Anderson TS, Ayanian JZ, Zaslavsky AM, Souza J, Landon BE. National trends in antihypertensive treatment among older adults by race and presence of comorbidity, 2008 to 2017. <em>J Gen Intern Med</em>. Published online April 26, 2022. doi:<a href="https://doi.org/10.1007/s11606-022-07612-3">10.1007/s11606-022-07612-3</a></div>
 </div>
-<div id="ref-suchard_comprehensive_2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-suchard_comprehensive_2019" class="csl-entry" role="listitem">
 <div class="csl-left-margin">19. </div><div class="csl-right-inline">Suchard MA, Schuemie MJ, Krumholz HM, et al. Comprehensive comparative effectiveness and safety of first-line antihypertensive drug classes: A systematic, multinational, large-scale analysis. <em>Lancet</em>. 2019;394(10211):1816-1826. doi:<a href="https://doi.org/10.1016/S0140-6736(19)32317-7">10.1016/S0140-6736(19)32317-7</a></div>
 </div>
-<div id="ref-chen_comparative_2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-chen_comparative_2021" class="csl-entry" role="listitem">
 <div class="csl-left-margin">20. </div><div class="csl-right-inline">Chen R, Suchard MA, Krumholz HM, et al. Comparative first-line effectiveness and safety of <span>ACE</span> (angiotensin-converting enzyme) inhibitors and angiotensin receptor blockers: A multinational cohort study. <em>Hypertension</em>. 2021;78(3):591-603. doi:<a href="https://doi.org/10.1161/HYPERTENSIONAHA.120.16667">10.1161/HYPERTENSIONAHA.120.16667</a></div>
 </div>
-<div id="ref-bangalore_angiotensin-converting_2016" class="csl-entry" role="doc-biblioentry">
+<div id="ref-bangalore_angiotensin-converting_2016" class="csl-entry" role="listitem">
 <div class="csl-left-margin">21. </div><div class="csl-right-inline">Bangalore S, Fakheri R, Toklu B, Ogedegbe G, Weintraub H, Messerli FH. Angiotensin-converting enzyme inhibitors or angiotensin receptor blockers in patients without heart failure? Insights from 254,301 patients from randomized trials. <em>Mayo Clin Proc</em>. 2016;91(1):51-60. doi:<a href="https://doi.org/10.1016/j.mayocp.2015.10.019">10.1016/j.mayocp.2015.10.019</a></div>
 </div>
-<div id="ref-selmer_choice_2012" class="csl-entry" role="doc-biblioentry">
+<div id="ref-selmer_choice_2012" class="csl-entry" role="listitem">
 <div class="csl-left-margin">22. </div><div class="csl-right-inline">Selmer R, Blix HS, Landmark K, Reikvam A. Choice of initial antihypertensive drugs and persistence of drug use–a 4-year follow-up of 78,453 incident users. <em>Eur J Clin Pharmacol</em>. 2012;68(10):1435-1442. doi:<a href="https://doi.org/10.1007/s00228-012-1261-2">10.1007/s00228-012-1261-2</a></div>
 </div>
-<div id="ref-rea_adherence_2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-rea_adherence_2021" class="csl-entry" role="listitem">
 <div class="csl-left-margin">23. </div><div class="csl-right-inline">Rea F, Savaré L, Franchi M, Corrao G, Mancia G. Adherence to treatment by initial antihypertensive mono and combination therapies. <em>Am J Hypertens</em>. 2021;34(10):1083-1091. doi:<a href="https://doi.org/10.1093/ajh/hpab083">10.1093/ajh/hpab083</a></div>
 </div>
-<div id="ref-chan_you_comprehensive_2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-chan_you_comprehensive_2021" class="csl-entry" role="listitem">
 <div class="csl-left-margin">24. </div><div class="csl-right-inline">Chan You S, Krumholz HM, Suchard MA, et al. Comprehensive comparative effectiveness and safety of first-line β-blocker monotherapy in hypertensive patients: A large-scale multicenter observational study. <em>Hypertension</em>. 2021;77(5):1528-1538. doi:<a href="https://doi.org/10.1161/HYPERTENSIONAHA.120.16402">10.1161/HYPERTENSIONAHA.120.16402</a></div>
 </div>
-<div id="ref-jamerson_benazepril_2008" class="csl-entry" role="doc-biblioentry">
+<div id="ref-jamerson_benazepril_2008" class="csl-entry" role="listitem">
 <div class="csl-left-margin">25. </div><div class="csl-right-inline">Jamerson K, Weber MA, Bakris GL, et al. Benazepril plus amlodipine or hydrochlorothiazide for hypertension in high-risk patients. <em>N Engl J Med</em>. 2008;359(23):2417-2428. doi:<a href="https://doi.org/10.1056/NEJMoa0806182">10.1056/NEJMoa0806182</a></div>
 </div>
-<div id="ref-wiysonge_beta-blockers_2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-wiysonge_beta-blockers_2017" class="csl-entry" role="listitem">
 <div class="csl-left-margin">26. </div><div class="csl-right-inline">Wiysonge CS, Bradley HA, Volmink J, Mayosi BM, Opie LH. Beta-blockers for hypertension. <em>Cochrane Database Syst Rev</em>. 2017;1(1):CD002003. doi:<a href="https://doi.org/10.1002/14651858.CD002003.pub5">10.1002/14651858.CD002003.pub5</a></div>
 </div>
-<div id="ref-hasford_population-based_2002" class="csl-entry" role="doc-biblioentry">
+<div id="ref-hasford_population-based_2002" class="csl-entry" role="listitem">
 <div class="csl-left-margin">27. </div><div class="csl-right-inline">Hasford J, Mimran A, Simons WR. A population-based european cohort study of persistence in newly diagnosed hypertensive patients. <em>J Hum Hypertens</em>. 2002;16(8):569-575. doi:<a href="https://doi.org/10.1038/sj.jhh.1001451">10.1038/sj.jhh.1001451</a></div>
 </div>
-<div id="ref-fontil_association_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-fontil_association_2022" class="csl-entry" role="listitem">
 <div class="csl-left-margin">28. </div><div class="csl-right-inline">Fontil V, Pacca L, Bellows BK, et al. Association of differences in treatment intensification, missed visits, and scheduled follow-up interval with racial or ethnic disparities in blood pressure control. <em><span>JAMA</span> Cardiol</em>. 2022;7(2):204-212. doi:<a href="https://doi.org/10.1001/jamacardio.2021.4996">10.1001/jamacardio.2021.4996</a></div>
 </div>
-<div id="ref-aggarwal_racialethnic_2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-aggarwal_racialethnic_2021" class="csl-entry" role="listitem">
 <div class="csl-left-margin">29. </div><div class="csl-right-inline">Aggarwal R, Chiu N, Wadhera RK, et al. Racial/ethnic disparities in hypertension prevalence, awareness, treatment, and control in the united states, 2013 to 2018. <em>Hypertension</em>. 2021;78(6):1719-1726. doi:<a href="https://doi.org/10.1161/HYPERTENSIONAHA.121.17570">10.1161/HYPERTENSIONAHA.121.17570</a></div>
 </div>
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{m.smith2023,
-  author = {Steven M. Smith and Almut G. Winterstein and Matthew J.
-    Gurka and Marta G. Walsh and Shailina Keshwani and Anne Libby and
-    William Hogan and Carl J. Pepine and Rhonda M. Cooper-DeHoff},
+</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{m._smith2023,
+  author = {M. Smith, Steven and G. Winterstein, Almut and J. Gurka,
+    Matthew and G. Walsh, Marta and Keshwani, Shailina and Libby, Anne
+    and Hogan, William and J. Pepine, Carl and M. Cooper-DeHoff, Rhonda},
   title = {Initial {Antihypertensive} {Regimens} in {Newly} {Treated}
     {Patients:} {Real} {World} {Evidence} from the {OneFlorida+}
     {Clinical} {Research} {Network}},
   journal = {Journal of the American Heart Association},
   volume = {12},
   pages = {e026652},
-  date = {2023-01-01},
+  date = {2023-01},
   url = {https://doi.org/10.1161/JAHA.122.026652},
   doi = {10.1161/JAHA.122.026652},
   langid = {en},
@@ -1249,12 +1400,12 @@ gtag('config', 'G-K32ECMZR0R', { 'anonymize_ip': true});
     significant gaps between current guideline recommendations and
     real-world implementation in early hypertension care.}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-m.smith2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-<div class="">Steven M. Smith, Almut G. Winterstein, Matthew
-J. Gurka, et al. Initial Antihypertensive Regimens in Newly Treated
-Patients: Real World Evidence from the OneFlorida+ Clinical Research
-Network. <em>Journal of the American Heart Association</em>.
-2023;12:e026652. doi:<a href="https://doi.org/10.1161/JAHA.122.026652">10.1161/JAHA.122.026652</a></div>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-m._smith2023" class="csl-entry quarto-appendix-citeas" role="listitem">
+<div class="">M.
+Smith S, G. Winterstein A, J. Gurka M, et al. Initial Antihypertensive
+Regimens in Newly Treated Patients: Real World Evidence from the
+OneFlorida+ Clinical Research Network. <em>Journal of the American Heart
+Association</em>. 2023;12:e026652. doi:<a href="https://doi.org/10.1161/JAHA.122.026652">10.1161/JAHA.122.026652</a></div>
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1283,12 +1434,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
     }
-  });
-  clipboard.on('success', function(e) {
+    return false;
+  }
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1320,11 +1474,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/cvmedlab\.org\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1334,8 +1527,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1347,9 +1549,245 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1390,6 +1828,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

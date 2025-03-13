@@ -3,8 +3,8 @@ title: "Cumulative Incidence Curves {R}"
 format:
   html:
     include-in-header: 
-      - includes/icons.html
-      - includes/analytics.html
+      - ../include/icons.html
+      - ../include/analytics.html
     fig-width: 7
     fig-asp: 0.618
 page-layout: full
@@ -27,7 +27,7 @@ library(survival)
 library(survminer)
 
 # data + a bit of cleaning/wrangling
-fu <- read_csv("/Users/stevensmith/Dropbox (UFL)/Manuscripts/K01/Early Patterns of Care/data/tfu_visualization.csv",
+fu <- read_csv("/Users/ssmithm/UFL Dropbox/Steven Smith/Manuscripts/K01/Early Patterns of Care/data/tfu_visualization.csv",
                show_col_types = FALSE) |> 
   rename_with(tolower) #|> 
 #  replace_na(list(time_to_actual_sfu = 0))
