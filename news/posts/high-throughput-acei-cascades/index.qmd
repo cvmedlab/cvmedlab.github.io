@@ -1,0 +1,17 @@
+---
+title: "High-Throughput Screening for ACE inhibitor Prescribing Cascades"
+author: "Steven M. Smith"
+date: "2025-03-28"
+categories: [paper]
+image: "pds_paper.png"
+---
+
+Our lab has been working for several years on some projects screening for clinically-important prescribing cascades related to cardiovascular medications. Our current project, funded by an R21 from the [NHLBI](https://www.nhlbi.nih.gov/) is the [Antihypertensive Prescribing Cascades project](../../../projects/antihtn_cascades/). The first paper, led by [Asinamai Ndai](../../../people.qmd), is [now published](https://onlinelibrary.wiley.com/doi/epdf/10.1002/pds.70132) in *Pharmacoepidemiology and Drug Safety*.
+
+If you don't have access to PDS, see below for a PDF copy of the paper. Also, check out the [Tableau visualization that accompanies this project](https://public.tableau.com/app/profile/cvmedlab/viz/ACE_newdata/TableofContentsFlowchart2) (made by Dr. Keshwani, based on prior work from our former analyst, Marta).
+
+More to come from this project, as we have other manuscripts currently under review!
+
+<iframe width="100%" height="800" src="Pharmacoepidemiology and Drug - 2025 - Ndai - High‐Throughput Screening for Prescribing Cascades Among Real‐World.pdf">
+
+</iframe>

@@ -23,7 +23,7 @@ Steven Smith
 
 #### Funding Period
 
-July 2022 - June 2024
+July 2022 - June 2025
 
 #### Overview
 
@@ -31,15 +31,19 @@ Hypertension (HTN) is prevalent in nearly half of U.S. adults and treated with \
 
 #### Associated Manuscripts
 
-1.  Wang GH, et al. Modifiable statin characteristics associated with potential statin-related prescribing cascades. Pharmacotherapy 2023;43(12):1307-16. doi: [10.1002/phar.2883](https://doi.org/10.1002/phar.2883). PubMed PMID: [37771303](https://pubmed.ncbi.nlm.nih.gov/37771303/).
+1.  Ndai AM, et al. High-throughput screening for prescribing cascades among real-world angiotensin-converting enzyme inhibitor initiators. Pharmacoepidemiol Drug Saf 2025;34:e70132. doi: [10.1002/pds.70132](https://doi.org/10.1002/pds.70132). PubMed PMID: [40098294](https://pubmed.ncbi.nlm.nih.gov/40098294/). 
 
-2.  Vouri SM, et al. High-throughput screening for prescribing cascades among real world statin initiators. Pharmacoepidemiol Drug Saf 2023;32(7):773-82. doi: [10.1002/pds.5607](https://doi.org/10.1002/pds.5607). PubMed PMID: [36880251](https://pubmed.ncbi.nlm.nih.gov/36880251/).
+2.  Wang GH, et al. Modifiable statin characteristics associated with potential statin-related prescribing cascades. Pharmacotherapy 2023;43(12):1307-16. doi: [10.1002/phar.2883](https://doi.org/10.1002/phar.2883). PubMed PMID: [37771303](https://pubmed.ncbi.nlm.nih.gov/37771303/).
 
-3.  Wang GH, et al. Continued potassium supplementation use following loop diuretic discontinuation in older adults: An evaluation of a prescribing cascade relic. J Am Geriatr Soc 2023;71(2):505-15. doi: [10.1111/jgs.18103](https://doi.org/10.1111/jgs.18103). PubMed PMID: [36289555](https://pubmed.ncbi.nlm.nih.gov/36289555/).
+3.  Vouri SM, et al. High-throughput screening for prescribing cascades among real world statin initiators. Pharmacoepidemiol Drug Saf 2023;32(7):773-82. doi: [10.1002/pds.5607](https://doi.org/10.1002/pds.5607). PubMed PMID: [36880251](https://pubmed.ncbi.nlm.nih.gov/36880251/).
 
-4.  Vouri SM, et al. Evaluation of a Beta-Blocker-Edema-Loop Diuretic Prescribing Cascade: A Prescription Sequence Symmetry Analysis Am J Hypertens 2022;35(7):601-9. doi: [10.1093/ajh/hpac013](https://doi.org/10.1093/ajh/hpac013). PubMed PMID: [35106529](https://pubmed.ncbi.nlm.nih.gov/35106529/).
+4.  Wang GH, et al. Continued potassium supplementation use following loop diuretic discontinuation in older adults: An evaluation of a prescribing cascade relic. J Am Geriatr Soc 2023;71(2):505-15. doi: [10.1111/jgs.18103](https://doi.org/10.1111/jgs.18103). PubMed PMID: [36289555](https://pubmed.ncbi.nlm.nih.gov/36289555/).
+
+5.  Vouri SM, et al. Evaluation of a Beta-Blocker-Edema-Loop Diuretic Prescribing Cascade: A Prescription Sequence Symmetry Analysis Am J Hypertens 2022;35(7):601-9. doi: [10.1093/ajh/hpac013](https://doi.org/10.1093/ajh/hpac013). PubMed PMID: [35106529](https://pubmed.ncbi.nlm.nih.gov/35106529/).
 
 #### Associated Resources
+
+-   [Antihypertensive Prescribing Cascades High-Throughput Screening Visualizations](https://public.tableau.com/app/profile/cvmedlab/vizzes)
 
 -   [Statin Prescribing Cascades High-throughput Screening Visualizations](https://public.tableau.com/app/profile/cvmedlab/viz/Resultsofthehigh-throughputSSAscreening/TableofContentsFlowchart)
 

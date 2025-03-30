@@ -1,0 +1,11 @@
+---
+title: "Dr. Keshwani joins CVmedLab as Research Assistant Professor"
+author: "Steven M. Smith"
+date: "2025-03-21"
+categories: [news]
+image: "shailina.jpg"
+---
+
+![](/news/posts/keshwani-faculty-cvmedlab/shailina.jpg)
+
+Dr.(!!) [Shailina Keshwani](https://directory.ufhealth.org/keshwani-shailina) has officially joined the [CVmedLab](https://cvmedlab.org/) as a Research Assistant Professor. She previously was a graduate student in the lab, having [successfully defending her dissertation this past december](/news/posts/keshwani-dissertation-defense/index.qmd). She will be helping oversee day-to-day activities of the lab, now that Dr. Smith also has responsibilities to the POP department.
