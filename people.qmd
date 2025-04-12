@@ -5,7 +5,7 @@ format:
       - include/icons.html
 ---
 
-:::::::::::::::::::::::::::::::::::::: grid
+:::::::::::::::::::::::::::::::::::::::: grid
 ::: g-col-12
 ## [People]{style="color: #1E354B"}
 
@@ -69,13 +69,20 @@ format:
 :::
 
 ::: g-col-2
+![](assets/veronica-profile.jpg){fig-align="center"}
+:::
+
+::: g-col-10
+[**Hipatia (Veronica) Donoso**]{style="color: #1E354B"} is the Assistant Director for the [UF Center for Integrative Cardiovascular and Metabolic Disease](https://cicmd.center.ufl.edu/). She most recently was Project Coordinator for the [Project ENFERMERÍA at UCF](https://access.ucf.edu/hispanic-serving-institution/enfermeria/), and prior to that, served as research coordinator for the [CICMD](https://cicmd.center.ufl.edu/). From time-to-time, she also helps us in a pinch as a research coordinator in the CVmedLab.
+:::
+
+::: g-col-2
 ![](assets/david-smith.jpg){fig-align="center"}
 :::
 
 ::: g-col-10
-[**David Smith**]{style="color: #1E354B"} is a Research Coordinator in the Department of Pharmacotherapy & Translational Research. He serves as our primary coordinator on the [Mino-TRH trial](https://ufhealth.org/clinical-trials/mino-trh). 
+[**David Smith**]{style="color: #1E354B"} is a Research Coordinator in the Department of Pharmacotherapy & Translational Research. He serves as our primary coordinator on the [Mino-TRH trial](https://ufhealth.org/clinical-trials/mino-trh).
 :::
-
 
 ::: g-col-12
 ##### Former Lab Members {style="color: #7f7f7f"}
@@ -86,7 +93,7 @@ format:
 :::
 
 ::: g-col-10
-[**Earl Morris, PharmD, MPH, PhD**]{style="color: #1E354B"} is our most recent PhD grad in the Department of Pharmaceutical Outcomes and Policy. His dissertation focused on xanthine oxidase inhibitor utilization and their comparative effects on cardiovascular and related outcomes, funded by an [American Heart Association](https://www.heart.org/) Predoctoral Fellowship award. Earl is now on Faculty in the POP Department.
+[**Earl Morris, PharmD, MPH, PhD**]{style="color: #1E354B"} earned his PhD in the CVmedLab (and Scott Vouri's lab) in the Department of Pharmaceutical Outcomes and Policy. His dissertation focused on xanthine oxidase inhibitor utilization and their comparative effects on cardiovascular and related outcomes, funded by an [American Heart Association](https://www.heart.org/) Predoctoral Fellowship award. Earl is now on Faculty in the POP Department.
 :::
 
 ::: g-col-2
@@ -158,4 +165,4 @@ format:
 
 See the [about page](about.qmd) for information on joining the group.
 :::
-::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::
